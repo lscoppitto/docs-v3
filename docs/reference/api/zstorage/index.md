@@ -1,13 +1,15 @@
 # zStorage APIs
 
 ## Introduction
-The **zStorage REST APIs** offer the possibility to get time series data from the zStorage cloud service.
+The **zStorage REST APIs** allow to query the zStorage cloud service to obtain time series data for a given workspace. 
 
-The base url of the zStorage api is:
+The base url:
 ```
 https://api.storage.zerynth.com/v3
 ```
 
+!!! important
+   IN order to use the zStorage, you need to have an active zStorage from w workspace in the ZDM
 
 !!! note
   - Set the **Content-Type** header to **application/json**.
@@ -18,7 +20,7 @@ https://api.storage.zerynth.com/v3
 
 ### Get Data
 
-Get the time series raw data of a workspace.
+Get the time series data of a workspace.
 
 `GET /timeseries/{workspace_id}/data`
 
@@ -36,7 +38,7 @@ Get the time series raw data of a workspace.
     - The `size` parameter cannot be larger than `175000` and cannot be negative.
     - The `sort` parameter with the `-` prefix indicate decreasing order.
     - The `from` parameter cannot be negative.
-    - The built time range is `start <= timestamp_device < end` .
+    - The time range is `start <= timestamp_device < end` .
 
 
 #### Response
