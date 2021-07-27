@@ -14,7 +14,7 @@ To make the process even more complicated, anything can happen during the firmwa
 
 ## **How FOTA works**
 
-The FOTA process starts with a Zerynth project containing the new firmware. After the project is thoroughly tested, the binary firmware can be uploaded to the zDeviceManger directly from VSCode or by using the cli. 
+The FOTA process starts with a Zerynth project containing the new firmware. After the project is thoroughly tested, the binary firmware can be uploaded to the Zerynth Device Manger directly from VSCode or by using the cli. 
 
 The Zerynth Device Manager keeps track of all the different versions of a firmware. From the firmware page it is possible to schedule a FOTA, namely sending to a device (or to a fleet) the command to update itself.
 
