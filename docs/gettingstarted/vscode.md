@@ -19,7 +19,7 @@ You can start VSCode:
 
 
 The extension adds some panels and tabs.
-In particular, in the Explorer tab (`Ctrl+Shift+E`) three more panels are present for managing projects, searching examples and integrating with the [zDeviceManager](../zCloud/zdm_intro.md). Moreover the extension also modifies some standard panels adding shortcuts to common actions.
+In particular, in the Explorer tab (`Ctrl+Shift+E`) three more panels are present for managing projects, searching examples and integrating with the [Zerynth Device Manager](../zCloud/zdm_intro.md). Moreover the extension also modifies some standard panels adding shortcuts to common actions.
 
 Let's quickly go through them.
 
@@ -59,7 +59,7 @@ From this panel the vast collection of examples can be browsed by category or se
 
 ### **Zerynth Device Manager**
 
-From this panel you can interact with the zDeviceManager (ZDM) by browsing through the fleets of devices connected to the [zCloud](../zCloud/index.md)
+From this panel you can interact with the Zerynth Device Manager (ZDM) by browsing through the fleets of devices connected to the [Zerynth Cloud](../zCloud/index.md)
 
 ### **Zerynth Tab**
 
@@ -112,12 +112,12 @@ By clicking `Device documentation` the documentation page for the device is open
 If you need the names of pins or the position of a communication bus, just click `Device pinmap` and you will be taken to the device schematics page.
 
 
-## **5. Explore the zDeviceManager**
+## **5. Explore the Zerynth Device Manager**
 
-The extension is also integrated with the zCloud, in particular with the zDeviceManager. The `Zerynth Control Panel` allows interacting with the cloud counterpart of the physical device. To start accessing the cloud, just press `Provisioning` and accept the warning about the current program being deleted. The provisioning process creates a cloud device and associates it with your physical device in your Zerynth account. 
+The extension is also integrated with the zCloud, in particular with the Zerynth Device Manager. The `Zerynth Control Panel` allows interacting with the cloud counterpart of the physical device. To start accessing the cloud, just press `Provisioning` and accept the warning about the current program being deleted. The provisioning process creates a cloud device and associates it with your physical device in your Zerynth account. 
 
-After a successful provisioning your physical device can connect to the zDeviceManager and send data.
-Moreover you can jump directly to the cloud device web page by clicking on `Cloud device`. You can also perform an over the air update of the firmware by clicking `FOTA`! The [over the air update](../zCloud/FOTA.md) is one of the essentials features of the zDeviceManager that allows managing all your devices remotely with just a click.
+After a successful provisioning your physical device can connect to the Zerynth Device Manager and send data.
+Moreover you can jump directly to the cloud device web page by clicking on `Cloud device`. You can also perform an over the air update of the firmware by clicking `FOTA`! The [over the air update](../zCloud/FOTA.md) is one of the essentials features of the Zerynth Device Manager that allows managing all your devices remotely with just a click.
 
 <figure>
   <a data-fancybox="gallery" href="../img/vscode-03-zdm.png">

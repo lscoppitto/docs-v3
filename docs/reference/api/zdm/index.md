@@ -1,7 +1,7 @@
-# zDeviceManager APIs
+# Zerynth Device Manager APIs
 
 ## Introduction
-The **zDeviceManager REST APIs** offer access to devices, job and FOTA services, as well as workspaces and fleets.
+The **Zerynth Device Manager REST APIs** offer access to devices, job and FOTA services, as well as workspaces and fleets.
 This API can be called from any application that can send an HTTPS request and receive an HTTPS response.
 
 !!! note 
@@ -9,7 +9,7 @@ This API can be called from any application that can send an HTTPS request and r
     - Set the **X-API-KEY** header to a valid API Key. For information about how to get an API key, see [Authentication](#authentication).
 
 ## Authentication
-zDeviceManager grants access to endpoints by verifying an API key.
+Zerynth Device Manager grants access to endpoints by verifying an API key.
 
 The API key is a unique identifier that authenticates your requests and it is bound to a single workspace. 
 
@@ -17,7 +17,7 @@ The API key is a unique identifier that authenticates your requests and it is bo
 
 To create an API key:
 
-1. Login to [zDeviceManager](https://zdm.zerynth.com).
+1. Login to [Zerynth Device Manager](https://zdm.zerynth.com).
 2. Choose a workspace.
 3. Go to the **Settings** page.
 4. Click on **New API key**. Choose a name for the API key and click **OK**
@@ -749,10 +749,10 @@ Schedule a new FOTA for multiple fleets.
 ```
 
 ## Integrations
-zDeviceManager allows you to forward data received from devices to third-party services.
+Zerynth Device Manager allows you to forward data received from devices to third-party services.
 
 !!! note "Note - Message Delivery Reliability"
-    All zDeviceManager integrations follow an **at-least-once** rule for data forwarding: the zDeviceManager guarantees that all data that has been received from devices is forwarded to the external service, but some messages may be sent multiple times. It is up to the external service to handle deduplication. 
+    All Zerynth Device Manager integrations follow an **at-least-once** rule for data forwarding: the Zerynth Device Manager guarantees that all data that has been received from devices is forwarded to the external service, but some messages may be sent multiple times. It is up to the external service to handle deduplication. 
 
 ### Webhook data format
 

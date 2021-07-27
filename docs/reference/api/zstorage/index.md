@@ -1,9 +1,9 @@
-# zStorage APIs
+# Zerynth Storage APIs
 
 ## Introduction
-The **zStorage REST APIs** offer the possibility to get time series data from the zStorage cloud service.
+The **Zerynth Storage REST APIs** offer the possibility to get time series data from the Zerynth Storage cloud service.
 
-The base url of the zStorage api is:
+The base url of the Zerynth Storage api is:
 ```
 https://api.storage.zerynth.com/v3
 ```

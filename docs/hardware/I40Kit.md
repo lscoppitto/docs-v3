@@ -6,7 +6,7 @@ The keystone of the kit is the 4zerobox. The 4ZeroBox is a modular hardware elec
 
 
 Zerynth SDK is the official development environment for the 4ZeroBox.
-Zerynth SDK is a powerful Python and C development environment that supports many industrial protocols, sensor channels and components. In addition to seamless integration with zCloud.
+Zerynth SDK is a powerful Python and C development environment that supports many industrial protocols, sensor channels and components. In addition to seamless integration with Zerynth Cloud.
 
 
 <figure>

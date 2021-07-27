@@ -179,11 +179,11 @@ The firmware can print to the console or not depending on the chosen debug level
 Provisioning is a very important step that must be performed just once, before connecting any device to the Zerynth Device Manager. It consists of associating the device physical identity protected by the secure element with the device identity on the Zerynth Device Manager. This step guarantees that the physical device is owned only by the Zerynth account that performs the associations.
 
 Under the hood the physical device is loaded with a provisioning firmware that generates a signature by exploiting the capabilities of the secure element. 
-The signature is then sent to the zDeviceManager that, after verifying its authenticity, associates the physical identity with a zDeviceManager device. The association is possible if the physical device is not already associated. In that case it must be deassociated first.
+The signature is then sent to the Zerynth Device Manager that, after verifying its authenticity, associates the physical identity with a Zerynth Device Manager device. The association is possible if the physical device is not already associated. In that case it must be deassociated first.
 
-Once associated, the device can connect to the zDeviceManager and begin to send data to the corresponding workspace.
+Once associated, the device can connect to the Zerynth Device Manager and begin to send data to the corresponding workspace.
 
-All the steps above can be performed with a single click on the edit icon of the `Provisioning` in the `Zerynth Control Panel`. A popup window will be shown for selecting the zDeviceManager device to associate with the physical one. If no devices are present in the workspace, one can be created from the VSCode popup.
+All the steps above can be performed with a single click on the edit icon of the `Provisioning` in the `Zerynth Control Panel`. A popup window will be shown for selecting the Zerynth Device Manager device to associate with the physical one. If no devices are present in the workspace, one can be created from the VSCode popup.
 
 <figure>
   <a data-fancybox="gallery" href="img/vscode-provisioning-01.png">
@@ -210,14 +210,14 @@ All the steps above can be performed with a single click on the edit icon of the
   <figcaption>Updated control panel</figcaption>
 </figure>
 
-Once a device is correctly provisioned, any project or example connecting to the zDeviceManager will work out of the box.
-By clicking `Cloud Device` in the `Zerynth Control Panel`, the zDeviceManager device page is opened in the browser,
+Once a device is correctly provisioned, any project or example connecting to the Zerynth Device Manager will work out of the box.
+By clicking `Cloud Device` in the `Zerynth Control Panel`, the Zerynth Device Manager device page is opened in the browser,
 showing the device info.
 
 
 ### Performing Over the Air Update (FOTA)
 
-When the device is connected to the zDeviceManager it is always possible to update the firmware remotely by sending a FOTA request. The device will download the new firmware and install it. Upon reset, the new firmware will validate itself and if everything works correctly, it becomes permanent. FOTA can be easily tested directly from VSCode by clicking `Launch FOTA` in the `Zerynth Control Panel`; the current project is compiled and the `firmware.z` is uploaded to the zDeviceManager as a new firmware version. The `FOTA` request is sent to the device automatically and by opening the console, its progress can be monitored.
+When the device is connected to the Zerynth Device Manager it is always possible to update the firmware remotely by sending a FOTA request. The device will download the new firmware and install it. Upon reset, the new firmware will validate itself and if everything works correctly, it becomes permanent. FOTA can be easily tested directly from VSCode by clicking `Launch FOTA` in the `Zerynth Control Panel`; the current project is compiled and the `firmware.z` is uploaded to the Zerynth Device Manager as a new firmware version. The `FOTA` request is sent to the device automatically and by opening the console, its progress can be monitored.
 
 More details on FOTA can be found [here](../../zCloud/FOTA.md).
 
@@ -241,15 +241,15 @@ All the commands of the extension can be run from VSCode command palette. Just p
 - `Zerynth > Compile`, produces an executable bytecode file compiling the current project for the physical device
 - `Zerynth > Run`, run the bytecode on the physical device
 - `Zerynth > Console`, open the serial port monitor for the physical device
-- `Zerynth > Attach to ZDM`, attach the physical device to a zDeviceManager device identifier
-- `Zerynth > Device Provisioning`, attach the physical device credentials contained in the secure element to a zDeviceManager device identifier
-- `Zerynth > Detach from ZDM`, detach the physical device credentials from the zDeviceManager device identifier
+- `Zerynth > Attach to ZDM`, attach the physical device to a Zerynth Device Manager device identifier
+- `Zerynth > Device Provisioning`, attach the physical device credentials contained in the secure element to a Zerynth Device Manager device identifier
+- `Zerynth > Detach from ZDM`, detach the physical device credentials from the Zerynth Device Manager device identifier
 - `Zerynth > FOTA`, prepare the current project for over the air update and send the update to the device
-- `Zerynth > Go To ZDM`, open the zDeviceManager web app
-- `Zerynth > Device Page`, open the device page on the zDeviceManager web app
-- `Zerynth > Add Workspace`, create a new workspace in the zDeviceManager
-- `Zerynth > Add Fleet`, create a new fleet of inside a zDeviceManager workspace
-- `Zerynth > Add Device`, create a new device of inside a zDeviceManager fleet
+- `Zerynth > Go To ZDM`, open the Zerynth Device Manager web app
+- `Zerynth > Device Page`, open the device page on the Zerynth Device Manager web app
+- `Zerynth > Add Workspace`, create a new workspace in the Zerynth Device Manager
+- `Zerynth > Add Fleet`, create a new fleet of inside a Zerynth Device Manager workspace
+- `Zerynth > Add Device`, create a new device of inside a Zerynth Device Manager fleet
 - `Zerynth > Logout`, log out
 
 

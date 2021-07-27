@@ -1,6 +1,6 @@
-# **Introduction to zStorage**
+# **Introduction to Zerynth Storage**
 
-zStorage is a dedicated cloud service optimized for storing time series data coming from IoT devices.
+Zerynth Storage is a dedicated cloud service optimized for storing time series data coming from IoT devices.
 It offers APIs to retrieve the raw or aggregated data and to export it into other formats (csv, json).
 
 
@@ -10,7 +10,7 @@ It offers APIs to retrieve the raw or aggregated data and to export it into othe
   </a>
 </figure>
 
-## Why use zStorage
+## Why use Zerynth Storage
 
 - A dedicated GUI for exploring the data produced by the devices
 - Advanced REST API to get both raw and aggregated data (e.g., average value of a column)

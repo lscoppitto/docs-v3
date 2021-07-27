@@ -204,7 +204,7 @@ If you now press `Cloud device` a page will be opened in your browser where you 
   <a data-fancybox="gallery" href="img/project-08.png">
   <img src="img/project-08.png" />
   </a>
-  <figcaption>zDeviceManager device page</figcaption>
+  <figcaption>Zerynth Device Manager device page</figcaption>
 </figure>
 
 ## 4. Send data!
@@ -217,7 +217,7 @@ You can also go back to the web browser, scroll down and check the data incoming
   <a data-fancybox="gallery" href="img/project-09.png">
   <img src="img/project-09.png" />
   </a>
-  <figcaption>zDeviceManager device data console</figcaption>
+  <figcaption>Zerynth Device Manager device data console</figcaption>
 </figure>
 
 

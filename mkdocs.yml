@@ -49,10 +49,10 @@ nav:
     - {Product Innovation Kit: hardware/productInovv.md}
 - Zerynth Cloud:
   - Introduction: zCloud/index.md
-  - zDeviceManager: zCloud/zdm_intro.md
-  - zStorage: zCloud/zstorage_intro.md
-  - zDashboard: zCloud/zdashboard_intro.md
-  - Connect to zCloud: zCloud/connect.md
+  - Zerynth Device Manager: zCloud/zdm_intro.md
+  - Zerynth Storage: zCloud/zstorage_intro.md
+  - Zerynth Dashboard: zCloud/zdashboard_intro.md
+  - Connect to Zerynth Cloud: zCloud/connect.md
   - Over the Air Updates: zCloud/FOTA.md
 - Tutorials and Demos:
   - Tutorials:
@@ -68,7 +68,7 @@ nav:
     - 4ZeroBox:
       - demos/4zerobox/hello_4zerobox.md
       - demos/4zerobox/industrial_kit.md
-    - zCloud:
+    - Zerynth Cloud:
       - demos/zCloud/jobs_relays.md
       - demos/zCloud/FOTA_fleet.md
       - Integrate Microsoft Azure IoT with Zerynth Cloud: demos/zCloud/azure_integration.md
@@ -138,7 +138,7 @@ nav:
       - Math:
         - reference/libs/math/math.md
         - reference/libs/math/bignum.md
-      - zDeviceManager:
+      - Zerynth Device Manager:
         - reference/libs/zerynth/zdm/index.md
         - reference/libs/zerynth/zdm/examples.md
       - Time Series Log:
@@ -162,17 +162,17 @@ nav:
           - reference/faq/installer.md
           - reference/faq/vscode.md
           - reference/faq/filesystem.md
-      - ZSDK Examples:
+      - Zerynth SDK Examples:
           - reference/examples/zerynth-os/hello_zerynth.md
           - reference/examples/zerynth-os/multi_serial.md
           - reference/examples/zerynth-os/multi_thread_basic.md
           - reference/examples/zerynth-os/c_language_interface.md
           - reference/examples/zerynth-os/adc.md
           - reference/examples/zerynth-os/watchdog.md
-    - zCloud APIs:
+    - Zerynth Cloud APIs:
       - reference/api/zdm/index.md
       - reference/api/zstorage/index.md
-    - zCloud Web App:
+    - Zerynth Cloud Web App:
       - Zerynth Device Manager : reference/webApp/zdm_gui.md
       - Zerynth Storage: reference/webApp/storage_gui.md
       - Zerynth Dashboard: reference/webApp/Dashboard_gui.md
