@@ -39,6 +39,23 @@ Expansion boards vary in features and functionality. Currently, Zerynth offers e
 -   [EXP-SER](EXP-SER.md): Serial Communication board with : CAN, RS232 and RS485  interfaces.
 -   [EXP-PROTO](EXP-PROTO.md): Prototyping board for connecting and testing different types of sensors and devices.
 
+## **ZM1 - IoT Module**
+
+The ZM1-DB mounts the ZM1 module. The Zerynth Module ZM1 is a dedicated customized version of the ESP32-WROOM-32SE Module.
+The Module is certified RoHS, CE/RED, e FCC (EU e US).
+
+The ZM1 Module mounts onboard the ESP32-D0WD microcontroller, and is designed to be scalable and adaptive. The CPU clock frequency is adjustable from 80 MHz to 240 MHz, With an embedded 16 MB of SPI Flash memory and integrates a rich set of peripherals, ranging from SD interface, Ethernet, High speed SPI, UART, e I2C.
+
+Inside the ZM1, the crypto element ATECC608A from Microchip has been integrated to handle secure connections in an easy manner, exchanging certificates and keys, encrypting messages over TLS protocol and using secure authentication procedures.
+
+<figure>
+  <a data-fancybox="gallery" href="img/zm1module.png">
+  <img src="img/zm1module.png"width="400"/>
+  </a>
+</figure>
+
+For more information on ZM1 module, [Please refer to the user manual of ZM1](https://www.zerynth.com/download/20127/)
+
 ## 4ZeroBox
 
 Industrial IoT device for acquisition, monitoring and control of industrial machines
