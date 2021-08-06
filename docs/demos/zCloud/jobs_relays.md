@@ -1,4 +1,4 @@
-# Controlling Relays with Jobs in zCloud
+# Controlling Relays with Jobs in Zerynth Cloud
 
 Water pipes are traditionally controlled by legacy pumps that require on-site maintenance. They cannot be monitored remotely and don’t provide any feedback with respect to on-going operations.
 If these pumps fail, catastrophic events could happen and, perhaps, what’s worse is that for the technicians, there is no way to know when, why or how this failure occurred. To determine the cause for failure then, the technicians have to travel on-site to fix the failure.
@@ -8,9 +8,9 @@ In contrast to an IoT enabled Water pump, you get periodic diagnostics of the op
 
 ## ZDM Jobs
 
-ZDM Jobs are probably the easiest way to handle actuators by using the zCloud and ZSDK. ZDM Jobs are functions that are triggered on the zCloud and executed on the respective devices. From the operator’s point of view, you can control devices at scale, while issuing jobs and executing functions in a schedulable manner for a large  fleet of devices.
+ZDM Jobs are probably the easiest way to handle actuators by using the Zerynth Cloud and ZSDK. ZDM Jobs are functions that are triggered on the Zerynth Cloud and executed on the respective devices. From the operator’s point of view, you can control devices at scale, while issuing jobs and executing functions in a schedulable manner for a large  fleet of devices.
 
-On the ZCloud side, the interface is pretty simple and adjustable. On the device side, the library is simple and easy to use. You can find more information about ZDM Jobs on this [page](https://docs.zerynth.com/latest/reference/libs/zerynth/zdm/#jobs) and details about the API on this [page](https://docs.zerynth.com/latest/reference/libs/zerynth/zdm/#jobs).
+On the Zerynth Cloud side, the interface is pretty simple and adjustable. On the device side, the library is simple and easy to use. You can find more information about ZDM Jobs on this [page](https://docs.zerynth.com/latest/reference/libs/zerynth/zdm/#jobs) and details about the API on this [page](https://docs.zerynth.com/latest/reference/libs/zerynth/zdm/#jobs).
 
 ## Hardware
 

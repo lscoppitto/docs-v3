@@ -9,7 +9,7 @@ This section contains the developer documentation for the vast ecosystem of tool
 
 It can be daunting to navigate all the information, but the task is made easier by the search bar on the upper right.
 
-The technical reference spans a wide range of topics from the details of writing a Zerynth based firmware for embedded devices to the zCloud APIs. For this reason it's useful starting a journey through Zerynth from the lower layers of the IoT stack and then going up.
+The technical reference spans a wide range of topics from the details of writing a Zerynth based firmware for embedded devices to the Zerynth Cloud APIs. For this reason it's useful starting a journey through Zerynth from the lower layers of the IoT stack and then going up.
 
 !!! warning "V2 Documentation"
     Documentation for versions of Zerynth before v3.0.0 can be found <a href="https://docsv2.zerynth.com" target="_blank">here</a>
@@ -34,11 +34,11 @@ Once the devices are securely connected, they need to be managed throughout thei
 
 ## Data Storage (coming soon)
 
-The Zerynth platform optionally provides a service where IoT data ca be stored and queried, called zStorage. An optimized IoT database cluster is made available to the user by a simple and powerful [API](api/zstorage/index.md) without worries about redundancy and availability.
+The Zerynth platform optionally provides a service where IoT data ca be stored and queried, called Zerynth Storage. An optimized IoT database cluster is made available to the user by a simple and powerful [API](api/zstorage/index.md) without worries about redundancy and availability.
 
 ## Data Visualization (coming soon)
 
-Once the data are stored, a Grafana based dashboard can be easily hooked up to the IoT database for visualizing them in no time. The zDashboarding service documentation can be found [here](../zCloud/zdashboard_intro.md)
+Once the data are stored, a Grafana based dashboard can be easily hooked up to the IoT database for visualizing them in no time. The Zerynth Dashboard service documentation can be found [here](../zCloud/zdashboard_intro.md)
 
 
 

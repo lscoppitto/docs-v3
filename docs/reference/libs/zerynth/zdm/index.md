@@ -45,7 +45,7 @@ Jobs are executed by the `Agent` thread and their result is sent to the cloud fo
 
 ## Data
 
-The `Agent` is capable of sending raw data points such as sensor readings to the cloud where they are temporarily stored and fed into the various available integrations (i.e. sent to Azure or to the zStorage for further elaboration). Data is sent in JSON format as a dictionary called `payload` thus allowing for the maximum flexibility. The `payload` is also associated to a `tag`, a label that can be used to better organize IoT data and to easily retrieve it from the cloud.
+The `Agent` is capable of sending raw data points such as sensor readings to the cloud where they are temporarily stored and fed into the various available integrations (i.e. sent to Azure or to the Zerynth Storage for further elaboration). Data is sent in JSON format as a dictionary called `payload` thus allowing for the maximum flexibility. The `payload` is also associated to a `tag`, a label that can be used to better organize IoT data and to easily retrieve it from the cloud.
 
 Sending data is very easy:
 

@@ -15,7 +15,7 @@ This tutorial will guide you in building your first IoT demo with the Zerynth In
 
 For this tutorial, you need to install the [Zerynth SDK](../../gettingstarted/index.md).
 
-The goal of the tutorial is setting up the 4ZeroBox for measuring environmental temperature and power consumption. The data will be sent to the zDeviceManager and displayed in a demo dashboard.
+The goal of the tutorial is setting up the 4ZeroBox for measuring environmental temperature and power consumption. The data will be sent to the Zerynth Device Manager and displayed in a demo dashboard.
 
 
 ## Sensors Setup
@@ -42,7 +42,7 @@ We will need to:
 
 - connect to the local network
 - read sensors with correct timings
-- send data to the zDeviceManager
+- send data to the Zerynth Device Manager
 
 ### Clone the example
 
@@ -63,9 +63,9 @@ The firmware needs to be customized with your wifi credentials at lines 18-19 an
 
 The `network.py` module contains a function that retries establishing the connection if something fails, while signaling the various states with different led colors.
 
-The `main.py` goes on with creating a zDeviceManager agent and starting it. This creates a secure MQTT connection with the zDeviceManager for sending data and receiving commands.
+The `main.py` goes on with creating a Zerynth Device Manager agent and starting it. This creates a secure MQTT connection with the Zerynth Device Manager for sending data and receiving commands.
 
-Finally, it starts the `reading.py` module `read_loop` function in a separate thread. The `read_loop` initializes the sensors and reads them once every ten seconds; it also sends the power and temperature reading to the zDeviceManager.
+Finally, it starts the `reading.py` module `read_loop` function in a separate thread. The `read_loop` initializes the sensors and reads them once every ten seconds; it also sends the power and temperature reading to the Zerynth Device Manager.
 
 ### Industrial sensors made easy
 
@@ -102,7 +102,7 @@ Given the configuration, the `sensors` module automatically provides the correct
 
 ### Provision the device
 
-Before running the firmware, it is necessary to assocaite the 4ZeroBox to your zCloud account. This must be done once and requires just two clicks!
+Before running the firmware, it is necessary to assocaite the 4ZeroBox to your Zerynth Cloud account. This must be done once and requires just two clicks!
 
 First, click `Physical device` in the `Zerynth Control Panel` to configure the firmware for the 4ZeroBox. Then, click `Provisioning`. It will ask for a cloud device name, set it to `industrial-kit`. Accept the confirmation dialog and wait for the process to finish.
 
@@ -121,15 +121,15 @@ indicating that the physical device is now associated with a cloud device and ha
 ### Run the firmware
 
 You are now ready to run the firmware! Press `Run` and all the modules and sensors configuration will be copied into the 4ZeroBox to be executed.
-By pressing `Console` you can check the output of the firmware and the values being read and sent to the zDeviceManager.
+By pressing `Console` you can check the output of the firmware and the values being read and sent to the Zerynth Device Manager.
 
 
 
-## Configuring the zDeviceManager
+## Configuring the Zerynth Device Manager
 
-The next step is configuring the zDeviceManager to send the incoming data to a dashboard for visualization.
+The next step is configuring the Zerynth Device Manager to send the incoming data to a dashboard for visualization.
 
-In the zDeviceManager, the incoming data from the 4ZeroBox is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the [zStorage](../../zCloud/zstorage_intro.md) or your own database. Whatever the storage, the data must be first sent out of the zDeviceManager to its final destination.
+In the Zerynth Device Manager, the incoming data from the 4ZeroBox is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the [Zerynth Storage](../../zCloud/zstorage_intro.md) or your own database. Whatever the storage, the data must be first sent out of the Zerynth Device Manager to its final destination.
 
 This is accomplished thanks to `Integrations`. In the workspace screen at [zdm.zerynth.com](https://zdm.zerynth.com), in the Integrations tab, it is possible to configure many different forwarding point.
 
@@ -139,7 +139,7 @@ Let's create a new integration by clicking the `New integration` button. The fir
 
 Webhook integrations are the most generic ones since they send data in batches from the workspace to an http endpoint; there, a service decodes the content of the batch and insert it into the storage.
 
-The next information requested by the integration dialog is the type of data: zDeviceManager supports both data and conditions streams. Select `data stream` and give it a name like `industrial-kit`. The most important piece of information required by the integration is the url of the endpoint that will be receiving data. Type `http://hello.zerynth.com/zdm/data` and click `Submit`.
+The next information requested by the integration dialog is the type of data: Zerynth Device Manager supports both data and conditions streams. Select `data stream` and give it a name like `industrial-kit`. The most important piece of information required by the integration is the url of the endpoint that will be receiving data. Type `http://hello.zerynth.com/zdm/data` and click `Submit`.
 
 <figure>
   <a data-fancybox="gallery" href="../img/kit-03.png">
@@ -170,11 +170,11 @@ The next information requested by the integration dialog is the type of data: zD
 </figure>
 
 
-Data is now flowing from the IoT device to the endpoint on `hello.zerynth.com` and the zDeviceManager will take care of resending any missed batch to avoid any data loss.
+Data is now flowing from the IoT device to the endpoint on `hello.zerynth.com` and the Zerynth Device Manager will take care of resending any missed batch to avoid any data loss.
 
 ## Dashboarding
 
-The data ingested at `hello.zerynth.com` is stored in a local database that can be queried by any dashboarding solution. We have installed a [Grafana](https://grafana.com/) instance that serves a public dashboard for you to play with. Grafana is one of the best dashboarding tool out there and you can use it without worrying about its maintenance directly from our custom [zDashboard](../../zCloud/zdashboard_intro.md) solution.
+The data ingested at `hello.zerynth.com` is stored in a local database that can be queried by any dashboarding solution. We have installed a [Grafana](https://grafana.com/) instance that serves a public dashboard for you to play with. Grafana is one of the best dashboarding tool out there and you can use it without worrying about its maintenance directly from our custom [Zerynth Dashboard](../../zCloud/zdashboard_intro.md) solution.
 
 Dashboards can be easily created by adding panels, and each panel is the result of a query into the incoming data.
 

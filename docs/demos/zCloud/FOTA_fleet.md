@@ -58,7 +58,7 @@ After you Compile and run the applicationon the ZM1-DB you will see the default 
   </a>
 </figure>
 
-Now we can upload the same application to the ZDM by just clicking the FOTA button inside the “Zerynth Control Panel”. After this firmware is uploaded to the zCloud it will be automatically marked as the new version and you can check that from the web interface. Navigate to your workspace then click on “Firmwares”  and you will see all the versions you have uploaded.
+Now we can upload the same application to the ZDM by just clicking the FOTA button inside the “Zerynth Control Panel”. After this firmware is uploaded to the Zerynth Cloud it will be automatically marked as the new version and you can check that from the web interface. Navigate to your workspace then click on “Firmwares”  and you will see all the versions you have uploaded.
 
 <figure>
   <a data-fancybox="gallery" href="../img/fota_fleet2.png">

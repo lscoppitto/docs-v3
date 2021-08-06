@@ -1,18 +1,18 @@
 # IIM42652
 
-This module contains the I2C driver for IIM-42652 6-axis SmartIndustrial™ MotionTracking device that supports an extended operating temperature range. The IIM-42652 combines a 3-axis gyroscope (up to ±2000 degrees/sec), and a 3-axis accelerometer (up to ±16g) and features a 2K-byte FIFO that can lower the traffic on the serial bus interface and reduce power consumption by allowing the system processor to burst read sensor data and then go into a low-power mode.
-
-[datasheet](http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf)
 [ds]: <http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf>
+_datasheet_: <http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf>
+
+This module contains the I2C driver for IIM-42652 6-axis SmartIndustrial™ MotionTracking device that supports an extended operating temperature range. The IIM-42652 combines a 3-axis gyroscope (up to ±2000 degrees/sec), and a 3-axis accelerometer (up to ±16g) and features a 2K-byte FIFO that can lower the traffic on the serial bus interface and reduce power consumption by allowing the system processor to burst read sensor data and then go into a low-power mode.
 
 ### class IIM42652
 ```python
-IIM42652(drv=I2C0, addr=0x68, clk=1000000)
+IIM42652(drv=I2C0, addr=0x69, clk=1000000)
 ```
 Create an instance of a new IIM-42652 device controlled by I2C.
 
 * `drv` is the I2C drive to use. Default is `I2C0`;
-* `addr` is the I2C address of the device. Default is `0x68`;
+* `addr` is the I2C address of the device. Default is `0x69`;
 * `clk` is the I2C clock speed to use. Default is `1000000`.
 
 ### method soft_reset
@@ -298,30 +298,4 @@ For additional information, see register `INT_CONFIG0` on [IIM-42652 datasheet][
 
 * `fifo_ths` is the clear method of fifo watermark threshold interrupt. 
 
-* `ui_drdy` is the clear method of ui data ready interrupt.
-
-### Example
-```python
-
-from bsp import board
-from components.iim42652 import iim42652
-# Create a iim42652 class with i2c
-iim = iim42652.IIM42652()
-sleep(500)
-# Software reset of the iim42652
-iim.soft_reset()
-# Set up the device for I2C communication
-iim.setup()
-# Set accel and config
-# Accel ODR = 2khz, full scale = 16 g
-iim.set_accel_cfg(0b0101, 0b000)
-# Set fifo in stream mode
-iim.set_fifo_mode(0b01)
-# Power accels and gyros on low noise mode
-iim.set_pwr_cfg(3, 0, 0, 0)
-while True:
-    sleep(1000)
-    print("accel x:", iim.get_accel_x())
-    print("accel y:", iim.get_accel_y())
-    print("accel z:", iim.get_accel_z())
-```
+* `ui_drdy` is the clear method of ui data ready interrupt. 
