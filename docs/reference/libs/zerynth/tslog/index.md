@@ -110,30 +110,107 @@ while True:
 ## The Log
 
 ### class TSLog
-```python 
+```python
 class TSLog(
-        folder, 
-        formats = [], 
-        record_size=128, 
-        bucket_size=1024, 
-        commit_delta=16, 
-        nreaders=1, 
-        recreate=False)
+        folder,
+        formats = [],
+        record_size=128,
+        bucket_size=1024,
+        commit_delta=1,
+        nreaders=1,
+        recreate=False,
+        serializer=None)
 ```
 
 Create a `TSLog` instance. The `TSLog` class accepts various parameters:
 
--   `folder` is a folder in a mounted filesystem to store buckets and snapshots. It is suggested to use a folder in the internal flash by prefixing the folder with "/zerynth/"
--   `formats` is the  list of possible formats of data that will be saved in the record. If given, it is converted to a record size in bytes via the `struct` library. Check the [struct docs](../../stdlib//struct.md) for available formats
+-   `folder` is a folder in a mounted filesystem to store buckets and snapshots. It is suggested to use a folder in the internal flash by prefixing the folder with "/zerynth/".
+-   `formats` is the  list of possible formats of data that will be saved in the record. If given, it is converted to a record size in bytes via the `struct` library. Check the [struct docs](../../stdlib//struct.md) for available formats.
 -   `record_size` is the fixed size of the log record. It is suggested to avoid using this parameter directly in favor of `format`
--   `bucket_size` is the number of records that can fit into a bucket
--   `commit_delta` is the number of records after which a snapshot of the log is taken. Adjust based on the frequency of acquisition of the firmware. 
+-   `bucket_size` is the number of records that can fit into a bucket.
+-   `commit_delta` is the number of records after which a snapshot of the log is taken. Adjust based on the frequency of acquisition of the firmware.
 -   `nreaders` is the number of readers that can be created by this instance. Maximum number is 4.
--   `recreate`, if *True* the log is created empty or truncated if already existing
+-   `recreate`, if *True* the log is created empty or truncated if already existing.
+-   `serializer`, is the object, external to TSLog, with which the data are
+transformed between the byte sequence to the specific serializer format
+(e.g.: json, cbor, etc.) and viceversa.
+The object class must implement the `dump()` and `load()` methods.
+The `dump()` method receives a data object in the specific serializer format
+and returns a data sequence to be stored into TSLog.
+The `load()` method receives a data sequence stored into TSLog and transforms
+it into specific serializer format.
+
+Usage of TSLog with json serializer:
+
+```python
+######################################
+# TSLog with json serializer
+#####################################
+import time
+import json
+from tslog import tslog
+
+# open the log and provide a record format
+# in this case a 64 bits integer followed by two floats
+tlog = tslog.TSLog("/zerynth/test0", serializer=json, recreate=False)
+
+
+#Let's define a reader thread thats keeps reading from the log
+def reader_loop():
+    print("Starting reader...")
+    cnt = 0
+    while True:
+        sleep(250)
+        values = treader.next()
+        if values is None:
+            print("NO DATA YET")
+        else:
+            print("=>",values)
+            # commit every 10 records read
+            cnt = cnt+1
+            if cnt % 10 == 0:
+                treader.commit()
+
+sleep(1000)
+
+# lets get a reader from the tslog
+treader = tlog.reader(0)
+# and start the thread
+thread(reader_loop)
+
+print("Starting writer...")
+
+a=0.0
+b=0.0
+while True:
+    a = a+1
+    b = b-1
+    ts = time.now()
+    # now write data to the log according to the format "Qff"
+    obj={"ts":ts, "a":a, "b":b}
+    seqn = tlog.store_object(obj)
+    print("<=", obj)
+    sleep(100)
+    if seqn%100==0:
+        print("Writer waits for reader to catch up...")
+        tlog.commit()
+        while True:
+            # get some stats
+            stats = tlog.stats()
+            print("last seqn: ",stats[0])
+            print("bucket:    ", stats[1])
+            print("reader lag:",stats[2])
+            # the reader lag indicates how behind the readers are with respect to the write
+            if stats[2]<10:
+                # reader is less than 10 records behind, let's wake up and write more data
+                print("Reader is catching up, writer restarts...")
+                break
+            sleep(5000)
+```
 
 ### method `store`
 
-```python 
+```python
 store(*args)
 ```
 
@@ -143,11 +220,11 @@ Return the sequence number of the stored record.
 
 ### method `store_with_tag`
 
-```python 
+```python
 store_with_tag(tag, *args)
 ```
 
-Store the arguments marking the record as belonging to `tag`. `tag` is a non negative integer that selects the 
+Store the arguments marking the record as belonging to `tag`. `tag` is a non negative integer that selects the
 format to be used according to `formats`.
 Return the sequence number of the stored record.
 
@@ -157,17 +234,17 @@ If formats provided are less than two, the method raises an exception.
 
 ### method `store_record`
 
-```python 
+```python
 store_record(data)
 ```
 
-Store the raw record up to record_size. 
+Store the raw record up to record_size.
 Return the sequence number of the stored record.
 
 
 ### method `commit`
 
-```python 
+```python
 commit()
 ```
 
@@ -176,7 +253,7 @@ Return the sequence number of the last record.
 
 ### method `stats`
 
-```python 
+```python
 stats()
 ```
 
@@ -190,7 +267,7 @@ The readers lag is the difference between the latest sequence number and the min
 
 ### method `reader`
 
-```python 
+```python
 reader(n)
 ```
 
@@ -198,7 +275,7 @@ Create an instance of a `TSReader`. The method requires a parameter `n` that is 
 
 ### method `close`
 
-```python 
+```python
 close()
 ```
 
