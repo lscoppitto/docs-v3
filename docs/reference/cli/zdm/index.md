@@ -1,6 +1,6 @@
-# zDeviceManager CLI
+# Zerynth Device Manager CLI
 
-The zDeviceManager CLI (ZDM CLI) is a command line interface that permits interacting with the [zDeviceManager](https://zdm.zerynth.com)
+The Zerynth Device Manager CLI (ZDM CLI) is a command line interface that permits interacting with the [Zerynth Device Manager](https://zdm.zerynth.com)
 
 This section is a guide for the most used of the ZDM CLI commands.
 

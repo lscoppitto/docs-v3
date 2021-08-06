@@ -4,9 +4,10 @@
 ```python
 next_expansion(e, selectors=None)
 ```
-Add the next expansion board to the ZM1-DB.
 * `e` is the next expansion type module.
-    Use the following table to choose the right expansion.
+    
+Use the following table to choose the right expansion.
+
     | module  | expansion |
     |---------|-----------|
     | `io`    | EXP-IO    |
@@ -27,6 +28,14 @@ Power on all the expansions conected to the ZM1-DB.
 expansions_off()
 ```
 Shut down all the expansions conected to the ZM1-DB.
+
+### function `led`
+```python
+led(color)
+```
+Set the color of the led.
+
+* `color` is the color to set. Possible colors are. `BLACK`, `WHITE`, `RED`, `GREEN`, `BLUE`, `YELLOW`, `CYAN` and `MAGENTA`.
 
 ### function init
 ```python

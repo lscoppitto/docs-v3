@@ -17,7 +17,7 @@ You can use this example to test ZDM Webhooks and Ubidots integrations.
 # ZDM Simple
 ################################################################################
 
-# The Zerynth Device Manager is the entrypoint for the zCloud.
+# The Zerynth Device Manager is the entrypoint for the Zerynth Cloud.
 # Let's connect and send data to the ZDM with a simple example.
 # Before exeuting this code, please associate the device with your
 # ZDM account by selecting "ZDM target" in VSCode Control Panel.
@@ -87,7 +87,7 @@ Once the device is connected to the ZDM, jobs can be sent from the ZDM web inter
 # ZDM Jobs
 ################################################################################
 
-# The Zerynth Device Manager is the entrypoint for the zCloud.
+# The Zerynth Device Manager is the entrypoint for the Zerynth Cloud.
 # Let's connect and send data to the ZDM with a simple example.
 # Before exeuting this code, please associate the device with your
 # ZDM account by selecting "ZDM target" in VSCode Control Panel.
@@ -188,7 +188,7 @@ Conditions can be monitored from the device page on the ZDM web interface.
 # ZDM Agent
 ################################################################################
 
-# The Zerynth Device Manager is the entrypoint for the zCloud.
+# The Zerynth Device Manager is the entrypoint for the Zerynth Cloud.
 # Let's connect and send data to the ZDM with a simple example.
 # Before exeuting this code, please associate the device with your
 # ZDM account by selecting "ZDM target" in VSCode Control Panel.
