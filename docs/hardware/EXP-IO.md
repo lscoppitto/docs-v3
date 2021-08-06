@@ -31,7 +31,7 @@ The EXP-IO expansion board is a mixed input/output module that features:
 ## **Software Library**
 
 For more information on the EXP-IO Library as software Library, features, functions and examples
-[Please check this Link](../../reference/reference/bsp/zm1_db/)
+[Please check this Link](/reference/libs/expansions/exp-io/)
 
 ## **Pin Mapping**
 
