@@ -21,7 +21,6 @@
 - On ZM1-DB board, the sensor lib has been simplified and unified for all expansion boards.
 
 ### Fixed
-- Endline for provisioning.
 - TSLog recreate.
 - vhalPin functions improved for multithreading.
 - readline() method in serial module.
