@@ -1,3 +1,46 @@
+## V3.0.4
+
+### Added
+- Support of external serializer in TSLog module. E.g.: json, cbor, etc.
+- DS1307 based RTC (Real Time Clock) module.
+- DS1307 based RTC (Real Time Clock) is used as system clock source when DS1307 gets initialized.
+- EXP-AIN support.
+- IIR filter module.
+- WiFi scan and RSSI retrieval.
+- Support for custom connected RGB LED.
+- Support to get ADC electric values.
+- ADC parameter to read electric values.
+- Config of default pins for all boards.
+- Timeout to read() and readline() functions.
+- Example for IIM accelerometer and IIR filter.
+- Example for DS1307 based RTC.
+
+### Changed
+- Zerynth VSCode extension auto updates SDK Toolchain.
+- Sensor module accepts both EXP-IO and EXP-AIN boards.
+- On ZM1-DB board, the sensor lib has been simplified and unified for all expansion boards.
+
+### Fixed
+- TSLog recreate.
+- vhalPin functions improved for multithreading.
+- readline() method in serial module.
+- Typo in cbstd module.
+- Multiple upgrades to sensor class and standard callbacks:
+    - errors explaining what is the missing kay in json resource file.
+    - on missing key the related sensor name is returned.
+    - raw values from sensor class can be printed.
+    - custom strings can be returned in json resource file.
+- Default values and required delay for IIM42652 accelerometer module.
+- Improved connection/disconnection checks in WiFi module.
+- New exception in GPIO module.
+- 4ZeroBox ethernet phy initialization and reset line.
+- Set minimal watchdog timeout during FOTA, overriding the ZERYNTH_EARLY_WATCHDOG value set in the firmware config.yml.
+- Possible race condition in DNS resolve.
+- Common readline functions.
+- vhalSerialReadTimeout() function may not work under some conditions.
+- Enabled FAT32 Long File Names (LFN) support.
+- TLS transactions may interfere with I2C attached peripherals under some conditions.
+
 ## V3.0.3
 
 - redesigned and improved Zerynth Control Panel in the VSCODE Extension.
