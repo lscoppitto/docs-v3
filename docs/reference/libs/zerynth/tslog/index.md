@@ -215,7 +215,9 @@ store(*args)
 ```
 
 Store the list of arguments to the log according to `formats`. The method always store the arguments according to `formats[0]`.
+
 If the provided formats are zero or more than one, the method raises an exception.
+
 Return the sequence number of the stored record.
 
 ### method `store_with_tag`
@@ -226,11 +228,13 @@ store_with_tag(tag, *args)
 
 Store the arguments marking the record as belonging to `tag`. `tag` is a non negative integer that selects the
 format to be used according to `formats`.
+
 Return the sequence number of the stored record.
 
 For example, if the log has been initialized with two formats, `Qff` and `Qiii`, the method can be used as `store_with_tag(0,100,1.0,2.0)` for storing data according to `Qff` or as `store_with_tag(1,100,1,2,3)` for storing data according to `Qiii`.
 
 If formats provided are less than two, the method raises an exception.
+
 
 ### method `store_record`
 
@@ -238,7 +242,22 @@ If formats provided are less than two, the method raises an exception.
 store_record(data)
 ```
 
-Store the raw record up to record_size.
+Store the raw record up to `record_size`.
+Return the sequence number of the stored record.
+
+
+### method `store_object`
+
+```python
+store_object(obj)
+```
+
+Store the `obj` as a record. `obj` is in the format handled by the serializer set in the TSLog object.
+
+If no serializer was set at `TSLog` object creation time, the `TSLogObjectsUnsupported` exception will be raised.
+
+If the `obj` is bigger than the `record_size`, the `TSLogObjectTooBig` exception will be raised.
+
 Return the sequence number of the stored record.
 
 
@@ -286,7 +305,7 @@ Close the log.
 ### class TSReader
 
 ```python
-TSReader(tslog, n, format="")
+TSReader(tslog, n, format="", serializer=None)
 ```
 
 Create an instance of `TSReader`. This class is never created manually, it is always the result of a call to `TSLog.reader(n)`.
@@ -298,24 +317,64 @@ next()
 ```
 
 Return the next record converted to a tuple according to the log `formats`.
-If only one format has been specified, the tuple contans the arguments stored. If the `formats` are more than one, the return value is a tuple with two items: the first is the `tag` as defined in `store_with_tag`, the second is the tuple of stored arguments.
 Can return *None* if there is no more available data, i.e. the writer has not committed new data yet.
+
+If only one format has been specified, the tuple contans the arguments stored. If the `formats` are more than one, the return value is a tuple with two items: the first is the `tag` as defined in `store_with_tag`, the second is the tuple of stored arguments.
 
 
 ### method `next_record`
 
 ```python
-next_record()
+next_record(advance=True, wait=0)
 ```
 
 Return the next record as a bytearray.
 Can return *None* if there is no more available data, i.e. the writer has not committed new data yet.
+
+If `advance` is `True`, the reader will advance to the next record.
+
+If `wait` is greater than zero, the method retries to get a record wating `wait` milliseconds between each retry.
+
+### method `next`
+
+```python
+next(wait=0)
+```
+
+Return the next record as a bytearray.
+Can return *None* if there is no more available data, i.e. the writer has not committed new data yet.
+
+If `wait` is greater than zero, the method retries to get a record wating `wait` milliseconds between each retry.
+
+The reader advance to next record.
+
+### method `peek`
+
+```python
+peek(wait=0)
+```
+
+Return the next record as a bytearray.
+Can return *None* if there is no more available data, i.e. the writer has not committed new data yet.
+
+If `wait` is greater than zero, the method retries to get a record wating `wait` milliseconds between each retry.
+
+The reader does not advance to next record.
+
+### method `uncommitted`
+
+```python
+uncommitted()
+```
+
+Returns the number of uncommitted records.
 
 ### method `commit`
 
 ```python
 commit()
 ```
+
 Save the sequence number of the last read record as the current `cursor`.
 
 ### method `close`
@@ -323,6 +382,7 @@ Save the sequence number of the last read record as the current `cursor`.
 ```python
 close()
 ```
+
 Close the reader
 
 
