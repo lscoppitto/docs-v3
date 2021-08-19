@@ -128,6 +128,7 @@ nav:
         - reference/libs/networking/net.md
         - reference/libs/networking/wifi.md
         - reference/libs/networking/eth.md
+        - reference/libs/networking/gsm.md
         - reference/libs/networking/socket.md
       - Protocols:
         - reference/libs/protocols/index.md
