@@ -41,9 +41,11 @@ The command sent to the modem or GNSS failed.
 
 ### function `configure`
 ```python
-configure(apn="", apn_user="", apn_password="", dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, modem_port=SERIAL2, modem_type=BG95_M3)
+configure(ser_obj=None, apn="", apn_user="", apn_password="", dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, modem_type=BG95_M3)
 ```
 Configures the gsm interface with given arguments.
+
+* `ser_obj`: the serial object used to control the GSM hardware module. It must be an instance of the `serial` class of the serial module.
 
 * `apn`: is the APN for the network connection. It depends from the SIM card provider.
 * `apn_user`: the username for the network connection authentication. Usually it is empty.
@@ -58,7 +60,6 @@ When `dhcp` is *False*, the other arguments are:
 * `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
 
 * `timeout`: Connection timeout in milliseconds. `GSMException` is raised if connection do not succeed during this time. Default value 10000 ms.
-* `modem_port`: the serial port where the GSM hardware module is attached to. Default value SERIAL2.
 * `modem_type`: the GSM hardware module type. Default value BG95_M3.
 
 ### function `init`
@@ -225,11 +226,11 @@ board.init()
 board.summary()
 
 # initialize the serial port
-_ = serial.serial(SERIAL2, baud=115200, flow_ctrl=serial.HW_FLOWCTRL_DISABLE)
+GSM_SER = serial.serial(SERIAL2, baud=115200, flow_ctrl=serial.HW_FLOWCTRL_DISABLE)
 
 try:
     print("configuring gsm...")
-    gsm.configure(apn="my-provider-apn", modem_port=SERIAL2)
+    gsm.configure(ser_obj=GSM_SER, apn="my-provider-apn")
     print("initializing modem...")
     gsm.init()
 
