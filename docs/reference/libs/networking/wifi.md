@@ -145,7 +145,7 @@ board.init()
 board.summary()
 
 try:
-    # Configure ethernet to use dhcp with a specific network
+    # Configure WiFi to use dhcp with a specific network
     wifi.configure(ssid="My-Network",password="My-Password")
     # Start the interface
     wifi.start()
@@ -187,7 +187,7 @@ board.init()
 board.summary()
 
 try:
-    # Configure ethernet to use dhcp with a specific network and security
+    # Configure WiFi to use dhcp with a specific network and security
     wifi.configure(ssid="My-Network",password="My-Password", security=wifi.WPA)
     # Start the interface
     wifi.start()
@@ -217,4 +217,46 @@ while True:
 
 ```
 
+Using WiFi with WPA2 Enterprise
 
+```python
+from bsp import board
+
+from networking import wifi
+
+board.init()
+board.summary()
+
+try:
+    # Configure WiFi to use dhcp with a specific network and security
+    print("configuring...")
+    ssid = "WiFi Enterprise"
+
+    wifi.configure(
+            ssid=ssid,
+            security=wifi.WPA2_ENTERPRISE,
+            ent_user="test_usr", ent_pwd="test_pwd",
+            timeout=10000)
+
+    # Start the interface
+    print("connecting...")
+    wifi.start()
+    print("connected...")
+    # Print the ip, gateway, mask, dns and mac address
+    print("info...")
+    print(wifi.info())
+    # Try resolving some hostname via dns
+    ip=wifi.resolve("www.zerynth.com")
+    print("resolved", ip)
+    # sleep a little bit
+    sleep(5000)
+    # disable wifi
+    wifi.stop()
+
+except Exception as e:
+    print(e)
+
+while True:
+    sleep(1000)
+
+```
