@@ -34,7 +34,8 @@ while True:
 ```
 
 
-Watchdog is enabled by adding the macro `ZERYNTH_EARLY_WATCHDOG` into `config.yml`
+By default the watchdog is set to 9000 milliseconds by the Zerynth OS.
+In order to set a custom watchdog time during the early system startup, the macro `ZERYNTH_EARLY_WATCHDOG` can be added into `config.yml`
 
 ```yml
 # config.yml

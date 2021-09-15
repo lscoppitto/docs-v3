@@ -5,7 +5,7 @@ It resets the board after a period of time in which the firmware does not "kick"
 that it is working correctly.
 
 In Zerynth the watchdog is configured *before* the firmware starts and can be reconfigured in the firmware.
-The initial time window of the watchdog is define in the `config.yml` project file with the ZERYNTH_EARLY_WATCHDOG variable.
+The initial time window of the watchdog is define in the `config.yml` project file with the ZERYNTH_EARLY_WATCHDOG variable. If ZERYNTH_EARLY_WATCHDOG is not defined, the default value of 9000 milliseconds is used.
 
 ## Functions
 
