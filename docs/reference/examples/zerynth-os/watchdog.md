@@ -16,7 +16,7 @@ import watchdog
 import mcu
 
 # Set Watchdog timeout after 15 seconds.
-watchdog.setup(0, 15000)
+watchdog.setup(15000)
 
 print("Hello Watchdog!")
 
