@@ -35,7 +35,7 @@ The configured SSID is not available between visible WiFi networks.
 
 ### function `configure`
 ```python
-configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000)
+configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, ent_user="", ent_pwd=""))
 ```
 Configures the wifi interface with given arguments.
 
@@ -51,7 +51,14 @@ When `dhcp` is *False*, the other arguments are:
 * `gateway`: the gateway to be used as default router.
 * `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
 
-* `timeout`: Connection timeout in milliseconds. `WifiException` is raised if connection do not succeed during this time. Default value 10000 ms. 
+* `timeout`: Connection timeout in milliseconds. `WifiException` is raised if connection do not succeed during this time. Default value 10000 ms.
+
+If the `security` is *WPA2_ENTERPRISE* (a.k.a. WPA-802.1X), the following parameters are used to specify the Extensible Authentication Protocol (EAP) attributes. Only PEAP is supported.
+If the `security` is set to other values, the following parameters are ignored.
+
+* `ent_user`: the username to be used for the authentication. Default value is empty string.
+* `ent_pwd`: the password to be used for the authentication. Default value is empty string.
+
 ### function `start`
 ```python
 start()
@@ -138,7 +145,7 @@ board.init()
 board.summary()
 
 try:
-    # Configure ethernet to use dhcp with a specific network
+    # Configure WiFi to use dhcp with a specific network
     wifi.configure(ssid="My-Network",password="My-Password")
     # Start the interface
     wifi.start()
@@ -180,7 +187,7 @@ board.init()
 board.summary()
 
 try:
-    # Configure ethernet to use dhcp with a specific network and security
+    # Configure WiFi to use dhcp with a specific network and security
     wifi.configure(ssid="My-Network",password="My-Password", security=wifi.WPA)
     # Start the interface
     wifi.start()
@@ -210,4 +217,46 @@ while True:
 
 ```
 
+Using WiFi with WPA2 Enterprise
 
+```python
+from bsp import board
+
+from networking import wifi
+
+board.init()
+board.summary()
+
+try:
+    # Configure WiFi to use dhcp with a specific network and security
+    print("configuring...")
+    ssid = "WiFi Enterprise"
+
+    wifi.configure(
+            ssid=ssid,
+            security=wifi.WPA2_ENTERPRISE,
+            ent_user="test_usr", ent_pwd="test_pwd",
+            timeout=10000)
+
+    # Start the interface
+    print("connecting...")
+    wifi.start()
+    print("connected...")
+    # Print the ip, gateway, mask, dns and mac address
+    print("info...")
+    print(wifi.info())
+    # Try resolving some hostname via dns
+    ip=wifi.resolve("www.zerynth.com")
+    print("resolved", ip)
+    # sleep a little bit
+    sleep(5000)
+    # disable wifi
+    wifi.stop()
+
+except Exception as e:
+    print(e)
+
+while True:
+    sleep(1000)
+
+```
