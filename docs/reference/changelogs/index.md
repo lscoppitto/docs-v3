@@ -1,3 +1,24 @@
+## V3.0.6
+
+### Added
+- DHT11 temperature and humidity sensor support.
+- WiFi WPA2 Enterprise PEAP authentication support.
+- OPC-UA network protocol.
+- ZDM logout function.
+- Example for DHT11 temperature and humidity sensor
+- Example for EXP-AIN expansion board.
+- Example for WPA2 enterprise authentication.
+
+### Changed
+- ZM1 Evaluation Board (ZM1-EVA) enabled by default in Zerynth VSCode extension.
+
+### Fixed
+- WiFi interface handling by the WiFi sniffer.
+- Problems with ethernet link loss and interface restart.
+- Upload firmware function improved regarding network timeouts.
+- Ethernet function name typo.
+- Some old examples have been updated.
+
 ## V3.0.5
 
 ### Added
