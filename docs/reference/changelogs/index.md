@@ -1,3 +1,14 @@
+## V3.0.5
+
+### Added
+- WiFi sniffer.
+- TSLog peek(), next(), uncommitted() methods.
+
+### Fixed
+- TSLog reader commit.
+- Raise exception when ADC I2C read transaction fails.
+- Message dialogs displayed about already running tasks with latest VSCode versions.
+
 ## V3.0.4
 
 ### Added
