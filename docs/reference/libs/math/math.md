@@ -147,3 +147,10 @@ ceil(x)
 ```
 
 Return the ceiling of *x*, the smallest integer greater than or equal to *x*.
+
+### function `trunc`
+```python
+trunc(x, n)
+```
+
+Return the value of *x* truncated to the *n* decimal.
