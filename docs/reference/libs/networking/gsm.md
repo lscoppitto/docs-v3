@@ -193,9 +193,9 @@ gps_start()
 This function initialize and sets up the GNSS subsystem.
 Note that to perform a GPS fix, the ```location()``` function has to be called.
 
-### function `localtion`
+### function `location`
 ```python
-localtion(timeout=60)
+location(timeout=60)
 ```
 The function runs the GPS fix and return a tuble with the location data once the fix succeeds. 
 The `timeout` argument is expressed in seconds and is the max amount of time to wait for the fix to complete. The default value is 60 seconds.
