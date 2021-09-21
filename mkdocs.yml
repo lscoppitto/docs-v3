@@ -61,6 +61,7 @@ nav:
     - tutorials/index.md
     - tutorials/cli.md
     - Ethernet and Wifi: tutorials/wifi.md
+    - Davra Integration: tutorials/davra.md
   - Demos:
     - ZM1-DB and Expansion boards:
       - EXP-RELAY Control Lamp: demos/zm1-db/exp-relay-lamp.md
