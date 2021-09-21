@@ -118,7 +118,6 @@ where:
             - `"ratio"` is the nuber of loops of the cable clamped.
             - `"n_coil"` is the number of coil of the clamp.
             - `"voltage"` is the voltage of the AC current.
-            - `"vref"` is the ref voltage of the ADC.
             - `"offset"` is the offset of the AC current.
 
 `conversion` can have custom `type` and `args`. In this case the user must create a custom callback and link that to the `type` with a dictionary called `cb_dict`.
