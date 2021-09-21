@@ -246,10 +246,10 @@ Zerynth Development boards offer a game-changing standard for connecting and add
 
 Expansion boards vary in features and functionality. Currently, Zerynth offers expansion boards for :
 
--   [EXP-AIN](EXP-AIN.md): Expansion board with 8 Industrial analog input channels
--   [EXP-CONNECT](EXP-CON.md): GSM-NB-IoT and GPS enabled expansion module.
--   [EXP-IO](EXP-IO.md): Industrial input/output board with 4 solid-state relays, 2 analog channels (4-20mA/0-10V/NTC/current clamp) channels, 2 opto-isolated digital inputs
--   [EXP-RELAY](EXP-RELAY.md): Relay board with 6 Electromechanical power relays rated 6A 250VAC.
--   [EXP-SER](EXP-SER.md): Serial Communication board with : CAN, RS232 and RS485  interfaces.
--   [EXP-PROTO](EXP-PROTO.md): Prototyping board for connecting and testing different types of sensors and devices.
+-   [EXP-AIN](../hardware/EXP-AIN.md): Expansion board with 8 Industrial analog input channels
+-   [EXP-CONNECT](../hardware/EXP-CON.md): GSM-NB-IoT and GPS enabled expansion module.
+-   [EXP-IO](../hardware/EXP-IO.md): Industrial input/output board with 4 solid-state relays, 2 analog channels (4-20mA/0-10V/NTC/current clamp) channels, 2 opto-isolated digital inputs
+-   [EXP-RELAY](../hardware/EXP-RELAY.md): Relay board with 6 Electromechanical power relays rated 6A 250VAC.
+-   [EXP-SER](../hardware/EXP-SER.md): Serial Communication board with : CAN, RS232 and RS485  interfaces.
+-   [EXP-PROTO](../hardware/EXP-PROTO.md): Prototyping board for connecting and testing different types of sensors and devices.
 
