@@ -91,6 +91,20 @@ Returns a tuple with the IP parameters associated with the interface. The tuple 
 4. `String`: DNS
 5. `String`: MAC address
 
+### function `ap_info`
+```python
+ap_info()
+```
+Returns a tuple with the AP parameters the WiFi interface is associated with. The tuple is composed by the following elements:
+
+0. `String`: The SSID of the AP
+1. `Integer`: The channel number
+2. `Integer`: The signal strength
+3. `Integer`: The security mode as described above in the *security* parameter of `configure` function.
+4. `String`: The BSSID of the AP in hexadecimal notation (e.g.: *10:20:30:40:50:60*).
+
+If the WiFi interface is not associated with any AP, the PeripheralError exception will be raised.
+
 ### function `scan`
 ```python
 scan(ssid=None)
