@@ -38,7 +38,7 @@ The Zerynth platform optionally provides a service where IoT data ca be stored a
 
 ## Data Visualization (coming soon)
 
-Once the data are stored, a Grafana based dashboard can be easily hooked up to the IoT database for visualizing them in no time. The Zerynth Dashboard service documentation can be found [here](../zCloud/zdashboard_intro.md)
+Once the data are stored, a Grafana based dashboard can be easily hooked up to the IoT database for visualizing them in no time. The Zerynth Dashboard service documentation can be found [here](../zCloud/zdm_intro.md)
 
 
 

@@ -3,6 +3,13 @@
 Zerynth OS (zOS) is a RTOS that runs on every Zerynth hardware and has the capability of executing firmwares written in Python and C. It makes the life of the developer easier by allowing for code reuse between projects and by providing a uniform programming interface among different platforms and architectures. 
 
 
+<figure>
+  <a data-fancybox="gallery" href="img/os.png">
+  <img src="img/os.png"/>
+  </a>
+</figure>
+
+
 Zerynth firmwares are developed in Python 3.5 using the Zerynth SDK. Most of the Python Standard Library functions, types and operators are supported by Zerynth OS. Some high level features have been removed either for reducing the resource footprint of the OS or because they were seldom useful in embedded scenarios. 
 
 The following guide is consequently an adaptation of [Python 3.0 official standard library guide](https://docs.python.org/3/library/index.html) that can be used for Python syntax, types, operators and constants details and use.

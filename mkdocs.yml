@@ -51,11 +51,7 @@ nav:
     - {Product Innovation Kit: hardware/productInovv.md}
 - Zerynth Cloud:
   - Introduction: zCloud/index.md
-  - Zerynth Device Manager: zCloud/zdm_intro.md
-  - Zerynth Storage: zCloud/zstorage_intro.md
-  - Zerynth Dashboard: zCloud/zdashboard_intro.md
-  - Connect to Zerynth Cloud: zCloud/connect.md
-  - Over the Air Updates: zCloud/FOTA.md
+  - Device Manager and Data Storage: zCloud/zdm_intro.md
 - Tutorials and Demos:
   - Tutorials:
     - tutorials/index.md
@@ -71,7 +67,9 @@ nav:
       - demos/4zerobox/hello_4zerobox.md
       - demos/4zerobox/industrial_kit.md
     - Zerynth Cloud:
+      - Connect to Zerynth Cloud: zCloud/connect.md
       - demos/zCloud/jobs_relays.md
+      - Over the Air Updates Single Device: zCloud/FOTA.md
       - demos/zCloud/FOTA_fleet.md
       - Integrate Microsoft Azure IoT with Zerynth Cloud: demos/zCloud/azure_integration.md
 - Technical Reference:
@@ -89,7 +87,6 @@ nav:
         - reference/libs/expansions/index.md
         - reference/bsp/4zerobox_v9.md
         - reference/bsp/zm1_db.md
-        - reference/libs/expansions/exp-ain.md
         - reference/libs/expansions/exp-io.md
         - reference/libs/expansions/exp-relay.md
         - reference/libs/expansions/exp-ser.md
@@ -178,11 +175,6 @@ nav:
     - Zerynth Cloud APIs:
       - reference/api/zdm/index.md
       - reference/api/zstorage/index.md
-    - Zerynth Cloud Web App:
-      - Zerynth Device Manager : reference/webApp/zdm_gui.md
-      - Zerynth Storage: reference/webApp/storage_gui.md
-      - Zerynth Dashboard: reference/webApp/Dashboard_gui.md
-
     - Changelog: reference/changelogs/index.md
     - What's new in Zerynth v3.x: reference/changelogs/whatsnew.md
     - Support plan for 3rd Party devices: reference/device_support.md
