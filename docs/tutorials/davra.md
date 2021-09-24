@@ -1,7 +1,7 @@
 #Davra integration and ZM1-EVA Evaluation Board
 
-In this demo we will look at how to publish data using the ZM1-EVA Evaluation board, create and enable a Davra integration
-and send the collected values to a Davra dashboard.
+In this demo we will publish data using the ZM1-EVA Evaluation board, create and enable a Davra integration
+and send the data to a Davra dashboard.
 
 In this tutorial, we will be using:
 
@@ -9,10 +9,10 @@ In this tutorial, we will be using:
     
 2.  [Zerynth Device Manager](http://zerynth.com/products/software/zdm/) (ZDM) - it helps you register, organize, monitor, and remotely manage IoT devices at scale.
     
-3.  ZM1-EVA - Evaluation Board
+3.  [ZM1-EVA - Evaluation Board](https://www.zerynth.com/products/hardware/zm1-eva/)
 
 ## 1. Import the Davra project
-Connect the ZM1-EVA and PC with a USB Type-C cable, then clone this [GitHub repository](https://github.com/zerynth/davra) 
+Connect the ZM1-EVA to the PC then clone this [GitHub repository](https://github.com/zerynth/davra) 
 containing a Zerynth project that configures a ZM1-EVA Evaluation board for sending humidity and temperature readings from a DHT11 to the Zerynth Cloud.
 
 Install and open the Zerynth SDK, press `Ctrl+Shift+P` and search for `Zerynth: Login`; then login to the Zerynth Cloud or create a new account if you don't have one.
@@ -47,7 +47,7 @@ Open the `main.py` file in the project folder, and edit the rows **49** and **50
 At this point you are ready to click on the **Run** button! Your device will be automatically configured and it will start
 publishing data to the Zerynth Cloud.
 
-If you open the device page from the [Zerynth Cloud](https://cloud.zerynth.com), you will see real time data coming from your device!
+If you open the device page from the [Zerynth Cloud](https://cloud.zerynth.com), you will see real time data sent from your device!
 
 ## Create Davra integration
 The last step to receive the data published from the device to you Davra dashboard is to create a **Davra Integration**.
