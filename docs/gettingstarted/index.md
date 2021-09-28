@@ -2,11 +2,11 @@
 
 
 ## **What is Zerynth?**
-Zerynth is a complete software-hardware platform, It simplifies the development of IoT products by offering modular industrial development boards, production-ready SoC modules and Easy-to-use Python enabled development enviornment.
-Zerynth hardware integrates seamlessly with Zerynth cloud, a powerful cloud service that monitors, manages and provisions devices, issues OTAs and procedure calls and visualize data with clear dashboards for the end-user. 
+Zerynth is a complete software-hardware platform, It simplifies the development of IoT products by offering modular industrial development boards, production-ready SoC modules and easy-to-use python development enviornment.
+Zerynth hardware integrates seamlessly with Zerynth cloud, a powerful cloud service that monitors, manages and provisions devices, issues OTAs and procedure calls and visualize data. 
 
 
-To get started, You need one of Zerynth development boards, [**Click here for more information on Zerynth Boards.**](https://zerynth.com/products/hardware/)
+To get started, You need one of Zerynth development boards or IoT data aquisition devices, [**Click here for more information on Zerynth Boards.**](https://zerynth.com/products/hardware/)
 
 ## **Get Started**
 
@@ -40,7 +40,7 @@ a blue dialog title "Windows protected your PC"; in that case, just click "more 
 
 <figure>
   <a data-fancybox="gallery" href="img/windows-screen.png">
-  <img src="img/windows-screen.png" width="200px"/>
+  <img src="img/windows-screen.png"/>
   </a>
   <figcaption>Windows Smartscreen warning</figcaption>
 </figure>
@@ -105,7 +105,7 @@ The login is done in your web browser and if everything is ok, you can go back t
 
 ## 2. Create your first IoT project
 
-VSCode, together with the VSCode Zerynth extension, is our default development enviroment. We spent quite a lot of effort to make it as user-friendly as possible, hope you enjoy! Let us show how easy it is.
+VSCode, together with the VSCode Zerynth extension, is our default development enviroment. We spent quite a lot of effort to make it as user-friendly as possible,lets see how easy it is to use.
 
 ### Clone an example
 
@@ -136,9 +136,7 @@ Congratulations, you created your first IoT project!
 
 The project is not ready yet, you need to add your wifi network name and password. You can do it easily by modifying the already opened file `main.py` (that by the way is the main entry point of every Zerynth firmware). The two variables are `ssid` and `passwd`, quite self explanatory.
 
-Now that the project knows how to connect to your local network, we need to plug a Zerynth device to your USB port. It doesn't matter if the hardware you have is a [ZM1-DB](../hardware/ZM1-Development-Board.md) or the mighty [4ZeroBox](../hardware/4ZeroBox.md); the project will run on all of them seamlessy.
-
-The only thing that you are required to do is to tell VSCode which kind of hardware you want to use! For this, just press the `Physical device` action in the `Zerynth Control Panel` on the left. VSCode will automatically recognize the device connected to your USB (when in doubt, VSCode will ask you to choose between different options) and configure the project accordingly. 
+Now that the project knows how to connect to your local network, we need to plug a Zerynth device to your USB port. Zerynth control panel autamtically recognizes which Zerynth board is connected.Press the `Physical device` action in the `Zerynth Control Panel` on the left. VSCode will automatically recognize the device connected to your USB (when in doubt, VSCode will ask you to choose between different options) and configure the project accordingly. 
 
 <figure>
   <a data-fancybox="gallery" href="img/control_panel_with_device.jpg">
