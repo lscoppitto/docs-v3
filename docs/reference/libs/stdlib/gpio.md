@@ -57,25 +57,25 @@ Set the `pin` gipo to logic `0`.
 
 ### function `on_rise`
 ```python
-on_rise(pin, fn, debounce=0, pull=INPUT_PULLDOWN)
+on_rise(pin, fn, debounce=0, pull=INPUT_PULLNONE)
 ```
-Registers the `fn` function as callback on the rising edge on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor. 
+Registers the `fn` function as callback on the rising edge on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor. By default pull is none, since setting a pull-up or pull-down without knowing the hardware used can cause failures.
 
 The signature of `fn` is `fn(pin, value)` where `pin` is the interrupted pin and `value` is 0 or 1 depending on the level of the pin.
 
 ### function `on_fall`
 ```python
-on_fall(pin, fn, debounce=0, pull=INPUT_PULLUP)
+on_fall(pin, fn, debounce=0, pull=INPUT_PULLNONNE)
 ```
-Registers the `fn` function as callback on the falling edge on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor.
+Registers the `fn` function as callback on the falling edge on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor. By default pull is none, since setting a pull-up or pull-down without knowing the hardware used can cause failures.
 
 The signature of `fn` is `fn(pin, value)` where `pin` is the interrupted pin and `value` is 0 or 1 depending on the level of the pin.
 
 ### function `on_rise_and_fall`
 ```python
-on_rise_and_fall(pin, fn, debounce=0, pull=INPUT_PULLDOWN)
+on_rise_and_fall(pin, fn, debounce=0, pull=INPUT_PULLNONE)
 ```
-Registers the `fn` function as callback either on the rising and falling edges on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor.
+Registers the `fn` function as callback either on the rising and falling edges on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor. By default pull is none, since setting a pull-up or pull-down without knowing the hardware used can cause failures.
 
 The signature of `fn` is `fn(pin, value)` where `pin` is the interrupted pin and `value` is 0 or 1 depending on the level of the pin.
 
