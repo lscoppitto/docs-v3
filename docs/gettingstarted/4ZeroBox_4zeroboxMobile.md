@@ -1,4 +1,4 @@
-# **Getting Started with 4ZeroBox**
+# **Getting Started with 4ZeroBox and 4ZeroBox Mobile**
 
 So you have a shiny new 4ZeroBox and would like to start playing with it?
 First, you need to install the [Zerynth SDK](index.md#1-install-zerynth), it takes just a couple of minutes.
@@ -60,5 +60,6 @@ Just press *Console* and the serial output of 4ZeroBox will appear in the VSCode
 
 Zerynth can do much more than a simple Hello World, for additional examples refer to:
 
-- [4ZeroBox Hardware page](../hardware/4ZeroBox.md)
-- [Tutorials](../tutorials/index.md)
+- [4ZeroBox Hardware page](../../hardware/4ZeroBox)
+- [4ZeroBox Mobile Hardware page](../../hardware/4ZeroBox_mobile)
+- [Tutorials](../../tutorials/)
