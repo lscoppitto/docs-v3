@@ -69,8 +69,18 @@ Industrial IoT device for acquisition, monitoring and control of industrial mach
 
 The 4ZeroBox modernizes any industrial machinery and equipment allowing companies to drive their Industry 4.0 digital transformation.
 
+## 4ZeroBox Mobile
+
+The 4ZeroBox Mobile is an Industrial data acquisition device that features Cellular 2G, NB-IOT and Wi-Fi connectivity and GPS Capabilities. There are many onboard features like: a DIN-rail mountable case,  industrial grade sensor channels, support for Wi-Fi, Relays, support for CAN protocols, RS485, RS232 interfaces.
+The 4ZeroBox Mobile can be integrated with any of Zerynth expansion boards. They can act as a prototype during the development stage, and a core for industrial applications.
+
+<figure>
+  <a data-fancybox="gallery" href="img/4zb_mobile.jpg">
+  <img src="img/4zb_mobile.jpg"width="400"/>
+  </a>
+</figure>
 
 
-[Buy now at this link](https://www.zerynth.com/products/hardware/4zerobox/)
+Buy now at [this link](https://www.zerynth.com/products/hardware/)
 
-[Click here to navigate to the 4ZeroBox Hardware Page](4ZeroBox.md).
+[Click here to navigate ](4ZeroBox_mobile.md) to the 4ZeroBox Mobile Hardware Page.
