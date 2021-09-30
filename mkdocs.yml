@@ -30,7 +30,7 @@ nav:
   - Zerynth in 5 minutes: gettingstarted/index.md
   - ZM1 Development Board: gettingstarted/ZM1-DB.md
   # - ZM1 Evaluation Board: gettingstarted/ZM1-EVA.md
-  - 4ZeroBox: gettingstarted/4ZeroBox.md
+  - 4ZeroBox and 4ZeroBox Mobile: gettingstarted/4ZeroBox_4zeroboxMobile.md
   - Visual Studio Code: gettingstarted/vscode.md
 - Hardware:
   - {Hardware Platforms: hardware/index.md}
@@ -47,6 +47,7 @@ nav:
     - EXP-PROTO: hardware/EXP-PROTO.md
   - Industrial IoT Device and Kit:
     - 4ZeroBox: hardware/4ZeroBox.md
+    - 4ZeroBox Mobile: hardware/4ZeroBox_mobile.md
     - {Industrial IoT Kit: hardware/I40Kit.md}
     - {Product Innovation Kit: hardware/productInovv.md}
 - Zerynth Cloud:
