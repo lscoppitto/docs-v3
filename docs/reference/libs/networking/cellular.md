@@ -1,51 +1,49 @@
 ---
 layout: blog
-title: GSM
+title: Cellular
 ---
-## GSM
+## Cellular
 
-This module implements a generic GSM interface.
-To function correctly it needs a gsm driver to be loaded, so that the module can use the driver to access the underlying hardware.
+This module implements a generic Cellular interface.
+To function correctly it needs a cellular driver to be loaded, so that the module can use the driver to access the underlying hardware.
 
-The link between the gsm module and the gsm driver is established without the programmer intervention by the driver itself.
+The link between the cellular module and the cellular driver is established without the programmer intervention by the driver itself.
 
 This module defines the following constants:
 
-* `BG95_M3` = 0; Quectel BG95-M3 GSM module as modem type.
-* `BG96`    = 1; Quectel BG96 GSM module as modem type.
+* `BG95_M3` = 0; Quectel BG95-M3 Cellular module as modem type.
+* `BG96`    = 1; Quectel BG96 Cellular module as modem type.
 
 ## Exception
 
-### exception `GSMException`
+### exception `CellularException`
 Generic exception
 
-### exception `GSMBadAPN`
+### exception `CellularBadAPN`
 The configured APN for PPP connection is not valid.
 
-### exception `GSMModemInitError`
+### exception `CellularModemInitError`
 The modem initialization failed.
 
-### exception `GSMGNSSInitError`
+### exception `CellularGNSSInitError`
 The GNSS (Global Navigation Satellite System) submodule initialization failed.
 
-### exception `GSMInvalidStateError`
+### exception `CellularInvalidStateError`
 The modem or GNSS is in an invalid state.
 
-### exception `GSMCommandError`
+### exception `CellularCommandError`
 The command sent to the modem or GNSS failed.
 
-### exception `GSMTimeoutError`
+### exception `CellularTimeoutError`
 The command sent to the modem or GNSS failed.
 
 ## Functions
 
 ### function `configure`
 ```python
-configure(ser_obj=None, apn="", apn_user="", apn_password="", dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, modem_type=BG95_M3)
+configure(apn="", apn_user="", apn_password="", dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, modem_type=BG95_M3)
 ```
-Configures the gsm interface with given arguments.
-
-* `ser_obj`: the serial object used to control the GSM hardware module. It must be an instance of the `serial` class of the serial module.
+Configures the cellular interface with given arguments.
 
 * `apn`: is the APN for the network connection. It depends from the SIM card provider.
 * `apn_user`: the username for the network connection authentication. Usually it is empty.
@@ -59,28 +57,28 @@ When `dhcp` is *False*, the other arguments are:
 * `gateway`: the gateway to be used as default router.
 * `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
 
-* `timeout`: Connection timeout in milliseconds. `GSMException` is raised if connection do not succeed during this time. Default value 10000 ms.
-* `modem_type`: the GSM hardware module type. Default value BG95_M3.
+* `timeout`: Connection timeout in milliseconds. `CellularException` is raised if connection do not succeed during this time. Default value 10000 ms.
+* `modem_type`: the Cellular hardware module type. Default value BG95_M3.
 
 ### function `init`
 ```python
 init()
 ```
-The function powers the GSM hardware module and initializes it. The GNSS
+The function powers the Cellular hardware module and initializes it. The GNSS
 subsystem is also initialized.
 
 ### function `deinit`
 ```python
 deinit()
 ```
-The function shuts the GSM hardware module down, by also stopping all
+The function shuts the Cellular hardware module down, by also stopping all
 eventually opend network connections. The GNSS subsystem is also shutted down.
 
 ### function `reset`
 ```python
 reset()
 ```
-The function resets the GSM hardware module and the GNSS subsystem. The started
+The function resets the Cellular hardware module and the GNSS subsystem. The started
 network connections should have been closed before, otherwise they could fall in
 an inconsistent state.
 
@@ -95,7 +93,7 @@ The DHCP or static IP parameters are used depending upon the arguments passed to
 ```python
 stop()
 ```
-The interface is stopped, all connections dropped, and all socket closed related to gsm interface.
+The interface is stopped, all connections dropped, and all socket closed related to cellular interface.
 
 ### function `resolve`
 ```python
@@ -150,7 +148,7 @@ The function returns the SIM card identifier as `String`.
 ```python
 rssi()
 ```
-The function returns the GSM signal RSSI (Received Signal Strength Indicator)
+The function returns the Cellular signal RSSI (Received Signal Strength Indicator)
 value expressed in dBm in the range -113, -51. A valid value is always
 negative.
 A returned value of *99* means the signal strength is too low or undetectable.
@@ -159,7 +157,7 @@ A returned value of *99* means the signal strength is too low or undetectable.
 ```python
 cellinfo()
 ```
-The function returns a tuple with the GSM cell information the modem is connected to. The tuple is composed by the following elements:
+The function returns a tuple with the Cellular cell information the modem is connected to. The tuple is composed by the following elements:
 
 0. `String`: The state of the modem connection. Can be: *SEARCH*, *LIMSRV*, *NOCONN*, *CONNECT*.
 1. `String`: Access technology. Can be: *No Service*, *GSM*, *GPRS*, *EDGE*, *eMTC*, *NB-IoT*.
@@ -199,7 +197,7 @@ location(timeout=60)
 ```
 The function runs the GPS fix and return a tuble with the location data once the fix succeeds. 
 The `timeout` argument is expressed in seconds and is the max amount of time to wait for the fix to complete. The default value is 60 seconds.
-When the timeout expires, the *GSMTimeoutError* exception is raised.
+When the timeout expires, the *CellularTimeoutError* exception is raised.
 
 The tuple is composed by the following elements:
 
@@ -215,69 +213,65 @@ The tuple is composed by the following elements:
 
 ## Examples
 
-Using the gsm module is very easy:
+Using the cellular module is very easy:
 
 ```python
-import serial
 from bsp import board
-from networking import gsm
+from networking import cellular
 
 board.init()
 board.summary()
 
-# initialize the serial port
-GSM_SER = serial.serial(SERIAL2, baud=115200, flow_ctrl=serial.HW_FLOWCTRL_DISABLE)
-
 try:
-    print("configuring gsm...")
-    gsm.configure(ser_obj=GSM_SER, apn="my-provider-apn")
+    print("configuring cellular...")
+    cellular.configure(apn="my-provider-apn")
     print("initializing modem...")
-    gsm.init()
+    cellular.init()
 
-    print("imei: ", gsm.imei())
-    print("imsi: ", gsm.imsi())
-    print("SIM ID: ", gsm.iccid())
+    print("imei: ", cellular.imei())
+    print("imsi: ", cellular.imsi())
+    print("SIM ID: ", cellular.iccid())
 
     print("Initializing the GPS...")
-    gsm.gps_start()
+    cellular.gps_start()
 
     print("connecting...")
-    gsm.start()
+    cellular.start()
     print("connected!")
-    print("ppp info: :", gsm.info())
+    print("ppp info: :", cellular.info())
 
-    print("cell info: ", gsm.cellinfo())
+    print("cell info: ", cellular.cellinfo())
 
-    ip=gsm.resolve("www.zerynth.com")
+    ip=cellular.resolve("www.zerynth.com")
     print("www.zerynth.com resolved ip: ", ip)
 
     # sleep a little bit
     sleep(5000)
 
     print("Disconnecting...")
-    gsm.stop()
+    cellular.stop()
     print("Disconnected!")
 
-    print("GPS :", gsm.location())
+    print("GPS :", cellular.location())
 
-    gsm.deinit()
+    cellular.deinit()
 
-except GSMBadAPN:
+except CellularBadAPN:
         print("Bad APN")
-        gsm.stop()
-        gsm.deinit()
-except GSMTimeoutError:
+        cellular.stop()
+        cellular.deinit()
+except CellularTimeoutError:
         print("GPS fix timed out")
-        gsm.stop()
-        gsm.deinit()
-except GSMException:
-        print("Generic GSM Exception")
-        gsm.stop()
-        gsm.deinit()
+        cellular.stop()
+        cellular.deinit()
+except CellularException:
+        print("Generic Cellular Exception")
+        cellular.stop()
+        cellular.deinit()
 except Exception as e:
         print("Exception: ", e)
-        gsm.stop()
-        gsm.deinit()
+        cellular.stop()
+        cellular.deinit()
         raise e
 
 while True:
