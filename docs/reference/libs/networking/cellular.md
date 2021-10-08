@@ -190,13 +190,13 @@ The values meaning for the element *1* of the tuple, the access tecnology, are:
 gps_start()
 ```
 This function initialize and sets up the GNSS subsystem.
-Note that to perform a GPS fix, the ```location()``` function has to be called.
+Note that to perform a GPS fix, either the ```fix()``` or ```location()``` functions have to be called.
 
-### function `location`
+### function `fix`
 ```python
-location(timeout=60)
+fix(timeout=60)
 ```
-The function runs the GPS fix and return a tuble with the location data once the fix succeeds. 
+The function runs the GPS fix and return a tuple with the fixed data once the fix succeeds. 
 The `timeout` argument is expressed in seconds and is the max amount of time to wait for the fix to complete. The default value is 60 seconds.
 When the timeout expires, the *CellularTimeoutError* exception is raised.
 
@@ -211,6 +211,29 @@ The tuple is composed by the following elements:
 6. `Float`: Speed over ground, expressed as Km/h.
 7. `Float`: Speed over ground, expressed as knots.
 8. `Integer`: Number of fixed satellites.
+
+**NOTE**: The Cellular hardware module on the [4ZeroBox Mobile board](../../../hardware/4ZeroBox_mobile)
+can use one of the GNSS or GSM subsystem at a time.
+While the fix request is ongoing, the GSM connection gets suspended. Long
+timeouts in a condition of low GNSS antenna reception may cause the GSM
+connection to drop; the cellular software module will auto reconnect as soon
+as it is possible after fix completes.
+
+### function `location`
+```python
+location(timeout=60)
+```
+The function runs the GPS fix and return a tuple with the location data once the fix succeeds. 
+The `timeout` argument is expressed in seconds and is the max amount of time to wait for the fix to complete. The default value is 60 seconds.
+When the timeout expires, the *CellularTimeoutError* exception is raised.
+
+The tuple is composed by the following elements:
+
+0. `Float`: The latitude expressed as (-)dd.ddddd degrees
+1. `Float`: The longitude expressed as (-)ddd.ddddd degrees
+3. `Float`: The altitude above/below mean sea level, expressed in meters.
+
+**NOTE**: see the [function fix()](#function-fix) note for GNSS fix operation details.
 
 ## Examples
 
@@ -253,7 +276,7 @@ try:
     cellular.stop()
     print("Disconnected!")
 
-    print("GPS :", cellular.location())
+    print("GPS :", cellular.fix())
 
     cellular.deinit()
 
