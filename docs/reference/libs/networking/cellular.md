@@ -167,6 +167,7 @@ The function returns a tuple with the Cellular cell information the modem is con
 5. `Integer`: Local Area Code
 6. `Integer`: Cell ID
 7. `Integer`: Base station ID code
+8. `String`: Operator name
 
 The values meaning for the element *0* of the tuple, the connection state, are:
 
