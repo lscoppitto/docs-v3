@@ -302,3 +302,12 @@ while True:
     sleep(1000)
 
 ```
+
+## Terms and Abbreviations
+
+|Abbreviation| Description|
+|------------|------------|
+|GNSS | Global navigation satellite system|
+|GPS | Global Positioning System|
+|GSM | Global System for Mobile communications|
+| GPRS | General Packet Radio Service |
