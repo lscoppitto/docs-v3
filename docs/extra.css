@@ -70,8 +70,7 @@ h6+p .highlight {
 
 }
 .tx-container{
-    background: #e6effc;
-
+    background: #e6effc!important;
 }
 
 [data-md-color-accent=red]{
