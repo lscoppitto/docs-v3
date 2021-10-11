@@ -192,7 +192,7 @@ theme:
     favicon: images/favicon.png
     features:
       - navigation.tabs
-    font: {code: Roboto Mono, text: Roboto}
+    font: {code: roboto, text: Open Sans}
     logo: images/favicon-white.png
     name: material
     palette: {accent: red, primary: indigo}
