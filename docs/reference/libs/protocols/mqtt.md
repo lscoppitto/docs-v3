@@ -22,6 +22,9 @@ Wrong username and/or password specified for MQTT connection.
 ### exception `MQTTConnectionNotAuthorized`
 The username specified for MQTT connection is not authorized to establish the connection, even it credentials are correct.
 
+### exception `MQTTPublishTimeout`
+The publish method has timeout waiting for ack from borker when `qos` > 0 and `timeout` > 0.
+
 ### class `MQTT`
 ```python
 MQTT(host, client_id, username="", password="", port=1883, clean_session=True, keepalive=60, reconnect_after=5000, network_timeout=6000, ctx=())
@@ -65,9 +68,13 @@ Return the number of pending topic subscriptions.
 
 ### method `publish`
 ```python
-publish(topic, msg, qos=0, retain=False)
+publish(topic, msg, qos=0, retain=False, timeout=0)
 ```
 Publishes the `msg` message related to `topic` subscribers, with `qos` quality of service level. The `retain` flag specifies whether the message has to be kept after a subscriber receives it or not.
+The `timeout` specifies the time in milliseconds to wait for an acknowledgement
+form the broker when `qos` > 0; when `qos` = 0, the `timeout` is ignored. If
+the acknowledgement is not received by the `timeout`, the `MQTTPublishTimeout`
+exception is raised.
 
 ### method `receive`
 ```python
