@@ -297,6 +297,7 @@ where `IDENTIFIER` is the `uid` of the device.
 
 Options:
 
+- `--board TEXT`  Set the board type associated with the `IDENTIFIER`, as returned by [`ztc device discover`](#ztc-device-discover) command
 - `--help`  Show this message and exit
 
 #### ztc device reset
