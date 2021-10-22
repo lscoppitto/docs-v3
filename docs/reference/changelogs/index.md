@@ -1,3 +1,35 @@
+## V3.0.7
+
+### Added
+- [4ZeroBox Mobile](../../hardware/4ZeroBox_mobile/) device support.
+- Cellular Quectel BG96 based click board on [4ZeroBox](../../hardware/4ZeroBox/) device support.
+- [Function](../libs/networking/wifi/#function-ap_info) to get information about the WiFi connected Access Point.
+- [Cellular and GNSS](../libs/networking/cellular/) library module.
+- Tensorflow Lite support.
+- New mqtt method to wait for mqtt broker ACK for publish with QOS > 0.
+- Sensors hardware customizable parameters per expansion board.
+- Time syncronization for drift fix and onfota callback status.
+- User button default setup functions.
+- Zerynth SIM management support in SDK toolchain.
+- Zerynth VSCode extension control panel reorganized with new Zerynth SIM support.
+- Zerynth VSCode extension setting to disable automatic SDK update.
+- 'Upload firmware' available in Zerynth VSCode extension also when no board is connected to the PC/MAC.
+- SDK Examples for cellular, GNSS and Tensorflow
+
+### Changed
+- Filesystem mkdir() and rmdir() return errors via errno.
+- Bootloader updated to version 2.
+- Publish method of mqtt lib and zdm library modules take a timeout parameter to wait broker AKSs when QOS>0.
+
+### Fixed
+- Improved stability for ZM1-EVA during startup.
+- Improved stability for flash memory access on boards with CAN devices.
+- Network DNS setup problem for some DHCP based environments.
+- Fixed problems on some cases of static IP configuration on eth and wifi interfaces.
+- The 4ZeroBox_v9 does a spurious reboot cycle after an hardware reset (power on or reset button).
+- Improved SD stability on 4ZeroBox mobile.
+- pylint path error on recent macOS releases while using Zerynth VSCode extension.
+
 ## V3.0.6
 
 ### Added
