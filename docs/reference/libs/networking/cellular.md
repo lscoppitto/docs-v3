@@ -284,7 +284,7 @@ Pre-initialized Object for the `GNSS` class.
 
 ## Examples
 
-Using the cellular module is very easy:
+### Using the cellular with 4ZeroBox Mobile:
 
 ```python
 from bsp import board
@@ -295,7 +295,7 @@ board.summary()
 
 try:
     print("configuring cellular...")
-    cellular.configure(apn="my-provider-apn")
+    cellular.configure()
     print("initializing modem...")
     cellular.init()
 
@@ -350,6 +350,78 @@ while True:
 
 ```
 
+### Using the cellular with ZM1-DB + EXP-CONNECT board
+
+```python
+from bsp import board
+from networking import cellular
+
+# Import the module for EXP-CONNECT board.
+from expansions import connect
+
+board.init()
+board.summary()
+
+# Initialize the EXP-CONNECT board.
+board.next_expansion(connect, (0,))
+
+try:
+    print("configuring cellular...")
+    # Use the APN for a custom SIM
+    cellular.configure(apn="my-provider-apn")
+    print("initializing modem...")
+    cellular.init()
+
+    print("IMEI: ", cellular.imei())
+    print("IMSI: ", cellular.imsi())
+    print("SIM ID: ", cellular.iccid())
+
+    print("Initializing the GNSS...")
+    cellular.gnss.start()
+
+    print("connecting...")
+    cellular.start()
+    print("connected!")
+    print("ppp info: :", cellular.info())
+
+    print("cell info: ", cellular.cellinfo())
+
+    ip=cellular.resolve("www.zerynth.com")
+    print("www.zerynth.com resolved ip: ", ip)
+
+    # sleep a little bit
+    sleep(5000)
+
+    print("Disconnecting...")
+    cellular.stop()
+    print("Disconnected!")
+
+    print("Get GPS data...")
+    print("GPS :", cellular.gnss.fix())
+
+    cellular.deinit()
+
+except CellularBadAPN:
+        print("Bad APN")
+        cellular.stop()
+        cellular.deinit()
+except CellularException:
+        print("Generic Cellular Exception")
+        cellular.stop()
+        cellular.deinit()
+except GNSSTimeoutError:
+        print("GPS fix timed out")
+        cellular.deinit()
+except Exception as e:
+        print("Exception: ", e)
+        cellular.stop()
+        cellular.deinit()
+        raise e
+
+while True:
+    sleep(1000)
+
+```
 ## Terms and Abbreviations
 
 | Abbreviation | Description |
