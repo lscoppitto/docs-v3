@@ -1,11 +1,8 @@
-# Getting Started with ZM1-Development Board
+# Getting Started with ZM1-EVA
 
-So you have a shiny new ZM1 Development Board (ZM1-EVA) and would like to start playing with it?
-First, you need to install the [Zerynth SDK](index.md#1-install-zerynth), it takes just a couple of minutes.
+In this guide, we will connect the ZM1-EVA, use the Zerynth extension and get you up and running for developing connected and secure IoT applications.
+we will be using the [Zerynth SDK](https://docs.zerynth.com/latest/gettingstarted/vscode/) - this includes VSCode with the VSCode Zerynth extension, which is our default development environment.
 
-When the SDK is installed, you can run Visual Studio Code that comes already configured with our Zerynth extension.
-
-Using the ZM1-EVA with the SDK is really easy
 
 
 ## 1. Create a project
@@ -29,9 +26,21 @@ Simply choose `Zerynth > Search examples` and then type `Hello`. Select the `Hel
   <figcaption>The Hello Zerynth example</figcaption>
 </figure>
 
-## 2. Connect and configure the ZM1-EVA
+## 2. Connect and Enable the device
 
-Connect the ZM1-EVA with a USB-C cable to the development machine. The VSCode extension provides a panel labeled *Zerynth Control Panel* that contains information about the current project.
+Connect the ZM1-EVA to the PC. 
+To be sure that the ZM1-EVA device support is enabled, press `Ctrl+Shift+P` and search for `Preferences Open User Settings`.
+This will open a dialog with two tabs (**User** and **Workspace**). 
+Click on the **Expansion** menu item under the "User" tab, you will see a new menu. Click on "Zerynth" item. Ensure that the ZM1-EVA board is enabled.
+
+<figure>
+  <a data-fancybox="gallery" href="../img/zm1eva-enabled.png">
+  <img src="../img/zm1eva-enabled.png" />
+  </a>
+  <figcaption>ZM1-EVA enabled</figcaption>
+</figure>
+
+The VSCode extension provides a panel labeled *Zerynth Control Panel* that contains information about the current project.
 
 Press *Physical Device* and the Zerynth SDK will automtically recognize the ZM1-EVA and configure the project accordingly.
 
@@ -42,12 +51,6 @@ Press *Physical Device* and the Zerynth SDK will automtically recognize the ZM1-
   <figcaption>Control Panel before selecting the physical device</figcaption>
 </figure>
 
-<figure>
-  <a data-fancybox="gallery" href="../img/control_panel_with_device.jpg">
-  <img src="../img/control_panel_with_device.jpg" />
-  </a>
-  <figcaption>Control Panel after selecting the physical device</figcaption>
-</figure>
 
 ## 3. Run the example
 
@@ -62,13 +65,20 @@ Just press *Console* and the serial output of ZM1-EVA will appear in the VSCode 
   <figcaption>Hello Zerynth console</figcaption>
 </figure>
 
+## Provisioning the device
+
+The first time you connect the device to Zerynth Cloud, you need to provision the device.
+You only need to provision your device once for the lifetime of the device.
+
+Just click `Provisioning` on the `Zerynth Control Panel`, you will be asked to create a cloud device, 
+give it a name like `my-iot-device` and accept the confirmation dialog and wait a little.
+
+After provisioning, in the control panel, You'll find the cloud device is now assigned an ID.
 
 ## 4. Explore Zerynth!
 
-Zerynth can do much more than a simple Hello World, for additional examples refer to:
+Zerynth can do much more than a simple Hello World, for additional information refer to:
 
-- [Hardware Reference](../hardware/ZM1-EVA.md)
-- [Zerynth in 5 minutes](index.md#2-create-your-first-iot-project)
-- [Tutorials](../tutorials/index.md)
-- [Zerynth in 5 minutes](index.md#2-create-your-first-iot-project)
+- [Demos](../../demos/zm1-db/exp-relay-lamp/)
+- [Zerynth Blog](https://www.zerynth.com/blog/)
 
