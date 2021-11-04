@@ -295,6 +295,7 @@ board.summary()
 
 try:
     print("configuring cellular...")
+    # Use a Zerynth SIM
     cellular.configure()
     print("initializing modem...")
     cellular.init()
