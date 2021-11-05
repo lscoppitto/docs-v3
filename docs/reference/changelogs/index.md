@@ -1,3 +1,16 @@
+## V3.0.8
+
+### Added
+- Configuration helper for cellular Quectel BG96 based click board on [4ZeroBox](../../hardware/4ZeroBox/).
+- Reinitialization of expansion pins after power down of zBUS power.
+
+### Fixed
+- Crash calling board.summary() on ZM1 Development Board with EXP-CONNECT attached.
+- Claim device can fail under Windows systems with high system load.
+- Auto reconfigure cellular module serial port on EXP-CONNECT board.
+- MQTT memory leakage.
+- VSCode closes all extension activities on exit.
+
 ## V3.0.7
 
 ### Added
