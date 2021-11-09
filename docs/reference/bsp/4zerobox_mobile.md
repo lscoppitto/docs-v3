@@ -39,6 +39,18 @@ Set the color of the led.
 
 * `color` is the color to set. Possible colors are. `BLACK`, `WHITE`, `RED`, `GREEN`, `BLUE`, `YELLOW`, `CYAN` and `MAGENTA`.
 
+### function `on_button_press`
+```python
+on_button_press(fn, dir=FALLING_EDGE, debounce=0)
+```
+Setup a callback on the user button pression.
+
+* `fn` is the callback function to setup.
+
+* `dir` is the direction used to trigger the interrupt. Defualt value is `FALLING EDGE`.
+
+* `debounce` is the number of milliseconds used to De-bounce.
+
 ### function `init`
 ```python
 init()
@@ -131,6 +143,139 @@ Difference between max and min in bits is passed to the callback.
 * `electric` if set to `True` Differnce (max - min) Current (mA) read is returned as result.
 
 Returns the value converted by the pin callback. Differnce (max - min) Current (mA) if callback is set to `None`.
+
+### function `out_off`
+```python
+out_off(out)
+```
+Open the selected relay switch.
+
+* `out` is the relay to open. Possible choices are `DOUT1` and `DOUT2`.
+
+### function `out_on`
+```python
+out_on(out)
+```
+Close the selected relay switch.
+
+* `out` is the relay to close. Possible choices are `DOUT1` and `DOUT2`.
+
+### function `is_out_on`
+```python
+is_out_on(out)
+```
+Returns the current state of the relay switch.
+
+* `out` is the relay to check. Possible choices are `DOUT1` and `DOUT2`.
+
+return `1` if the relay is closed, `0` if open.
+
+### function `get_can`
+```python
+get_can(nss=CTS1, spi_clk=20000000)
+```
+Get a ready to use CAN object.
+
+* `nss` is the chip select pin used to control the CAN peripheral through SPI.
+* `spi_clk` is the clock speed used by the SPI. Default is 20 MHz.
+
+Returns the initialized CAN object.
+
+### function `get_serial`
+```python
+get_serial(ser=SERIAL1, baud=115200, stopbits=serial.STOPBIT_1, parity=serial.PARITY_NONE, bitsize=serial.BITSIZE_8, mode=serial.MODE_UART, flow_ctrl=serial.HW_FLOWCTRL_DISABLE)
+```
+Get a ready to use serial (RS232 or RS485).
+
+* `ser` is the serial port to use. Default `SERIAL1`
+* `baud` is the baudrate of to use. Default 115200.
+* `stopbits` is the stopbits configuration to use. Default 1 stopbit. See `serial` for possible values.
+* `parity` is the parity check configuration to use. Default none. See `serial` for possible values.
+* `bitsize` is the bitsize configuration to use. Default size 8. See `serial` for possible values.
+* `mode` is the mode to use for the serial. Default RS232. See `serial` for possible values.
+* `flow_ctrl` is the flow control configuration to use. Default disabled. See `serial` for possible values.
+
+Returns the initialized serial object.
+
+### function `start_cellular`
+```python
+start_cellular(apn="", apn_user="", apn_password="",
+               dhcp=True, ip="", mask="", gateway="",
+               dns="8.8.8.8", timeout=10000)
+```
+The method fully configure, initialize and start the cellular module. The cellular module will be ready to use when this method resolves.
+
+* `apn`: is the APN for the network connection. It depends from the SIM card provider.
+* `apn_user`: the username for the network connection authentication. Usually it is empty. Default value empty string.
+* `apn_password`: the password for the network connection authentication. Usually it is empty. Default value empty string.
+
+If `dhcp` is *True* (the default) other following four IP related arguments are ignored.
+When `dhcp` is *False*, the four IP related arguments are:
+
+* `ip`: is the IP address.
+* `mask`: the net mask expressed as A.B.C.D dotted address.
+* `gateway`: the gateway to be used as default router.
+* `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
+
+* `timeout`: Connection timeout in milliseconds. `CellularException` is raised if connection do not succeed during this time. Default value 10000 ms.
+
+The `cellular` module is returned.
+
+### function `stop_cellular`
+```python
+stop_cellular()
+```
+The interface is stopped, all connections dropped, and all socket related to cellular interface closed.
+
+### function `reset_cellular`
+```python
+reset_cellular()
+```
+The method resets the Cellular hardware module and the GNSS subsystem. The started
+network connections should have been closed before, otherwise they could fall in
+an inconsistent state.
+
+### function `antenna_on`
+```python
+antenna_on()
+```
+The method powers the cellular modem antenna. The antenna is already powered by the `start_cellular` method.
+
+### function `antenna_off`
+```python
+antenna_off()
+```
+The method shuts down the cellular modem antenna.
+
+### function `get_status`
+```python
+get_status()
+```
+The method returns the value of the status pin of the cellular modem. The pin will be high when the module is on.
+
+### function `get_psm_ind`
+```python
+get_psm_ind()
+```
+The method returns the value of the psm indicator pin. The pin will be low when in PSM.
+
+### function `get_ring`
+```python
+get_ring()
+```
+The method returns the value of the ring pin. The pin will go low when the ring triggers.
+
+### function `setup_ring_cb`
+```python
+setup_ring_cb(cb)
+```
+The method setup the call back function to be called when the ring triggers.
+
+### function `get_dcd`
+```python
+get_dcd()
+```
+The method returns the value of the dcd pin.
 
 ### function `summary`
 ```python
