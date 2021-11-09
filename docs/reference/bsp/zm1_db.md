@@ -8,12 +8,13 @@ next_expansion(e, selectors=None)
     
 Use the following table to choose the right expansion.
 
-    | module  | expansion |
-    |---------|-----------|
-    | `io`    | EXP-IO    |
-    | `relay` | EXP-RELAY |
-    | `ser`   | EXP-SER   |
-    | `ain`   | EXP-AIN   |
+    | module    | expansion   |
+    |-----------|-------------|
+    | `io`      | EXP-IO      |
+    | `relay`   | EXP-RELAY   |
+    | `ser`     | EXP-SER     |
+    | `ain`     | EXP-AIN     |
+    | `connect` | EXP-CONNECT |
 
 * `selectors` is a tuple with information on position of rotative switches of the expansion. Order follow swiches indexes.
 
