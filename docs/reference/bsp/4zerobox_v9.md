@@ -88,6 +88,8 @@ Read a channel from the ADC_010_420 in Voltage mode.
 
 Returns the value converted by the channel callback. Voltage value (V) if callback is set to `None`.
 
+***note***: deprecated `read_010` is still usable and will call `read_voltage`.
+
 ### function read_current
 ```python
 read_current(ch, raw=False, electric=False)
@@ -99,6 +101,8 @@ Read a channel from the ADC_010_420 in Current mode.
 * `electric` if set to `True` the electric value in mA is returned.
 
 Returns the value converted by the channel callback. Current value (mA) if callback is set to `None`.
+
+***note***: deprecated `read_420` is still usable and will call `read_current`.
 
 ### function read_resistive
 ```python
