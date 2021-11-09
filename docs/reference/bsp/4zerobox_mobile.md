@@ -23,13 +23,13 @@ Use the following table to choose the right expansion.
 ```python
 expansions_on()
 ```
-Power on all the expansions conected to the ZM1-DB.
+Power on all the expansions conected to the 4ZeroBox Mobile.
 
 ### function `expansions_off`
 ```python
 expansions_off()
 ```
-Shut down all the expansions conected to the ZM1-DB.
+Shut down all the expansions conected to the 4ZeroBox Mobile.
 
 ### function `led`
 ```python
@@ -43,7 +43,7 @@ Set the color of the led.
 ```python
 init()
 ```
-Reinitialize all exapansions connected to the ZM1-DB.
+Reinitialize all exapansions connected to the 4ZeroBox Mobile.
 
 ### function `set_adc_config`
 ```python
@@ -136,4 +136,4 @@ Returns the value converted by the pin callback. Differnce (max - min) Current (
 ```python
 summary()
 ```
-Print a summary on ZM1-DB and its connected expansions.
+Print a summary on 4ZeroBox Mobile and its connected expansions.
