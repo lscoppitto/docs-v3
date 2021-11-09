@@ -43,13 +43,11 @@ Set the color of the led.
 ```python
 on_button_press(fn, dir=FALLING_EDGE, debounce=0)
 ```
-Setup a callback on the user button pression.
+Set-up the `USER_BUTTON` to call an interrupt callback when pressed.
 
-* `fn` is the callback function to setup.
-
-* `dir` is the direction used to trigger the interrupt. Defualt value is `FALLING EDGE`.
-
-* `debounce` is the number of milliseconds used to De-bounce.
+* `fn` is the function to be called when the button is pressed;
+* `dir` is the wave edge that will trigger the callback. Default is `FALLING_EDGE`;
+* `debounce` is the De-Bounce delay to set.
 
 ### function `init`
 ```python
