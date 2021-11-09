@@ -37,6 +37,16 @@ Set the color of the led.
 
 * `color` is the color to set. Possible colors are. `BLACK`, `WHITE`, `RED`, `GREEN`, `BLUE`, `YELLOW`, `CYAN` and `MAGENTA`.
 
+### function `on_button_press`
+```python
+on_button_press(fn, dir=FALLING_EDGE, debounce=0)
+```
+Set-up the `USER_BUTTON` to call an interrupt callback when pressed.
+
+* `fn` is the function to be called when the button is pressed;
+* `dir` is the wave edge that will trigger the callback. Default is `FALLING_EDGE`;
+* `debounce` is the De-Bounce delay to set.
+
 ### function init
 ```python
 init()
