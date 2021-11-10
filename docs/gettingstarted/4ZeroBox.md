@@ -2,7 +2,11 @@
 
 ### **Unboxing Time!**
 
-Inside the box, you will find the 4Zerobox, terminal connectors and the warnings and instructions manual.
+Inside the box, you will find the 
+
+*  4Zerobox 
+*  terminal connectors
+*  Warnings and instructions manual
 
 <figure>
   <a data-fancybox="gallery" href="../img/unbox_4zb.jpg">

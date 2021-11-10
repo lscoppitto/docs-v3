@@ -2,7 +2,12 @@
 
 ### **Unboxing Time!**
 
-Inside the box, you will find the 4Zerobox Mobile, terminal connectors and the warnings and instructions manual.
+Inside the box, you will find the 
+
+*  4Zerobox Mobile
+*  Antennas
+*  DIN Rail compatibile-packaging
+*  Warnings and instructions manual
 
 <figure>
   <a data-fancybox="gallery" href="../img/unbox_4zb.png">
@@ -57,12 +62,15 @@ Check the project for errors by pressing *Build*. If everything is ok, you can p
 
 After the compilation and flashing, the terminal should show the serial output "Hello from 4ZeroBox Mobile!"
 
-### **4. Connect to the cloud**
+### **4. Connect to the cloud over cellular network**
 
-Connecting your devices to the cloud is very easy with zerynth platform. You don't need to know security, protocols or certificates, in minutes you will be sending your data to the cloud in a secure way and Zerynth OS will handles all of these details.
-To connect your device to the cloud, you have to **claim** it. It must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise).
 
-Just click *claim device* in the Zerynth Control Panel. You will be asked to 
+the 4Zerobox handles cellular connectivity seamlessly, just **claim** the device and the extension automatically connects the board to the cloud device, generates and shows cellular information like: MSISDN, IMSI, Modem IMEI and more.
+
+
+Insert Zerynth sim in the SIM slot beside the antennas and click on **claim device**, this process must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise).
+
+during the **claim device** process You will be asked to 
 
 *  choose which fleet you want to register your device to.
 
@@ -78,38 +86,63 @@ Just click *claim device* in the Zerynth Control Panel. You will be asked to
 if you click on *cloud device* section, you will be directed to the device page in zerynth cloud.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/after_prov_4zb.jpg">
-  <img src="../img/after_prov_4zb.jpg" />
+  <a data-fancybox="gallery" href="../img/after_prov_4zb_mob.jpg">
+  <img src="../img/after_prov_4zb_mob.jpg" />
   </a>
+  <figcaption>4ZeroBox mobile claimed</figcaption>
 </figure>
 
-The next step is to clone *zdm over wifi* example, from the examples tab on the left, clone the example..
-<figure>
-  <a data-fancybox="gallery" href="../img/zdm_over_wifi.jpg">
-  <img src="../img/zdm_over_wifi.jpg" />
-  </a>
-</figure>
+The next step is to clone *Publish over cellular* example, from the examples tab on the left, clone the example.
 
-Change the *SSID* and *PASSWORD* in the code according to your wifi network settings, choose the hardware type from the *Zerynth control panel* and then Run the code. 
 
-The terminal should state the connection status.
+After cloning, click on **Physical device** to configure the code for the 4zerobox mobile.
+the extension imports all necessary libraries and configures the code to connect to zerynth cloud servers.
+
+Check the project for errors by pressing *Build*. If everything is ok, you can press *Run*. The Zerynth SDK compiles the source files, creates a binary firmware and burns it.
+
+The terminal should state the connection status and if connected successfuly should print data similar to this output
+
+```
+INFO ] bsp.board @:101 | Configuring output only gpios...
+[INFO ] bsp.board @:105 | Configuring input only gpios...
+configuring cellular...
+connecting to cellular...
+connected! (True, 10.13.134.14, 255.255.255.255, 10.64.64.64, 79.170.208.50, 00:00:00:00:00:00)
+www.zerynth.com:  78.46.184.161
+[INFO ] zdm.zdm @_run:139 | Starting...
+[INFO ] zdm.zdm @_connect:121 | Connecting...
+[INFO ] zdm.zdm @_handle_dn_msg:258 | received message {"version":1636557616520,"key":"#status","value":{"current":{"__info":{"t":1636557546027,"v":null}},"expected":{}}}
+[INFO ] zdm.zdm @_handle_delta_request:372 | delta request with key status
+[INFO ] zdm.zdm @update_clock:287 | Sync time from ts: 1636557616
+[INFO ] zdm.zdm @_handle_dn_msg:258 | received message {"version":1636557617255,"key":"#status","value":{"current":{"__info":{"t":1636557616531,"v":null}},"expected":{}}}
+[INFO ] zdm.zdm @_handle_delta_request:372 | delta request with key status
+[INFO ] zdm.zdm @update_clock:287 | Sync time from ts: 1636557617
+cellinfo:  (NOCONN, EDGE, 22201, GSM 900, 8, 44823, 32294, 19, 222, 1, I TIM)
+ZDM is online:     True
+Firmware version:  Factory
+```
 Let's click on the *cloud device* in the *zerynth control panel* to check the device status.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/after_connection.jpg">
-  <img src="../img/after_connection.jpg" />
+  <a data-fancybox="gallery" href="../img/after_connection_4zb_mobile.jpg">
+  <img src="../img/after_connection_4zb_mobile.jpg" />
   </a>
 </figure>
 
 To see the recieved data, go to the *console* section in your device page in Zerynth Cloud.
 
+<figure>
+  <a data-fancybox="gallery" href="../img/console_section_zerynth_cloud.jpg">
+  <img src="../img/console_section_zerynth_cloud.jpg" />
+  </a>
+</figure>
 
 ### **5. Hardware details**
 
-If you want more information on the features, pinmap or the user manual, Please refer to [the hardware page.](../../hardware/4ZeroBox/)
+If you want more information on the features, pinmap or the user manual, Please refer to [the hardware page.](../../hardware/4ZeroBox_mobile/)
 
 ### **6. Explore Zerynth!**
-Zerynth can do much more than a simple Hello World, for additional examples refer to:
+Zerynth can do much more ! For additional examples check:
 
 - The examples tab in Zerynth extension.
-- [Tutorials](../../tutorials/)
+- [The tutorials section](../../tutorials/)

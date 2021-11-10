@@ -2,7 +2,11 @@
 
 ### **Unboxing Time!**
 
-Inside the box, you will find the ZM1-DB, sticker for the DIN rail bar package and the warnings and instructions manual.
+Inside the box, you will find the 
+
+*  ZM1-DB
+*  Sticker for the DIN rail bar package
+*  Warnings and instructions manual
 
 <figure>
   <a data-fancybox="gallery" href="../img/unbox_zm1db.jpg">

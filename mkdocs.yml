@@ -28,7 +28,6 @@ markdown_extensions:
 nav:
 - Getting Started:
   - ZM1-DB: gettingstarted/ZM1-DB.md
-  - 4ZeroBox and 4ZeroBox Mobile: gettingstarted/4ZeroBox_4zeroboxMobile.md
   - 4ZeroBox: gettingstarted/4ZeroBox.md
   - 4ZeroBox Mobile: gettingstarted/4ZeroBox_mobile.md
   - Zerynth SDK: gettingstarted/sdk_guide.md
