@@ -27,11 +27,11 @@ markdown_extensions:
 - pymdownx.tilde
 nav:
 - Getting Started:
-  - Zerynth in 5 minutes: gettingstarted/index.md
-  - ZM1 Development Board: gettingstarted/ZM1-DB.md
-  # - ZM1 Evaluation Board: gettingstarted/ZM1-EVA.md
+  - ZM1-DB: gettingstarted/ZM1-DB.md
   - 4ZeroBox and 4ZeroBox Mobile: gettingstarted/4ZeroBox_4zeroboxMobile.md
-  - Visual Studio Code: gettingstarted/vscode.md
+  - 4ZeroBox: gettingstarted/4ZeroBox.md
+  - 4ZeroBox Mobile: gettingstarted/4ZeroBox_mobile.md
+  - Zerynth SDK: gettingstarted/sdk_guide.md
 - Hardware:
   - {Hardware Platforms: hardware/index.md}
   - IoT Modules:

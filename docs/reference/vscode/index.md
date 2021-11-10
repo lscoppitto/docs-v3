@@ -74,6 +74,30 @@ Zerynth redesigned the control panel of the extension. The control panel enables
 
 let's have a look at how we can use the extension in doing the following operations
 
+### Zerynth Examples
+
+From this panel the vast collection of examples can be browsed by category or searched by content. Cloning an example is the quickest way to create a working new project.
+
+<figure>
+  <a data-fancybox="gallery" href="img/zerynth-examples-panel.png">
+  <img src="img/zerynth-examples-panel.png" />
+  </a>
+  <figcaption>Zerynth Examples Panel</figcaption>
+</figure>
+
+### Debug and monitor
+
+Now that the project is running, click `Console` and a terminal tab will open showing all the output printed by the device.
+This is the standard way to debug and monitor the output of a program. 
+
+However sometime a program may fail with an error that in Python is called an `Exception`. When this happens, in the tab `Problems` one can easily click on the problem itself and being redirected to the source code line that caused the error.
+
+### Access the documentation
+
+In the `Zerynth Control Panel` there are many shortcuts to the documentation, a core part of an IoT development journey.
+By clicking `Device documentation` the documentation page for the device is opened in the browser. 
+If you need the names of pins or the position of a communication bus, just click `Device pinmap` and you will be taken to the device schematics page.
+
 ### Cloning an example
 
 The easiest way to setup a new project is to clone an example. It can be done either from the `Clone Zerynth Example` button or from the `Zerynth Examples` panel. Clicking the `Clone Zerynth Example` button starts a popup for searching the installed examples. Typing something and hitting enter shows the matches:

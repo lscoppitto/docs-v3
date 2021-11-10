@@ -1,22 +1,21 @@
-# **Getting Started with ZM1-Development Board**
+# **Getting Started with 4ZeroBox Mobile**
 
 ### **Unboxing Time!**
 
-Inside the box, you will find the ZM1-DB, sticker for the DIN rail bar package and the warnings and instructions manual.
+Inside the box, you will find the 4Zerobox Mobile, terminal connectors and the warnings and instructions manual.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/unbox_zm1db.jpg">
-  <img src="../img/unbox_zm1db.jpg" />
+  <a data-fancybox="gallery" href="../img/unbox_4zb.png">
+  <img src="../img/unbox_4zb.png"width="600" />
   </a>
 </figure>
 
 
 
-
 ### **1. Create a project**
 
-
 First, you need to install the Zerynth SDK, [Here is a step-by-step guide for installing Zerynth SDK for windows, linux or mac.](sdk_guide.md)
+
 
 Let's create a new project, you can create a new project from scratch by pressing `Ctrl+Shift+P` and entering the command `New Zerynth project`.
 Zerynth SDK also provides a lot of examples that can be easily cloned and used as a starting point for a new project.
@@ -29,11 +28,11 @@ Just press `Ctrl+Shift+P` and type `examples` in the popup that VSCode displays.
   </a>
 </figure>
 
-Simply choose `Zerynth > Search examples` and then type `Hello`. Select the `Hello_Zerynth` example and provide a folder to clone in. When ready, click `Clone Zerynth Example` and you are good to go.
+Simply choose `Zerynth > Search examples` and then type `Hello`. Select the `Hello_4Zerobox_Mobile` example and provide a folder to clone in. When ready, click `Clone Zerynth Example` and you are good to go.
 
-### **2. Connect and configure the ZM1-DB**
+### **2. Connect and configure the 4ZeroBox**
 
-Connect the ZM1-DB with a USB-C cable to the PC. The VSCode extension provides a panel labeled *Zerynth Control Panel* that contains information about the current project.
+Connect the 4ZeroBox Mobile to the PC. The VSCode extension provides a panel labeled *Zerynth Control Panel* that contains information about the current project.
 
 Press *Physical Device* and if necessary, the extension will ask which board is connected.
 
@@ -45,17 +44,18 @@ Press *Physical Device* and if necessary, the extension will ask which board is 
 </figure>
 
 <figure>
-  <a data-fancybox="gallery" href="../img/control_panel_with_device.jpg">
-  <img src="../img/control_panel_with_device.jpg" />
+  <a data-fancybox="gallery" href="../img/control_panel_with_4zb_mobile.jpg">
+  <img src="../img/control_panel_with_4zb_mobile.jpg" />
   </a>
   <figcaption>Control Panel after selecting the physical device</figcaption>
 </figure>
+
 
 ### **3. Run the example**
 
 Check the project for errors by pressing *Build*. If everything is ok, you can press *Run*. The Zerynth SDK compiles the source files, creates a binary firmware and burns it to the ZM1-DB.
 
-Just press *Console* and the serial output of ZM1-DB will appear in the VSCode terminal.
+After the compilation and flashing, the terminal should show the serial output "Hello from 4ZeroBox Mobile!"
 
 ### **4. Connect to the cloud**
 
@@ -78,19 +78,19 @@ Just click *claim device* in the Zerynth Control Panel. You will be asked to
 if you click on *cloud device* section, you will be directed to the device page in zerynth cloud.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/after_prov.jpg">
-  <img src="../img/after_prov.jpg" />
+  <a data-fancybox="gallery" href="../img/after_prov_4zb.jpg">
+  <img src="../img/after_prov_4zb.jpg" />
   </a>
 </figure>
 
-The next step is to clone *ZDM_simple* example, from the examples tab on the left, clone the ZDM simple example..
+The next step is to clone *zdm over wifi* example, from the examples tab on the left, clone the example..
 <figure>
-  <a data-fancybox="gallery" href="../img/zdm_simple.jpg">
-  <img src="../img/zdm_simple.jpg" />
+  <a data-fancybox="gallery" href="../img/zdm_over_wifi.jpg">
+  <img src="../img/zdm_over_wifi.jpg" />
   </a>
 </figure>
 
-Change the *ssid* and *passwd* in the code according to your wifi network settings, choose the hardware type from the *Zerynth control panel* and then Run the code. 
+Change the *SSID* and *PASSWORD* in the code according to your wifi network settings, choose the hardware type from the *Zerynth control panel* and then Run the code. 
 
 The terminal should state the connection status.
 Let's click on the *cloud device* in the *zerynth control panel* to check the device status.
@@ -106,11 +106,10 @@ To see the recieved data, go to the *console* section in your device page in Zer
 
 ### **5. Hardware details**
 
-If you want more information on the features, pinmap or the user manual, Please refer to [the hardware page.](../../hardware/ZM1-Development-Board/)
+If you want more information on the features, pinmap or the user manual, Please refer to [the hardware page.](../../hardware/4ZeroBox/)
 
-### **6. Explore the ZM1-DB**
-
+### **6. Explore Zerynth!**
 Zerynth can do much more than a simple Hello World, for additional examples refer to:
 
 - The examples tab in Zerynth extension.
-- [Tutorials](../tutorials/index.md)
+- [Tutorials](../../tutorials/)
