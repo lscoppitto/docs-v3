@@ -12,8 +12,8 @@ Easy-to-use hardware devices for driving Industrial IoT applications and connect
 
 The ZM1-DB is an efficient and secure development board that features the Zerynth IoT module ZM1.
 <figure>
-  <a data-fancybox="gallery" href="img/zm1-db.png">
-  <img src="img/zm1-db.png" />
+  <a data-fancybox="gallery" href="img/ZM1-DB-front.png">
+  <img src="img/ZM1-DB-front.png" width="250"/>
   </a>
 </figure>
 
@@ -21,7 +21,7 @@ Thanks to the zBUS you can connect Zerynth expansion boards and quickly add powe
 
 <figure>
   <a data-fancybox="gallery" href="img/exp-boards.jpg">
-  <img src="img/exp-boards.jpg" />
+  <img src="img/exp-boards.jpg"width="500" />
   </a>
 </figure>
 
@@ -29,7 +29,7 @@ Thanks to the zBUS you can connect Zerynth expansion boards and quickly add powe
 4ZeroBox and 4ZeroBox mobile are industrial IoT devices for data acquisition, monitoring, and control of industrial machines. 
 <figure>
   <a data-fancybox="gallery" href="img/4zb.png">
-  <img src="img/4zb.png" />
+  <img src="img/4zb.png"width="500" />
   </a>
 </figure>
 

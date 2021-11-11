@@ -6,7 +6,7 @@ In this tutorial we will show how to use Zerynth toolchain from the command line
 The tutorial assumes:
 
 - You have a supported [hardware](../hardware/index.md) at hand
-- You have installed the [Zerynth SDK](../gettingstarted/index.md)
+- You have installed the [Zerynth SDK](../gettingstarted/sdk_guide.md)
 
 
 ## Shells and editors

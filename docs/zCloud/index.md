@@ -1,25 +1,25 @@
 # Introduction to Zerynth Cloud
 
-The Internet of Things is all about extracting valuable data from billions of connected devices. However, Developing IoT enabled device is very difficult as you need to develop and deploy hundreds of devices while keeping security, connectivity and scalablity in mind.
-
 **Zerynth Cloud** is a complete platform that frees you from the burden of maintaining all the technology and infrastructure of developing and deploying fleets of devices, while focusing on the added value of IoT data.
 From a single interface, provision and manage IoT devices, store and visualize data, and gain valuable insights and issue firmware updates on fleets of devices.
 
 
-## **Zerynth Cloud** is composed of
+### **Zerynth Cloud** is composed of
 
-* **Device Management**: anything from securely provisioning devices, updating and configuring them remotely is the task of the [Zerynth Device Manager](zdm_intro.md) and its [Over the Air Update](FOTA.md) capabilities.
-* **Data Storage**: IoT data needs to be stored, recovered from accidental corruption and easily accessed for analysis and integration. The [Zerynth Storage](zdm_intro.md) service has been developed with these goals in mind.
-* **Dashboarding**: no better tool than a properly designed dashboard can help extract useful insights from IoT data. The Zerynth Dashboard service allows hosting and serving multiple customizable dashboards getting data directly from the Zerynth Storage.
+* **Device Management**: anything from securely provisioning devices, updating and configuring them remotely is the task of the [Zerynth Device Manager](device_manager_data_storage.md).
+* **Data Storage**: IoT data needs to be stored, recovered and easily accessed for analysis and integration. The [Zerynth Storage](device_manager_data_storage.md#storage) service has been developed with these goals in mind.
+* **Dashboarding**: The Zerynth Dashboard service allows hosting and serving multiple customizable dashboards to visualize data and control device.
+
+[**Rest open APIs** are also available.](../reference/api/zdm/) They enable users to access devices, job and FOTA services, as well as workspaces and fleets operatiosn. They can be called from any application that can send an HTTPS request and receive an HTTPS response.
 
 <figure>
-  <a data-fancybox="gallery" href="img/zCloud.png">
-  <img src="img/zCloud.png"/>
+  <a data-fancybox="gallery" href="img/zcloud.jpg">
+  <img src="img/zcloud.jpg"/>
   </a>
 </figure>
 
 
-## Zerynth Cloud Inteface
+### Zerynth Cloud Inteface
 
 ### Workspaces Navigation Page
 
