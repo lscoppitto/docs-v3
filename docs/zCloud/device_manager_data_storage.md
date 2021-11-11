@@ -11,7 +11,7 @@ For this often daunting task, Zerynth developed the Zerynth Device Manager. It i
 - **Connectivity**: transfer data to the Zerynth Device Manager with state of the art two-way authenticated and encrypted TLS connections.
 - **Life Cycle Management**: perform complex orchestration tasks by sending jobs and over-the-air updates to your fleets; from an easy to use GUI or programmatically via CLI or REST APIs.
 - **Data Availability**: avoid losing precious data by temporarily queueing them on the Zerynth Device Manager when your data sinks are down.
-- **Integrations**:  forward data via convenient webhooks or API to your final IoT application or even better to the [Zerynth Storage](zdm_intro.md) and Zerynth Dashboard services
+- **Integrations**:  forward data via convenient webhooks or API to your final IoT application or to the integrated dashboard services.
 
 Zerynth Device Manager can be adapted to all kinds of deployments, being available as a SaaS hosted by Zerynth or as an on-premises containerized application.
 
@@ -27,7 +27,7 @@ Zerynth Device Manager can be adapted to all kinds of deployments, being availab
 - A **Device** is the cloud representation of the physical IoT device. A Zerynth Device Manager device is associated to a physical device during provisioning. An action performed over a Zerynth Device Manager device (i.e. sending an update or a new configuration) is always reflected and communicated to the physical device.
 - A **Workspace** is an entity that groups together all the devices belonging to a single project. Zerynth Device Manager accounts can have multiple independent workspaces, one for each project.
 - A **Fleet** is a group of devices belonging to a Workspace. You can use fleets to group devices with similar features and applications. Fleets allow sending bulk device commands, OTA updates and jobs.
-- An **Integration** is an interface between the Zerynth Device Manager and other internal or external services like the [Zerynth Storage](zdm_intro.md) or your IoT application backend. Integrations are used to forward data and events out of the Zerynth Device Manager.
+- An **Integration** is an interface between the zerynth cloud and other 3rd party services.
 
 Devices send data, events and receive requests from the Zerynth Device Manager. In particular:
 
@@ -47,7 +47,7 @@ Just create a webhook integration from the Zerynth Device Manager web app and po
 
 It seems a lot of work but we have you covered: from [here](https://github.com/zerynth/demo-template) you can checkout a demo repository with all the components already in place!
 
-## **Storage**
+### **Storage**
 
 Zerynth Storage is a dedicated cloud service optimized for storing time series data coming from IoT devices.
 It offers APIs to retrieve the raw or aggregated data and to export it into other formats (csv, json).

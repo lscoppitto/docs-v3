@@ -5,7 +5,7 @@ Zerynth OS (zOS) is a RTOS that runs on every Zerynth hardware and has the capab
 
 <figure>
   <a data-fancybox="gallery" href="img/os.png">
-  <img src="img/os.png"/>
+  <img src="img/os.png"width="600"/>
   </a>
 </figure>
 

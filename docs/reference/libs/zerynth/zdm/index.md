@@ -117,6 +117,7 @@ class Agent(cfg=None, jobs=None, conditions=[], on_conditions=None, set_clock_ev
 ```
 
 Create an `Agent` instance. The `Agent` class accepts various parameters:
+
 * `cfg` is an instance of the `Config` class detailing the transport connection parameters. It is set to *None* by default using standard parameters.
 * `jobs` is a dictionary that defines the ZDM jobs the agent can handle. The keys of the dictionary are strings representing the name of the jobs and the values are functions that are called each time a job is triggered. When set to *None* the only jobs that can be triggered are `reset` and `fota`.
 * `conditions` is a list of strings defining the condition's names used by the device.

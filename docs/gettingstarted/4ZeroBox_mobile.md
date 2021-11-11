@@ -1,5 +1,12 @@
 # **Getting Started with 4ZeroBox Mobile**
 
+<figure>
+  <a data-fancybox="gallery" href="../img/4zb_mobile.png">
+  <img src="../img/4zb_mobile.png"width="400" />
+  </a>
+</figure>
+
+
 ### **Unboxing Time!**
 
 Inside the box, you will find the 
@@ -8,13 +15,6 @@ Inside the box, you will find the
 *  Antennas
 *  DIN Rail compatibile-packaging
 *  Warnings and instructions manual
-
-<figure>
-  <a data-fancybox="gallery" href="../img/unbox_4zb.png">
-  <img src="../img/unbox_4zb.png"width="600" />
-  </a>
-</figure>
-
 
 
 ### **1. Create a project**
@@ -68,7 +68,7 @@ After the compilation and flashing, the terminal should show the serial output "
 the 4Zerobox handles cellular connectivity seamlessly, just **claim** the device and the extension automatically connects the board to the cloud device, generates and shows cellular information like: MSISDN, IMSI, Modem IMEI and more.
 
 
-Insert Zerynth sim in the SIM slot beside the antennas and click on **claim device**, this process must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise).
+Insert Zerynth sim in the SIM slot beside the antennas and click on **claim device** on the zerynth control panel, this process must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise by pressing **unclaim**).
 
 during the **claim device** process You will be asked to 
 

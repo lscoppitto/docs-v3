@@ -91,5 +91,9 @@ You can start VSCode:
 
 For more information on the extension features, sections and technical details, please refer to [the Development Environmen section in the technical reference.](../../../reference/vscode/)
 
+### More information
 
-Everything is set and you are ready to run your first IoT project, refer to any of our hardware [getting started guides on the left tab.](../ZM1-DB/)
+If you need more information about the extension, [check the development environment page.](../../reference/vscode/)
+
+
+Everything is set and you are ready to run your first IoT project, refer to any of our [getting started guides on the left tab.](../ZM1-DB/)

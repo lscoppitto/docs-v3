@@ -1,5 +1,11 @@
 # **Getting Started with 4ZeroBox**
 
+<figure>
+  <a data-fancybox="gallery" href="../img/unbox_4zb.png">
+  <img src="../img/unbox_4zb.png"width="400" />
+  </a>
+</figure>
+
 ### **Unboxing Time!**
 
 Inside the box, you will find the 
@@ -7,13 +13,6 @@ Inside the box, you will find the
 *  4Zerobox 
 *  terminal connectors
 *  Warnings and instructions manual
-
-<figure>
-  <a data-fancybox="gallery" href="../img/unbox_4zb.jpg">
-  <img src="../img/unbox_4zb.jpg"width="600" />
-  </a>
-</figure>
-
 
 
 ### **1. Create a project**
@@ -59,12 +58,21 @@ Press *Physical Device* and if necessary, the extension will ask which board is 
 
 Check the project for errors by pressing *Build*. If everything is ok, you can press *Run*. The Zerynth SDK compiles the source files, creates a binary firmware and burns it to the ZM1-DB.
 
-After the compilation and flashing, the terminal should show the serial output "Hello Zerynth 4ZeroBox!"
+After the compilation and flashing, the terminal should show the serial output 
+
+```
+Hello Zerynth 4ZeroBox!
+Hello Zerynth 4ZeroBox!
+Hello Zerynth 4ZeroBox!
+Hello Zerynth 4ZeroBox!
+Hello Zerynth 4ZeroBox!
+Hello Zerynth 4ZeroBox!
+```
 
 ### **4. Connect to the cloud**
 
 Connecting your devices to the cloud is very easy with zerynth platform. You don't need to know security, protocols or certificates, in minutes you will be sending your data to the cloud in a secure way and Zerynth OS will handles all of these details.
-To connect your device to the cloud, you have to **claim** it. It must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise).
+To connect your device to the cloud, you have to **claim** it. It must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise otherwise by pressing **unclaim**).
 
 Just click *claim device* in the Zerynth Control Panel. You will be asked to 
 

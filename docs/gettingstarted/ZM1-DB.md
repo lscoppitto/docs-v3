@@ -1,20 +1,19 @@
 # **Getting Started with ZM1-Development Board**
 
+<figure>
+  <a data-fancybox="gallery" href="../img/zm1-db.png">
+  <img src="../img/zm1-db.png"width="250" />
+  </a>
+</figure>
+
+
 ### **Unboxing Time!**
 
 Inside the box, you will find the 
 
 *  ZM1-DB
-*  Sticker for the DIN rail bar package
+*  Sticker for the DIN rail mountable case
 *  Warnings and instructions manual
-
-<figure>
-  <a data-fancybox="gallery" href="../img/unbox_zm1db.jpg">
-  <img src="../img/unbox_zm1db.jpg" />
-  </a>
-</figure>
-
-
 
 
 ### **1. Create a project**
@@ -57,14 +56,15 @@ Press *Physical Device* and if necessary, the extension will ask which board is 
 
 ### **3. Run the example**
 
-Check the project for errors by pressing *Build*. If everything is ok, you can press *Run*. The Zerynth SDK compiles the source files, creates a binary firmware and burns it to the ZM1-DB.
+Check the project for errors by pressing *Build*. If everything is ok, you can press *Run*. The Zerynth SDK compiles the source files, creates a binary firmware and burns it to the board.
 
 Just press *Console* and the serial output of ZM1-DB will appear in the VSCode terminal.
 
 ### **4. Connect to the cloud**
 
-Connecting your devices to the cloud is very easy with zerynth platform. You don't need to know security, protocols or certificates, in minutes you will be sending your data to the cloud in a secure way and Zerynth OS will handles all of these details.
-To connect your device to the cloud, you have to **claim** it. It must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise).
+Connecting your devices to the cloud is very easy with zerynth platform. You don't need to have technical knowledge about protocols or certificates, in minutes you will be sending your data to the cloud securely.
+
+To connect your device to the cloud, you have to **claim** it. It must be done only once, it's just a click and gives you control over the device forever (or until you decide otherwise by pressing **unclaim**).
 
 Just click *claim device* in the Zerynth Control Panel. You will be asked to 
 
@@ -78,7 +78,7 @@ Just click *claim device* in the Zerynth Control Panel. You will be asked to
 
 *  Create a new cloud device for this board.
 *  Accept the provisioning firmware (the existing firmware will be overwritten).
-*  After provisioning, the terminal should output "Claim finished successfully".
+*  After provisioning, the terminal should print "Claim finished successfully".
 if you click on *cloud device* section, you will be directed to the device page in zerynth cloud.
 
 <figure>

@@ -51,7 +51,7 @@ nav:
     - {Product Innovation Kit: hardware/productInovv.md}
 - Zerynth Cloud:
   - Introduction: zCloud/index.md
-  - Device Manager and Data Storage: zCloud/zdm_intro.md
+  - Device Manager and Data Storage: zCloud/device_manager_data_storage.md
 - Tutorials and Demos:
   - Tutorials:
     - tutorials/index.md

@@ -5,7 +5,7 @@ The editor of choice is [Visual Studio Code](https://code.visualstudio.com) (VSC
 
 However, since all the operations required for compiling and running a firmware are performed via a [command line interface](../cli/ztc/index.md), any editor can be used with any build system with some ad hoc configuration.
 
-## What is installed
+### What is installed
 
 Once the **Zerynth SDK** is installed, a Zerynth folder is created containing all the required components. Depending on the platform the zerynth folder can be found:
 
@@ -31,7 +31,7 @@ At the end of installation, the `PATH` environment variable is modified to point
 !!! note
     If a version of Zerynth before v3.0.0 is detected, there may be a clash between the old `ztc` and `zdm` commands. In that case, the `ztc3` and `zdm3` commands can be used in their place to maintain compatibility.
 
-## VSCode Extension
+### VSCode Extension
 
 The VSCode Zerynth extension can be installed together with the SDK or can be installed from the [Azure marketplace](https://marketplace.visualstudio.com/items?itemName=zerynth.zerynth3). The end result is the same and in both cases the full SDK is downloaded and installed.
 
@@ -44,7 +44,7 @@ Upon startup the Zerynth extension shows the greeting panel with some getting st
 
 By opening the explorer panel, the option to start a new Zerynth project is given, either from scratch or by cloning an existing example.
 
-## Zerynth Control Panel
+### Zerynth Control Panel
 
 Zerynth redesigned the control panel of the extension. The control panel enables the users to compile and run applications, View hardware information and handle cloud operations such as provisioning, FOTA...
 
@@ -65,38 +65,23 @@ Zerynth redesigned the control panel of the extension. The control panel enables
 - **Run**: Compiles the project then burns the application to the device. Only the changed components are burned.
 - **Erase and Run**: Erases the device flash memory, compiles the project then burns the application to the device.
 - **Console**: Opens the serial terminal automatically configured for the connected device.
+- **Claim device**: links the physical device by associating a virtual device on the Zerynth cloud. Burns a special firmware which creates the required credentials, certificates and register them to the Zerynth cloud.
+- **Unclaim device**: unlinks a provisioned device from the related virtual device on the Zerynth cloud.
 - **Cloud Device**: ID of Virtual Device on zerynth cloud.
-- **Provioning**: Provisions the physical device by associating a virtual device on the Zerynth cloud. Burns a special firmware which creates the required credentials, certificates and register them to the Zerynth cloud.
-- **Undo Provisioning**: Disassociates a provisioned device from the related virtual device on the Zerynth cloud.
-- **Launch FOTA**: compiles and prepares the compiled project for FOTA then launches the FOTA procedure.
+- **FOTA**: compiles and prepares the compiled project for FOTA then launches the FOTA procedure.
 - **Upload firmware**: compiles and uploads the current project on Zerynth Cloud for future FOTA deployments.
-
-
-let's have a look at how we can use the extension in doing the following operations
 
 ### Zerynth Examples
 
 From this panel the vast collection of examples can be browsed by category or searched by content. Cloning an example is the quickest way to create a working new project.
 
 <figure>
-  <a data-fancybox="gallery" href="img/zerynth-examples-panel.png">
-  <img src="img/zerynth-examples-panel.png" />
+  <a data-fancybox="gallery" href="img/zerynth-examples-panel.jpg">
+  <img src="img/zerynth-examples-panel.jpg" />
   </a>
   <figcaption>Zerynth Examples Panel</figcaption>
 </figure>
 
-### Debug and monitor
-
-Now that the project is running, click `Console` and a terminal tab will open showing all the output printed by the device.
-This is the standard way to debug and monitor the output of a program. 
-
-However sometime a program may fail with an error that in Python is called an `Exception`. When this happens, in the tab `Problems` one can easily click on the problem itself and being redirected to the source code line that caused the error.
-
-### Access the documentation
-
-In the `Zerynth Control Panel` there are many shortcuts to the documentation, a core part of an IoT development journey.
-By clicking `Device documentation` the documentation page for the device is opened in the browser. 
-If you need the names of pins or the position of a communication bus, just click `Device pinmap` and you will be taken to the device schematics page.
 
 ### Cloning an example
 
@@ -112,33 +97,18 @@ After selecting an example, a folder where to clone it must be chosen
 
 ### Running a project
 
-Once the example is cloned, VSCode shows a set of panels and terminals that are useful for working with the current project.
-
-<figure>
-  <a data-fancybox="gallery" href="img/vscode-project-opened.png">
-  <img src="img/vscode-project-opened.png"/>
-  </a>
-</figure>
-
-In the top half of the screen VSCode shows the source code of the project, represented by the file `main.py`. On the left, there are many panels, some are provided by VSCode, some by the Zerynth extension. In particular, the `Zerynth Control Panel` contains shortcuts to all the operations required to run a connected device.
-
-
-<figure>
-  <a data-fancybox="gallery" href="img/control_panel_no_device.jpg">
-  <img src="img/control_panel_no_device.jpg"/>
-  </a>
-</figure>
-
 In order to compile and run a project, a device must be first plugged in to a USB port. By pressing `Physical device` in the `Zerynth Control Panel` the device is automatically recognized and the project configured accordingly. 
 
-!!! note
-    Not all Zerynth hardwares can be automatically recognized. In that case, VSCode will present a popup where the correct device can be chosen
 
 <figure>
   <a data-fancybox="gallery" href="img/control_panel_with_device.jpg">
   <img src="img/control_panel_with_device.jpg"/>
   </a>
 </figure>
+
+
+!!! note
+    Not all Zerynth hardwares can be automatically recognized. In that case, VSCode will present a popup where the correct device can be chosen
 
 By clicking on `Device documentation` and `Device Pinmap` the documentation pages for the device datasheet and schematics are opened in the browser. Before opening the pages, VSCode will ask to trust the link; it is recommended to set `zerynth.com` as a trusted domain in VSCode so that all pages will be opened without confirmation.
 
@@ -198,52 +168,43 @@ The firmware can print to the console or not depending on the chosen debug level
 
 
 
-### Provisioning the device
+### Claiming the device
 
-Provisioning is a very important step that must be performed just once, before connecting any device to the Zerynth Device Manager. It consists of associating the device physical identity protected by the secure element with the device identity on the Zerynth Device Manager. This step guarantees that the physical device is owned only by the Zerynth account that performs the associations.
+Claiming the device is a very important step that must be performed just once, before connecting any device to the Zerynth cloud. It consists of associating the device physical identity protected by the secure element with the device identity on the Zerynth cloud. This step guarantees that the physical device is owned only by the Zerynth account that performs the associations.
 
-Under the hood the physical device is loaded with a provisioning firmware that generates a signature by exploiting the capabilities of the secure element. 
-The signature is then sent to the Zerynth Device Manager that, after verifying its authenticity, associates the physical identity with a Zerynth Device Manager device. The association is possible if the physical device is not already associated. In that case it must be deassociated first.
+Under the hood the physical device is loaded with a provisioning firmware that uses the secure element to generate a signature.
+This signature is sent to the Zerynth cloud, after verifying its authenticity, Zerynth cloud associates the physical identity with a virtual device. The association is possible only if the physical device is not already associated. In that case it must be deassociated first.
 
-Once associated, the device can connect to the Zerynth Device Manager and begin to send data to the corresponding workspace.
+Once associated, the device is ready to communicate with the cloud.
 
-All the steps above can be performed with a single click on the edit icon of the `Provisioning` in the `Zerynth Control Panel`. A popup window will be shown for selecting the Zerynth Device Manager device to associate with the physical one. If no devices are present in the workspace, one can be created from the VSCode popup.
+during the **claim device** process You will be asked to 
 
+*  choose which fleet you want to register your device to.
+*  Create a new cloud device for this board.
 <figure>
   <a data-fancybox="gallery" href="img/vscode-provisioning-01.png">
   <img src="img/vscode-provisioning-01.png" />
   </a>
-  <figcaption>Select a device to provision</figcaption>
 </figure>
+
+*  Accept the provisioning firmware (the existing firmware will be overwritten).
 <figure>
   <a data-fancybox="gallery" href="img/vscode-provisioning-02.png">
   <img src="img/vscode-provisioning-02.png" />
   </a>
-  <figcaption>Accept the confirmation dialog</figcaption>
-</figure>
-<figure>
-  <a data-fancybox="gallery" href="img/vscode-provisioning-03.png">
-  <img src="img/vscode-provisioning-03.png" />
-  </a>
-  <figcaption>Successful provisioning!</figcaption>
-</figure>
-<figure>
-  <a data-fancybox="gallery" href="img/control_panel_with_device.jpg">
-  <img src="img/control_panel_with_device.jpg" />
-  </a>
-  <figcaption>Updated control panel</figcaption>
 </figure>
 
-Once a device is correctly provisioned, any project or example connecting to the Zerynth Device Manager will work out of the box.
-By clicking `Cloud Device` in the `Zerynth Control Panel`, the Zerynth Device Manager device page is opened in the browser,
-showing the device info.
+*  After provisioning, the terminal should print "Claim finished successfully".
+if you click on *cloud device* section, you will be directed to the device page in zerynth cloud.
 
 
 ### Performing Over the Air Update (FOTA)
 
-When the device is connected to the Zerynth Device Manager it is always possible to update the firmware remotely by sending a FOTA request. The device will download the new firmware and install it. Upon reset, the new firmware will validate itself and if everything works correctly, it becomes permanent. FOTA can be easily tested directly from VSCode by clicking `Launch FOTA` in the `Zerynth Control Panel`; the current project is compiled and the `firmware.z` is uploaded to the Zerynth Device Manager as a new firmware version. The `FOTA` request is sent to the device automatically and by opening the console, its progress can be monitored.
+the cloud enables users to remotely update and manage the firmware of the device seamlessly and in a fail-safe way.
 
-More details on FOTA can be found [here](../../zCloud/FOTA.md).
+The device downloads the new firmware and installs it. Upon reset, the new firmware will validate itself and if everything works correctly, it becomes permanent. FOTA can be easily tested directly from VSCode by clicking `Launch FOTA` in the `Zerynth Control Panel`; the current project is compiled and the `firmware.z` is uploaded to the Zerynth Device Manager as a new firmware version. The `FOTA` request is sent to the device automatically and by opening the console, its progress can be monitored.
+
+We wrote a quick FOTA demo, [click here to check it](../../zCloud/FOTA.md).
 
 ### Shortcuts
 
