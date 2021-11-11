@@ -55,13 +55,13 @@ an inconsistent state.
 ```python
 antenna_on()
 ```
-The method powers the cellular modem antenna. The antenna is already powered by the `start_cellular` method.
+The method powers the GNSS antenna. The antenna is already powered by the `start_cellular` method.
 
 ### method `antenna_off`
 ```python
 antenna_off()
 ```
-The method shuts down the cellular modem antenna.
+The method shuts down the GNSS antenna.
 
 ### method `get_status`
 ```python
