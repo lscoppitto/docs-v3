@@ -75,7 +75,6 @@ The signature of `fn` is `fn(pin, value)` where `pin` is the interrupted pin and
 ```python
 on_rise_and_fall(pin, fn, debounce=0, pull=INPUT_PULLNONE)
 ```
-
 Registers the `fn` function as callback either on the rising and falling edges on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor. By default pull is none, since setting a pull-up or pull-down without knowing the hardware used can cause failures.
 *** note ***: This function might not work properly with pin that are not native of the zm1 module.
 
