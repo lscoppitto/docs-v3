@@ -119,6 +119,7 @@ where:
             - `"n_coil"` is the number of coil of the clamp.
             - `"voltage"` is the voltage of the AC current.
             - `"offset"` is the offset of the AC current.
+    - `digits_limit` if this is present, the returned number of decimal digits returned by read function will be limited to the desired digit.
 
 `conversion` can have custom `type` and `args`. In this case the user must create a custom callback and link that to the `type` with a dictionary called `cb_dict`.
 To do so, the user should create a module with the callback and the dictionary.
