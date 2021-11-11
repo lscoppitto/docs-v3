@@ -67,7 +67,7 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
 For more infos about electrical connections, and how to use 4ZeroBox with sensors and other hardware, see the  [user manual](https://www.zerynth.com/download/13894/).
 
 For more information on the 4ZeroBox Library as software drivers, Its features, functions and examples
-[Please check this Link](../../reference/reference/bsp/4zerobox_v9/)
+[Please check this Link](../../reference/bsp/4zerobox_v9/)
 
 Other useful documents are:
 
@@ -93,7 +93,7 @@ For step-by-step guide on connecting, running your first example, Please refer t
 ## **4ZeroBox Software Library**
 
 For more information on the ZM1-DB Library as software Library, Its features, functions and examples demos
-[Please check this Link](../../reference/reference/bsp/4zerobox_v9/)
+[Please check this Link](../../reference/bsp/4zerobox_v9/)
 
 
 ## **Power**

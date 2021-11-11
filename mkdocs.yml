@@ -30,7 +30,7 @@ nav:
   - Zerynth in 5 minutes: gettingstarted/index.md
   - ZM1 Development Board: gettingstarted/ZM1-DB.md
   # - ZM1 Evaluation Board: gettingstarted/ZM1-EVA.md
-  - 4ZeroBox: gettingstarted/4ZeroBox.md
+  - 4ZeroBox and 4ZeroBox Mobile: gettingstarted/4ZeroBox_4zeroboxMobile.md
   - Visual Studio Code: gettingstarted/vscode.md
 - Hardware:
   - {Hardware Platforms: hardware/index.md}
@@ -47,6 +47,7 @@ nav:
     - EXP-PROTO: hardware/EXP-PROTO.md
   - Industrial IoT Device and Kit:
     - 4ZeroBox: hardware/4ZeroBox.md
+    - 4ZeroBox Mobile: hardware/4ZeroBox_mobile.md
     - {Industrial IoT Kit: hardware/I40Kit.md}
     - {Product Innovation Kit: hardware/productInovv.md}
 - Zerynth Cloud:
@@ -124,7 +125,9 @@ nav:
         - reference/libs/networking/index.md
         - reference/libs/networking/net.md
         - reference/libs/networking/wifi.md
+        - reference/libs/networking/wifisniff.md
         - reference/libs/networking/eth.md
+        - reference/libs/networking/cellular.md
         - reference/libs/networking/socket.md
       - Protocols:
         - reference/libs/protocols/index.md
@@ -135,8 +138,6 @@ nav:
       - Security and Cryptography:
         - reference/libs/crypto/index.md
         - reference/libs/crypto/element.md
-      - Filters:
-        - reference/libs/filters/iir_filter.md
       - Math:
         - reference/libs/math/math.md
         - reference/libs/math/bignum.md
@@ -191,7 +192,7 @@ theme:
     favicon: images/favicon.png
     features:
       - navigation.tabs
-    font: {code: Roboto Mono, text: Roboto}
+    font: {code: roboto, text: Open Sans}
     logo: images/favicon-white.png
     name: material
     palette: {accent: red, primary: indigo}
