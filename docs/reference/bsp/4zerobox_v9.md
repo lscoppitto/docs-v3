@@ -232,6 +232,7 @@ Set the color of the led.
 setup_cellular(click_slot=1)
 ```
 Configures pins and serial interface to be used correctly with Quectel BG96 cellular modem click board on the selected `click_slot`.
+Valid `click_slot` values are `1` and `2`.
 
 ### function summary
 ```python
