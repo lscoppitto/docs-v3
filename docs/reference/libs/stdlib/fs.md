@@ -38,6 +38,8 @@ Can raise:
 * `FSNoSuchMountpointError` 
 * `FSCantMountError`
 * `FSNoMoreMountpointsError`
+* `FSFileAlreadyExistsError`
+* `FSFileDoesNotExistError`
 
 All of the above have `IOError` as parent.
 
@@ -71,6 +73,15 @@ Opens or create a file at `path`.
 
 
 Return an instance of `FileIO` or raises `IOError`.
+
+### function `mkdir`
+```python
+mkdir(path)
+```
+Creates a directory.
+
+* `path`: is a string referring to the directory to be created.
+
 
 ### function `rmdir`
 ```python
