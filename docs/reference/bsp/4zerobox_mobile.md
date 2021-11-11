@@ -23,19 +23,19 @@ Use the following table to choose the right expansion.
 ```python
 expansions_on()
 ```
-Power on all the expansions conected to the 4ZeroBox Mobile.
+Powers on all the expansions conected to the 4ZeroBox Mobile.
 
 ### function `expansions_off`
 ```python
 expansions_off()
 ```
-Shut down all the expansions conected to the 4ZeroBox Mobile.
+Shuts down all the expansions conected to the 4ZeroBox Mobile.
 
 ### function `led`
 ```python
 led(color)
 ```
-Set the color of the led.
+Sets the color of the led.
 
 * `color` is the color to set. Possible colors are. `BLACK`, `WHITE`, `RED`, `GREEN`, `BLUE`, `YELLOW`, `CYAN` and `MAGENTA`.
 
@@ -43,7 +43,7 @@ Set the color of the led.
 ```python
 on_button_press(fn, dir=FALLING_EDGE, debounce=0)
 ```
-Set-up the `USER_BUTTON` to call an interrupt callback when pressed.
+Sets-up the `USER_BUTTON` to call an interrupt callback when pressed.
 
 * `fn` is the function to be called when the button is pressed;
 * `dir` is the wave edge that will trigger the callback. Default is `FALLING_EDGE`;
@@ -53,13 +53,13 @@ Set-up the `USER_BUTTON` to call an interrupt callback when pressed.
 ```python
 init()
 ```
-Reinitialize all exapansions connected to the 4ZeroBox Mobile.
+Reinitializes all exapansions connected to the 4ZeroBox Mobile.
 
 ### function `set_adc_config`
 ```python
 set_adc_config(pin, pga=1, sps=0)
 ```
-Set sps configuration to use for an ADC pin. Pga currently not implemented.
+Sets sps configuration to use for an ADC pin. Pga currently not implemented.
 
 * `pin` is the pin to configure.
 * `pga` is the gain. Not implemented yet.
@@ -69,7 +69,7 @@ Set sps configuration to use for an ADC pin. Pga currently not implemented.
 ```python
 set_adc_callback(label, pin, cb=None, sens=None)
 ```
-Setup a callback to convert ADC read values on an ADC pin. The ADC's read function will automatically call the passed callback after the bit to electric value conversion is completed.
+Sets-up a callback to convert ADC read values on an ADC pin. The ADC's read function will automatically call the passed callback after the bit to electric value conversion is completed.
 
 * `label` is the label of the adc configuration to use.
     Possible labels are the following:
@@ -78,7 +78,7 @@ Setup a callback to convert ADC read values on an ADC pin. The ADC's read functi
     3. `'cur'` for current reading ADC;
     4. `'pow'` for power reading ADC.
 
-* `pin` is the pin usef by the ADC to configure. Possible choices are `AIN1` to `AIN6`
+* `pin` is the pin used by the ADC to configure. Possible choices are `AIN1` to `AIN6`
 
 * `cb` is the callback to setup to the specific channel.
     The callback should have the following signature: `cb(value, sens)` where `value` will be the electric value passed by the read and `sens` a some sort of structure with data needed by the conversion callback. The callback should return the converted value.
@@ -89,7 +89,7 @@ Setup a callback to convert ADC read values on an ADC pin. The ADC's read functi
 ```python
 read_voltage(pin, raw=False, electric=False)
 ```
-Read a and convert voltage value from a ADC pin. Voltage in V is passed to the callback.
+Reads and converts voltage value from a ADC pin. Voltage in V is passed to the callback.
 * `pin` is the ADC pin to read from. Possible choices are `AIN1` to `AIN6`
 
 * `raw` if set to `True` ADC's bits are returned as result.
@@ -102,7 +102,7 @@ Returns the value converted by the pin callback. Voltage value (V) if the callba
 ```python
 read_resistive(pin, raw=False, electric=False)
 ```
-Read an convert resistance value from a ADC pin. Resistance in Ohm is passed to the callback.
+Reads and converts resistance value from a ADC pin. Resistance in Ohm is passed to the callback.
 * `pin` is the ADC pin to read from. Possible choices are `AIN1` to `AIN6`
 
 * `raw` if set to `True` ADC's bits are returned as result.
@@ -115,7 +115,7 @@ Returns the value converted by the pin callback. Resistance value (Ohm) if the c
 ```python
 read_current(pin, raw=False, electric=False)
 ```
-Read an convert current value from a ADC pin. Current in mA is passed to the callback.
+Reads and converts current value from a ADC pin. Current in mA is passed to the callback.
 * `pin` is the ADC pin to read from. Possible choices are `AIN1` to `AIN6`
 
 * `raw` if set to `True` ADC's bits are returned as result.
@@ -128,7 +128,7 @@ Returns the value converted by the pin callback. Current value (mA) if the callb
 ```python
 read_power(pin, samples=400, raw=False, electric=False):
 ```
-Read and convert power value from ADC pin. To do so, the ADC will get min and max values read on `samples`.
+Reads and converts power value from ADC pin. To do so, the ADC will get min and max values read on `samples`.
 Difference between max and min in bits is passed to the callback.
 
 * `pin` is the ADC pin to read from. Possible choices are `AIN1` to `AIN6`
@@ -146,7 +146,7 @@ Returns the value converted by the pin callback. Differnce (max - min) Current (
 ```python
 out_off(out)
 ```
-Open the selected relay switch.
+Opens the selected relay switch.
 
 * `out` is the relay to open. Possible choices are `DOUT1` and `DOUT2`.
 
@@ -154,7 +154,7 @@ Open the selected relay switch.
 ```python
 out_on(out)
 ```
-Close the selected relay switch.
+Closes the selected relay switch.
 
 * `out` is the relay to close. Possible choices are `DOUT1` and `DOUT2`.
 
@@ -166,13 +166,13 @@ Returns the current state of the relay switch.
 
 * `out` is the relay to check. Possible choices are `DOUT1` and `DOUT2`.
 
-return `1` if the relay is closed, `0` if open.
+Returns `1` if the relay is closed, `0` if open.
 
 ### function `get_can`
 ```python
 get_can(nss=CTS1, spi_clk=20000000)
 ```
-Get a ready to use CAN object.
+Gets a ready to use CAN object.
 
 * `nss` is the chip select pin used to control the CAN peripheral through SPI.
 * `spi_clk` is the clock speed used by the SPI. Default is 20 MHz.
@@ -183,7 +183,7 @@ Returns the initialized CAN object.
 ```python
 get_serial(ser=SERIAL1, baud=115200, stopbits=serial.STOPBIT_1, parity=serial.PARITY_NONE, bitsize=serial.BITSIZE_8, mode=serial.MODE_UART, flow_ctrl=serial.HW_FLOWCTRL_DISABLE)
 ```
-Get a ready to use serial (RS232 or RS485).
+Gets a ready to use serial (RS232 or RS485).
 
 * `ser` is the serial port to use. Default `SERIAL1`
 * `baud` is the baudrate of to use. Default 115200.
@@ -201,7 +201,7 @@ start_cellular(apn="", apn_user="", apn_password="",
                dhcp=True, ip="", mask="", gateway="",
                dns="8.8.8.8", timeout=10000)
 ```
-The method fully configure, initialize and start the cellular module. The cellular module will be ready to use when this method resolves.
+The function fully configures, initializes and starts the cellular module. The cellular module will be ready to use when this method resolves.
 
 * `apn`: is the APN for the network connection. It depends from the SIM card provider.
 * `apn_user`: the username for the network connection authentication. Usually it is empty. Default value empty string.
@@ -229,7 +229,7 @@ The interface is stopped, all connections dropped, and all socket related to cel
 ```python
 reset_cellular()
 ```
-The method resets the Cellular hardware module and the GNSS subsystem. The started
+The function resets the Cellular hardware module and the GNSS subsystem. The started
 network connections should have been closed before, otherwise they could fall in
 an inconsistent state.
 
@@ -237,46 +237,46 @@ an inconsistent state.
 ```python
 antenna_on()
 ```
-The method powers the cellular modem antenna. The antenna is already powered by the `start_cellular` method.
+The function powers the cellular modem antenna. The antenna is already powered by the `start_cellular` method.
 
 ### function `antenna_off`
 ```python
 antenna_off()
 ```
-The method shuts down the cellular modem antenna.
+The function shuts down the cellular modem antenna.
 
 ### function `get_status`
 ```python
 get_status()
 ```
-The method returns the value of the status pin of the cellular modem. The pin will be high when the module is on.
+The function returns the value of the status pin of the cellular modem. The pin will be high when the module is on.
 
 ### function `get_psm_ind`
 ```python
 get_psm_ind()
 ```
-The method returns the value of the psm indicator pin. The pin will be low when in PSM.
+The function returns the value of the psm indicator pin. The pin will be low when in PSM.
 
 ### function `get_ring`
 ```python
 get_ring()
 ```
-The method returns the value of the ring pin. The pin will go low when the ring triggers.
+The function returns the value of the ring pin. The pin will go low when the ring triggers.
 
 ### function `setup_ring_cb`
 ```python
 setup_ring_cb(cb)
 ```
-The method setup the call back function to be called when the ring triggers.
+The function setup the call back function to be called when the ring triggers.
 
 ### function `get_dcd`
 ```python
 get_dcd()
 ```
-The method returns the value of the dcd pin.
+The function returns the value of the dcd pin.
 
 ### function `summary`
 ```python
 summary()
 ```
-Print a summary on 4ZeroBox Mobile and its connected expansions.
+Prints a summary on 4ZeroBox Mobile and its connected expansions.
