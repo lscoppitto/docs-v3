@@ -65,7 +65,7 @@ The signature of `fn` is `fn(pin, value)` where `pin` is the interrupted pin and
 
 ### function `on_fall`
 ```python
-on_fall(pin, fn, debounce=0, pull=INPUT_PULLNONNE)
+on_fall(pin, fn, debounce=0, pull=INPUT_PULLNONE)
 ```
 Registers the `fn` function as callback on the falling edge on the `pin` gpio. De-bouncing with a delay of `debounce` milliseconds and setting a `pull` pull-up or pull-down resistor. By default pull is none, since setting a pull-up or pull-down without knowing the hardware used can cause failures.
 
