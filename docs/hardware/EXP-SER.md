@@ -21,10 +21,10 @@ Connections between the controller and the transceiver are digitally isolated by
 
 -   [User manual](https://www.zerynth.com/download/20121/)
 
-## ZM1-DB Software Library
+## Software Library
 
 For more information on the EXP-SER Library as software Library, features, functions and examples
-[Please check this Link](../../reference/reference/bsp/zm1_db/)
+[Please check this Link](../../reference/libs/expansions/exp-ser/)
 
 ## **Pin Mapping**
 

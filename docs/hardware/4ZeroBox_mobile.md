@@ -65,7 +65,7 @@ For more infos about electrical connections, and how to use 4ZeroBox Mobile with
 
 For step-by-step guide on connecting, running your first example, Please refer to [the Getting started guide for the 4ZeroBox Mobile](../../gettingstarted/4ZeroBox_mobile/)
 
-## **4ZeroBox Mobile Software Library**
+## **Software Library**
 
 For more information on the 4ZeroBox mobile software Library, Its features, functions and examples demos
 [Please check this Link](../../reference/libs/expansions/)
