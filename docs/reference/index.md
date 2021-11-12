@@ -6,7 +6,7 @@ The technical reference spans a wide range of topics from the details of writing
 It can be daunting to navigate all of this information, for an easier approach try search bar on the upper right.
 
 
-## Hardware
+### Hardware
 
 Easy-to-use hardware devices for driving Industrial IoT applications and connected products, for development and mass production.
 
@@ -35,22 +35,22 @@ Thanks to the zBUS you can connect Zerynth expansion boards and quickly add powe
 
 Each board is supported with a [board support package](libs/expansions/) that automatically configures the hardware and imports the appropriate libraries.
 
-## Firmware
+### Firmware
 
 Zerynth OS was designed to enable efficient and short development time. It handles all development layers from hardware configuration till secure cloud communication. 
 Zerynth SDK provides different ways for firmware development, It supports [VSCode through the extension ](vscode/index.md) and the [command line interface](cli/ztc/index.md).
 
-## Cloud
+### Cloud
 
 Zerynth Cloud is a complete platform that frees you from the burden of maintaining all the technology and infrastructure of developing and deploying fleets of devices, while focusing on the added value of IoT data. From a single interface, provision and manage IoT devices, store and visualize data, and gain valuable insights and issue firmware updates on fleets of devices.
 For more information, Check the [device manager documentation](libs/zerynth/zdm/) and [device manager APIs.](api/zdm/)
 
-## FAQ
+### FAQ
 
 Your device is not recognized? something is out of place? [Refer to the FAQ section for more details.](faq/hardware/)
 
 
-## Version 2.x.x Documentation
+### Version 2.x.x Documentation
 
 Documentation for versions v2.x.x can be found <a href="https://docsv2.zerynth.com" target="_blank">here</a>
 
