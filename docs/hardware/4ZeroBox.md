@@ -5,8 +5,8 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
 4ZeroBox mounts a powerful ZM1 module by Zerynth (240MHz, 16Mb of Flash, 312Kb SRAM) and provides many onboard features like: a DIN-rail mountable case with industrial grade sensor channels, support for Wi-fi, Bluetooth, Ethernet, LoRa, CAN, RS485, RS232, SD Card, JTAG, I2C, SPI; last but not least, there are 2 on-board MikroBUS sockets to extend the 4ZeroBox with hundreds of MikroElektronika click boards (see “MikroBus Slots” section).
 
 <figure>
-  <a data-fancybox="gallery" href="../img/4zerobox_v1.png">
-  <img src="../img/4zerobox_v1.png" />
+  <a data-fancybox="gallery" href="../img/4zerobox.png">
+  <img src="../img/4zerobox.png" />
   </a>
 </figure>
 

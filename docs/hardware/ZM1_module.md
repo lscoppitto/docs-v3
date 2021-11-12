@@ -58,7 +58,4 @@ The [ZM1-DB](../ZM1-Development-Board/) is a flexible, modular, development boar
   </a>
 </figure>
 
-
-## **Pin Mapping, Bootstrap pins, Peripherals and Electric Characteristics**
-
-Please refer to the [datasheet of the module](#resources-and-documents)
+For more information on the ZM1-DB, Please refer to [ZM1-DB page.](ZM1-Development-Board.md)

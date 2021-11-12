@@ -15,7 +15,7 @@ The ZM1-DB easily connects with the Zerynth expansion boards. The expansion syst
 
 [Buy now at this link](https://www.zerynth.com/products/hardware/zm1-db/)
 
-For more information on the ZM1-DB, Please refer to [ZM1-DB Hardware page here](ZM1-Development-Board.md)
+For more information on the ZM1-DB, Please refer to [ZM1-DB page.](ZM1-Development-Board.md)
 
 ### Modular Expansion System
 Zerynth Development boards offer a game-changing way of connecting and adding functionalities to your application in a simple and easy way.
@@ -66,6 +66,8 @@ Industrial IoT device for acquisition, monitoring and control of industrial mach
 </figure>
 
 The 4ZeroBox modernizes any industrial machinery and equipment allowing companies to drive their Industry 4.0 digital transformation.
+[Click here to navigate ](4ZeroBox.md) to the 4ZeroBox Page.
+
 
 ### 4ZeroBox Mobile
 
@@ -81,4 +83,4 @@ The 4ZeroBox Mobile can be integrated with any of Zerynth expansion boards. They
 
 The 4ZeroBox Mobile is available on major destributors at [this link](https://www.zerynth.com/products/hardware/4zerobox-mobile/)
 
-[Click here to navigate ](4ZeroBox_mobile.md) to the 4ZeroBox Mobile Hardware Page.
+[Click here to navigate ](4ZeroBox_mobile.md) to the 4ZeroBox Mobile Page.
