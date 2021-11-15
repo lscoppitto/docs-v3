@@ -91,6 +91,7 @@ nav:
         - reference/libs/expansions/exp-relay.md
         - reference/libs/expansions/exp-ser.md
         - reference/libs/expansions/exp-ain.md
+        - reference/libs/expansions/exp-connect.md
       - Standard Library:
         - reference/libs/stdlib/builtins.md
         - reference/libs/stdlib/threading.md
