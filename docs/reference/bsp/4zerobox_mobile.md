@@ -5,7 +5,7 @@
 next_expansion(e, selectors=None)
 ```
 * `e` is the next expansion type module.
-    
+
 Use the following table to choose the right expansion.
 
     | module    | expansion   |
@@ -14,7 +14,6 @@ Use the following table to choose the right expansion.
     | `relay`   | EXP-RELAY   |
     | `ser`     | EXP-SER     |
     | `ain`     | EXP-AIN     |
-    | `connect` | EXP-CONNECT |
 
 
 * `selectors` is a tuple with information on position of rotative switches of the expansion. Order follow swiches indexes.
@@ -237,13 +236,13 @@ an inconsistent state.
 ```python
 antenna_on()
 ```
-The function powers the cellular modem antenna. The antenna is already powered by the `start_cellular` method.
+The function powers the GNSS antenna. The antenna is already powered by the `start_cellular` method.
 
 ### function `antenna_off`
 ```python
 antenna_off()
 ```
-The function shuts down the cellular modem antenna.
+The function shuts down the GNSS antenna.
 
 ### function `get_status`
 ```python
