@@ -142,6 +142,7 @@ nav:
       - Math:
         - reference/libs/math/math.md
         - reference/libs/math/bignum.md
+        - reference/libs/math/fft/fft.md
       - Zerynth Device Manager:
         - reference/libs/zerynth/zdm/index.md
         - reference/libs/zerynth/zdm/examples.md
