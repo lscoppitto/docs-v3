@@ -9,11 +9,11 @@ https://api.storage.zerynth.com/v3
 ```
 
 !!! important
-   IN order to use the zStorage, you need to have an active zStorage from w workspace in the ZDM
+    Make sure that the zStorage cloud service has been enabled for the workspace.
 
 !!! note
-  - Set the **Content-Type** header to **application/json**.
-  - Set the **X-API-KEY** header to a valid API Key. For information about how to get an API key, see [Authentication](../zdm/index.md#authentication).
+    - Set the **Content-Type** header to **application/json**.
+    - Set the **X-API-KEY** header to a valid API Key. For information about how to get an API key, see [Authentication](../zdm/index.md#authentication).
 
 
 ## TimeSeries API
@@ -32,6 +32,7 @@ Get the time series data of a workspace.
 - **from** - Page index (default: `0`)
 - **size** - Size of each page (default: `100`)
 - **sort** - Sort the result [ `timestamp_device`, `-timestamp_device` ] (default: Decreasing timestamp device  `-timestamp_device` )
+- **device** - Filter by a device ID (default: All devices)
 
 
 !!! note
@@ -39,6 +40,7 @@ Get the time series data of a workspace.
     - The `sort` parameter with the `-` prefix indicate decreasing order.
     - The `from` parameter cannot be negative.
     - The time range is `start <= timestamp_device < end` .
+    - The `device` parameter can be specified more than one time to filter by multiple devices.
 
 
 #### Response
@@ -102,6 +104,41 @@ Get the time series data of a workspace.
       "timestamp_in": "2021-07-08T14:21:10.908Z",
       "fleet_id": "flt-123456789",
       "device_id": "dev-123456789",
+      "tag": "my-tag",
+      "payload": {
+        "hum": 55,
+        "temp": 27
+      }
+    }
+  ]
+}
+```
+
+##### Filter by devices.
+
+`GET https://api.storage.zerynth.com/v3/timeseries/wks-123456789/data?device=dev-123456789&device=dev-abcdef`
+
+`200 OK`
+
+```json
+{
+  "result": [
+    {
+      "timestamp_device": "2021-07-08T14:21:10.908Z",
+      "timestamp_in": "2021-07-08T14:21:10.908Z",
+      "fleet_id": "flt-123456789",
+      "device_id": "dev-123456789",
+      "tag": "my-tag",
+      "payload": {
+        "hum": 55,
+        "temp": 27
+      }
+    },
+    {
+      "timestamp_device": "2021-07-08T14:21:10.908Z",
+      "timestamp_in": "2021-07-08T14:21:10.908Z",
+      "fleet_id": "flt-123456789",
+      "device_id": "dev-abcdef",
       "tag": "my-tag",
       "payload": {
         "hum": 55,
