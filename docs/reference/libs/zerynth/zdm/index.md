@@ -17,10 +17,10 @@ The above snippet shows the steps required to enable a ZDM connection:
 - start the agent
 
 ## Connection
-Under the hood a MQTT client is started and a secure connection is established using the device certificates contained in the secure element of every Zerynth hardware. 
+Under the hood a MQTT client is started and a secure connection is established using the device certificates contained in the secure element of every Zerynth hardware.
 
 In order for the connection to be established correctly it is necessary that the physical device has been associated with a ZDM device. This procedure links the physical device identity contained in the secure element to its cloud identity represented by the ZDM device unique identifier. The procedure must be performed just once and can be done both from the [command line](../../../cli/ztc/index.md)  and [VSCode extension](../../../vscode/index.md).
- 
+
 After the connection is established, the `Agent` will update the real time clock to the current time and will try to keep it synchronized. The `Agent` will also take care of the reliability of the connection by automatically retrying to connect in case of network failure.
 
 Upon successful connection, the `Agent` also sends some information on the physical device, like the firmware version and the device type.
@@ -45,7 +45,7 @@ Jobs are executed by the `Agent` thread and their result is sent to the cloud fo
 
 ## Data
 
-The `Agent` is capable of sending raw data points such as sensor readings to the cloud where they are temporarily stored and fed into the various available integrations (i.e. sent to Azure or to the zStorage for further elaboration). Data is sent in JSON format as a dictionary called `payload` thus allowing for the maximum flexibility. The `payload` is also associated to a `tag`, a label that can be used to better organize IoT data and to easily retrieve it from the cloud.
+The `Agent` is capable of sending raw data points such as sensor readings to the cloud where they are temporarily stored and fed into the various available integrations (i.e. sent to Azure or to the Zerynth Storage for further elaboration). Data is sent in JSON format as a dictionary called `payload` thus allowing for the maximum flexibility. The `payload` is also associated to a `tag`, a label that can be used to better organize IoT data and to easily retrieve it from the cloud.
 
 Sending data is very easy:
 
@@ -60,9 +60,9 @@ agent.publish(payload={"temperature": 25.3, "humidity": 35.2}, tag="room")
 
 ## Conditions
 
-IoT data can refer not only to a single point in time but also to a time range. For this kind of data the ZDM provides the `Conditions`. A `Condition` represent a time range starting at `t_start` and ending at `t_end` thus having a duration. One example of `Condition` is the battery level: it enters the `battery_low` status at a certain time and exits it when it recharges. 
+IoT data can refer not only to a single point in time but also to a time range. For this kind of data the ZDM provides the `Conditions`. A `Condition` represent a time range starting at `t_start` and ending at `t_end` thus having a duration. One example of `Condition` is the battery level: it enters the `battery_low` status at a certain time and exits it when it recharges.
 
-A `Condition` is *open* when it has a starting time but not yet an ending time. When the `Agent` connects it asks for the open `Conditions` and passes them to the firmware for handling. 
+A `Condition` is *open* when it has a starting time but not yet an ending time. When the `Agent` connects it asks for the open `Conditions` and passes them to the firmware for handling.
 
 A `Condition` can also have payloads of data associated to the starting and ending times.
 
@@ -112,11 +112,12 @@ In the snippet above, a function is provided to the `on_fota` parameter. This fu
 ## ZDM Agent
 
 ### class Agent
-```python 
+```python
 class Agent(cfg=None, jobs=None, conditions=[], on_conditions=None, set_clock_every=300, on_fota=None, host="zmqtt.zdm.zerynth.com")
 ```
 
 Create an `Agent` instance. The `Agent` class accepts various parameters:
+
 * `cfg` is an instance of the `Config` class detailing the transport connection parameters. It is set to *None* by default using standard parameters.
 * `jobs` is a dictionary that defines the ZDM jobs the agent can handle. The keys of the dictionary are strings representing the name of the jobs and the values are functions that are called each time a job is triggered. When set to *None* the only jobs that can be triggered are `reset` and `fota`.
 * `conditions` is a list of strings defining the condition's names used by the device.
@@ -127,13 +128,13 @@ Create an `Agent` instance. The `Agent` class accepts various parameters:
 
 ### method `start`
 
-```python 
+```python
 start(wait_working=10)
 ```
 
 Start the `Agent`. Since the connection time can be considerable depending on the network status, the method returns either upon successful connection or after a certain amount of time whatever comes first. The amount of time to wait for a working agent can be set in seconds with the `wait_working` parameter.
 
- 
+
 ### method `online`
 
 ```python
@@ -183,12 +184,16 @@ When the a new firmware is launched and it has not been validate yet, the versio
 ### method `publish`
 
 ```python
-publish(payload, tag="default")
+publish(payload, tag="default", timeout=0)
 ```
 
 Send data contained in `payload` labeling it with `tag`.
 This method calls into the underlying MQTT client that is configured by default with a `qos` of one.
- 
+The `timeout` specifies the time in milliseconds to wait for an acknowledgement
+form the broker when `qos` > 0; when `qos` = 0, the `timeout` is ignored. If
+the acknowledgement is not received by the `timeout`, the `MQTTPublishTimeout`
+exception is raised.
+
 
 ### method `reset`
 
@@ -220,7 +225,7 @@ Triggers the request of open conditions. The result is passed to the callback pr
 
 ### class Condition
 
-```python 
+```python
 class Condition(agent, uuid, tag)
 ```
 
@@ -229,7 +234,7 @@ This class is never instantiated directly. Use `Agent.new_condition` to create o
 
 ### method `open`
 
-```python 
+```python
 open(payload={}, start=None)
 ```
 
@@ -240,7 +245,7 @@ Open a condition.
 
 ### method `close`
 
-```python 
+```python
 close(payload={}, finish=None)
 ```
 
@@ -251,7 +256,7 @@ Close a condition.
 
 ### method `reset`
 
-```python 
+```python
 reset()
 ```
 Reset the condition instance in order to reuse it without creating a new one.

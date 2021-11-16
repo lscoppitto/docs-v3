@@ -74,9 +74,11 @@ If `read` returns an empty bytearray the underlying stream can be considered dis
 
 ### method `readline`
 ```python
-readline(max_len=256, end="\r\n", with_end=True)
+readline(max_len=256, end="\r\n", with_end=True, timeout=-1)
 ```
 
 Reads a line from the serial, ending with `end` marker string, of `max_len` bytes length, and returns a bytearray with the actual bytes read.
 
 If `with_end` is True, the returning line contains the `end` marker as well.
+
+If `timeout` is positive, the function will return after `timeout` milliseconds if the line is not read.

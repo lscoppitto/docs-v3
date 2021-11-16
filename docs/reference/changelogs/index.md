@@ -1,3 +1,123 @@
+## V3.0.8
+
+### Added
+- Configuration helper for cellular Quectel BG96 based click board on [4ZeroBox](../../hardware/4ZeroBox/).
+- Reinitialization of expansion pins after power down of zBUS power.
+
+### Fixed
+- Crash calling board.summary() on ZM1 Development Board with EXP-CONNECT attached.
+- Claim device can fail under Windows systems with high system load.
+- Auto reconfigure cellular module serial port on EXP-CONNECT board.
+- MQTT memory leakage.
+- VSCode closes all extension activities on exit.
+
+## V3.0.7
+
+### Added
+- [4ZeroBox Mobile](../../hardware/4ZeroBox_mobile/) device support.
+- Cellular Quectel BG96 based click board on [4ZeroBox](../../hardware/4ZeroBox/) device support.
+- [Function](../libs/networking/wifi/#function-ap_info) to get information about the WiFi connected Access Point.
+- [Cellular and GNSS](../libs/networking/cellular/) library module.
+- Tensorflow Lite support.
+- New mqtt method to wait for mqtt broker ACK for publish with QOS > 0.
+- Sensors hardware customizable parameters per expansion board.
+- Time syncronization for drift fix and onfota callback status.
+- User button default setup functions.
+- Zerynth SIM management support in SDK toolchain.
+- Zerynth VSCode extension control panel reorganized with new Zerynth SIM support.
+- Zerynth VSCode extension setting to disable automatic SDK update.
+- 'Upload firmware' available in Zerynth VSCode extension also when no board is connected to the PC/MAC.
+- SDK Examples for cellular, GNSS and Tensorflow
+
+### Changed
+- Filesystem mkdir() and rmdir() return errors via errno.
+- Bootloader updated to version 2.
+- Publish method of mqtt lib and zdm library modules take a timeout parameter to wait broker AKSs when QOS>0.
+
+### Fixed
+- Improved stability for ZM1-EVA during startup.
+- Improved stability for flash memory access on boards with CAN devices.
+- Network DNS setup problem for some DHCP based environments.
+- Fixed problems on some cases of static IP configuration on eth and wifi interfaces.
+- The 4ZeroBox_v9 does a spurious reboot cycle after an hardware reset (power on or reset button).
+- Improved SD stability on 4ZeroBox mobile.
+- pylint path error on recent macOS releases while using Zerynth VSCode extension.
+
+## V3.0.6
+
+### Added
+- DHT11 temperature and humidity sensor support.
+- WiFi WPA2 Enterprise PEAP authentication support.
+- OPC-UA network protocol.
+- ZDM logout function.
+- Example for DHT11 temperature and humidity sensor
+- Example for EXP-AIN expansion board.
+- Example for WPA2 enterprise authentication.
+
+### Changed
+- ZM1 Evaluation Board (ZM1-EVA) enabled by default in Zerynth VSCode extension.
+
+### Fixed
+- WiFi interface handling by the WiFi sniffer.
+- Problems with ethernet link loss and interface restart.
+- Upload firmware function improved regarding network timeouts.
+- Ethernet function name typo.
+- Some old examples have been updated.
+
+## V3.0.5
+
+### Added
+- WiFi sniffer.
+- TSLog peek(), next(), uncommitted() methods.
+
+### Fixed
+- TSLog reader commit.
+- Raise exception when ADC I2C read transaction fails.
+- Message dialogs displayed about already running tasks with latest VSCode versions.
+
+## V3.0.4
+
+### Added
+- Support of external serializer in TSLog module. E.g.: json, cbor, etc.
+- DS1307 based RTC (Real Time Clock) module.
+- DS1307 based RTC (Real Time Clock) is used as system clock source when DS1307 gets initialized.
+- EXP-AIN support.
+- IIR filter module.
+- WiFi scan and RSSI retrieval.
+- Support for custom connected RGB LED.
+- Support to get ADC electric values.
+- ADC parameter to read electric values.
+- Config of default pins for all boards.
+- Timeout to read() and readline() functions.
+- Example for IIM accelerometer and IIR filter.
+- Example for DS1307 based RTC.
+
+### Changed
+- Zerynth VSCode extension auto updates SDK Toolchain.
+- Sensor module accepts both EXP-IO and EXP-AIN boards.
+- On ZM1-DB board, the sensor lib has been simplified and unified for all expansion boards.
+
+### Fixed
+- TSLog recreate.
+- vhalPin functions improved for multithreading.
+- readline() method in serial module.
+- Typo in cbstd module.
+- Multiple upgrades to sensor class and standard callbacks:
+    - errors explaining what is the missing kay in json resource file.
+    - on missing key the related sensor name is returned.
+    - raw values from sensor class can be printed.
+    - custom strings can be returned in json resource file.
+- Default values and required delay for IIM42652 accelerometer module.
+- Improved connection/disconnection checks in WiFi module.
+- New exception in GPIO module.
+- 4ZeroBox ethernet phy initialization and reset line.
+- Set minimal watchdog timeout during FOTA, overriding the ZERYNTH_EARLY_WATCHDOG value set in the firmware config.yml.
+- Possible race condition in DNS resolve.
+- Common readline functions.
+- vhalSerialReadTimeout() function may not work under some conditions.
+- Enabled FAT32 Long File Names (LFN) support.
+- TLS transactions may interfere with I2C attached peripherals under some conditions.
+
 ## V3.0.3
 
 - redesigned and improved Zerynth Control Panel in the VSCODE Extension.

@@ -64,6 +64,14 @@ h6+p .highlight {
 .tx-hero__content{
   max-width: 600px!important;
 }
+.tx-hero .md-button{
+    
+    border-radius: 25px;
+
+}
+.tx-container{
+    background: #e6effc!important;
+}
 
 [data-md-color-accent=red]{
 --md-accent-fg-color: hsl(212, 100%, 47%);

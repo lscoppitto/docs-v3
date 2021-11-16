@@ -35,7 +35,7 @@ The configured SSID is not available between visible WiFi networks.
 
 ### function `configure`
 ```python
-configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000)
+configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, ent_user="", ent_pwd=""))
 ```
 Configures the wifi interface with given arguments.
 
@@ -51,7 +51,14 @@ When `dhcp` is *False*, the other arguments are:
 * `gateway`: the gateway to be used as default router.
 * `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
 
-* `timeout`: Connection timeout in milliseconds. `WifiException` is raised if connection do not succeed during this time. Default value 10000 ms. 
+* `timeout`: Connection timeout in milliseconds. `WifiException` is raised if connection do not succeed during this time. Default value 10000 ms.
+
+If the `security` is *WPA2_ENTERPRISE* (a.k.a. WPA-802.1X), the following parameters are used to specify the Extensible Authentication Protocol (EAP) attributes. Only PEAP is supported.
+If the `security` is set to other values, the following parameters are ignored.
+
+* `ent_user`: the username to be used for the authentication. Default value is empty string.
+* `ent_pwd`: the password to be used for the authentication. Default value is empty string.
+
 ### function `start`
 ```python
 start()
@@ -84,6 +91,74 @@ Returns a tuple with the IP parameters associated with the interface. The tuple 
 4. `String`: DNS
 5. `String`: MAC address
 
+### function `ap_info`
+```python
+ap_info()
+```
+Returns a tuple with the AP parameters the WiFi interface is associated with. The tuple is composed by the following elements:
+
+0. `String`: The SSID of the AP
+1. `Integer`: The channel number
+2. `Integer`: The signal strength
+3. `Integer`: The security mode as described above in the *security* parameter of `configure` function.
+4. `String`: The BSSID of the AP in hexadecimal notation (e.g.: *10:20:30:40:50:60*).
+
+If the WiFi interface is not associated with any AP, the PeripheralError exception will be raised.
+
+### function `scan`
+```python
+scan(ssid=None)
+```
+Start a scan over WIFI access points. The function will return when the scan is completed, which can take up to 1.5 seconds per scanned channel.
+
+* `ssid` is the target ssid to scan. If `None` all the found AP will be saved, otherwise only the ones matching with `ssid`.
+
+### function `get_ap_num`
+```python
+get_ap_num()
+```
+Returns the number of APs found during the scan.
+
+### function `get_ap_records`
+```python
+get_ap_records(n)
+```
+Returns a list of tuples with all recorded APs' data.
+
+* `n` is the number of APs tuples to be returned.
+
+Return a list of tuples with the following format (`ssid`, `channel`, `rssi`, `auth mode`, `bssid`).
+The tuple is composed by the following elements:
+
+0. `String`: The SSID of the AP
+1. `Integer`: The channel number
+2. `Integer`: The signal strength
+3. `Integer`: The security mode as described above in the *security* parameter of `configure` function.
+4. `String`: The BSSID of the AP in hexadecimal notation (e.g.: *10:20:30:40:50:60*).
+
+### function `get_rssi`
+```python
+get_rssi(ssid)
+```
+Returns the `rssi` of the specified `ssid`.
+A scan is executed before returning the `rssi`, this can require some seconds.
+
+### function `scan_and_get`
+```python
+scan_and_get(ssid=None)
+```
+Start a scan over WIFI access points, returning a list of tuples with all recorded APs' data when the scan is over. This can take up to 1.5 seconds per scanned channel.
+
+* `ssid` is the target ssid to scan. If `None` all the found AP will be saved, otherwise only the ones matching with `ssid`.
+
+Return a list of tuples with the following format (`ssid`, `channel`, `rssi`, `auth mode`, `bssid`).
+The tuple is composed by the following elements:
+
+0. `String`: The SSID of the AP
+1. `Integer`: The channel number
+2. `Integer`: The signal strength
+3. `Integer`: The security mode as described above in the *security* parameter of `configure` function.
+4. `String`: The BSSID of the AP in hexadecimal notation (e.g.: *10:20:30:40:50:60*).
 
 ## Examples
 
@@ -98,7 +173,7 @@ board.init()
 board.summary()
 
 try:
-    # Configure ethernet to use dhcp with a specific network
+    # Configure WiFi to use dhcp with a specific network
     wifi.configure(ssid="My-Network",password="My-Password")
     # Start the interface
     wifi.start()
@@ -140,7 +215,7 @@ board.init()
 board.summary()
 
 try:
-    # Configure ethernet to use dhcp with a specific network and security
+    # Configure WiFi to use dhcp with a specific network and security
     wifi.configure(ssid="My-Network",password="My-Password", security=wifi.WPA)
     # Start the interface
     wifi.start()
@@ -170,4 +245,46 @@ while True:
 
 ```
 
+Using WiFi with WPA2 Enterprise
 
+```python
+from bsp import board
+
+from networking import wifi
+
+board.init()
+board.summary()
+
+try:
+    # Configure WiFi to use dhcp with a specific network and security
+    print("configuring...")
+    ssid = "WiFi Enterprise"
+
+    wifi.configure(
+            ssid=ssid,
+            security=wifi.WPA2_ENTERPRISE,
+            ent_user="test_usr", ent_pwd="test_pwd",
+            timeout=10000)
+
+    # Start the interface
+    print("connecting...")
+    wifi.start()
+    print("connected...")
+    # Print the ip, gateway, mask, dns and mac address
+    print("info...")
+    print(wifi.info())
+    # Try resolving some hostname via dns
+    ip=wifi.resolve("www.zerynth.com")
+    print("resolved", ip)
+    # sleep a little bit
+    sleep(5000)
+    # disable wifi
+    wifi.stop()
+
+except Exception as e:
+    print(e)
+
+while True:
+    sleep(1000)
+
+```

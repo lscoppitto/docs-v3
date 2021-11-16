@@ -5,8 +5,8 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
 4ZeroBox mounts a powerful ZM1 module by Zerynth (240MHz, 16Mb of Flash, 312Kb SRAM) and provides many onboard features like: a DIN-rail mountable case with industrial grade sensor channels, support for Wi-fi, Bluetooth, Ethernet, LoRa, CAN, RS485, RS232, SD Card, JTAG, I2C, SPI; last but not least, there are 2 on-board MikroBUS sockets to extend the 4ZeroBox with hundreds of MikroElektronika click boards (see “MikroBus Slots” section).
 
 <figure>
-  <a data-fancybox="gallery" href="../img/4zerobox_v1.png">
-  <img src="../img/4zerobox_v1.png" />
+  <a data-fancybox="gallery" href="../img/4zerobox.png">
+  <img src="../img/4zerobox.png" />
   </a>
 </figure>
 
@@ -67,7 +67,7 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
 For more infos about electrical connections, and how to use 4ZeroBox with sensors and other hardware, see the  [user manual](https://www.zerynth.com/download/13894/).
 
 For more information on the 4ZeroBox Library as software drivers, Its features, functions and examples
-[Please check this Link](../../reference/reference/bsp/4zerobox_v9/)
+[Please check this Link](../../reference/bsp/4zerobox_v9/)
 
 Other useful documents are:
 
@@ -90,10 +90,10 @@ Official reference for Zerynth 4ZeroBox can be found  [here](https://www.zerynth
 
 For step-by-step guide on connecting, running your first example, Please refer to [the Getting started guide for the 4ZeroBox](../../gettingstarted/4ZeroBox/)
 
-## **4ZeroBox Software Library**
+## **Software Library**
 
 For more information on the ZM1-DB Library as software Library, Its features, functions and examples demos
-[Please check this Link](../../reference/reference/bsp/4zerobox_v9/)
+[Please check this Link](../../reference/bsp/4zerobox_v9/)
 
 
 ## **Power**

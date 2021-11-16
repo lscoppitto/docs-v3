@@ -1,45 +1,56 @@
----
-title: Technical Reference
-description: ...
----
-
 # Technical reference
 
-This section contains the developer documentation for the vast ecosystem of tools and APIs provided by Zerynth.
+This section contains the documentation for the vast ecosystem of tools and APIs provided by the SDK.
+The technical reference spans a wide range of topics from the details of writing the firmware to the Cloud APIs. 
 
-It can be daunting to navigate all the information, but the task is made easier by the search bar on the upper right.
-
-The technical reference spans a wide range of topics from the details of writing a Zerynth based firmware for embedded devices to the zCloud APIs. For this reason it's useful starting a journey through Zerynth from the lower layers of the IoT stack and then going up.
-
-!!! warning "V2 Documentation"
-    Documentation for versions of Zerynth before v3.0.0 can be found <a href="https://docsv2.zerynth.com" target="_blank">here</a>
+It can be daunting to navigate all of this information, for an easier approach try search bar on the upper right.
 
 
-## Hardware
+### Hardware
 
-Zerynth provides IoT hardware as ready to use [development boards](../hardware/index.md) with [expansions](../hardware/index.md/#modular-expansion-system), industrial grade units like the [4ZeroBox](../hardware/4ZeroBox.md) for developing Zerynth based IoT products from scratch.
+Easy-to-use hardware devices for driving Industrial IoT applications and connected products, for development and mass production.
 
-## Firmware
+The ZM1-DB is an efficient and secure development board that features the Zerynth IoT module ZM1.
+<figure>
+  <a data-fancybox="gallery" href="img/ZM1-DB-front.png">
+  <img src="img/ZM1-DB-front.png" width="250"/>
+  </a>
+</figure>
 
-Once the Zerynth hardware is plugged in, it is extremely easy to write IoT firmware for it. Starting with the [IDE](vscode/index.md) or with the [command line interface](cli/ztc/index.md) for more advanced users, a simple Hello World can be executed in no time.
-Writing firmware is made even easier by the use of the Zerynth OS and its Python engine together with the vast choice of libraries and battle tested [protocols](libs/protocols/index.md)
+Thanks to the zBUS you can connect Zerynth expansion boards and quickly add powerful features to your prototype based on your needs.
 
-## Security and Connectivity
-
-Zerynth connectivity and security libraries are so intertwined with hardware and firmware that they are almost invisible to the non-technical eye. For the details, refer to the [secure element](libs/crypto/index.md) documentation and to the list of [networking](libs/networking/index.md) libraries available.
-
-## Device Management
-
-Once the devices are securely connected, they need to be managed throughout their lifecycle. First of all they must be [provisioned](../gettingstarted/index.md#3-prepare-the-device-for-the-cloud) so that they can be authenticated by the Zerynth Device Manager for receiving [jobs](../zCloud/zdm_intro.md) and performing over the air update of the firmware ([FOTA](../zCloud/FOTA.md). Care must also be taken to gather the data sent by the device and forward them to third party [integrations](../zCloud/zdm_intro.md). Device management can be completely automated via [API](api/zdm/index.md) or [CLI](cli/zdm/index.md).
-
-## Data Storage (coming soon)
-
-The Zerynth platform optionally provides a service where IoT data ca be stored and queried, called zStorage. An optimized IoT database cluster is made available to the user by a simple and powerful [API](api/zstorage/index.md) without worries about redundancy and availability.
-
-## Data Visualization (coming soon)
-
-Once the data are stored, a Grafana based dashboard can be easily hooked up to the IoT database for visualizing them in no time. The zDashboarding service documentation can be found [here](../zCloud/zdashboard_intro.md)
+<figure>
+  <a data-fancybox="gallery" href="img/exp-boards.jpg">
+  <img src="img/exp-boards.jpg"width="500" />
+  </a>
+</figure>
 
 
+4ZeroBox and 4ZeroBox mobile are industrial IoT devices for data acquisition, monitoring, and control of industrial machines. 
+<figure>
+  <a data-fancybox="gallery" href="img/4zb.png">
+  <img src="img/4zb.png"width="500" />
+  </a>
+</figure>
 
+Each board is supported with a [board support package](libs/expansions/) that automatically configures the hardware and imports the appropriate libraries.
+
+### Firmware
+
+Zerynth OS was designed to enable efficient and short development time. It handles all development layers from hardware configuration till secure cloud communication. 
+Zerynth SDK provides different ways for firmware development, It supports [VSCode through the extension ](vscode/index.md) and the [command line interface](cli/ztc/index.md).
+
+### Cloud
+
+Zerynth Cloud is a complete platform that frees you from the burden of maintaining all the technology and infrastructure of developing and deploying fleets of devices, while focusing on the added value of IoT data. From a single interface, provision and manage IoT devices, store and visualize data, and gain valuable insights and issue firmware updates on fleets of devices.
+For more information, Check the [device manager documentation](libs/zerynth/zdm/) and [device manager APIs.](api/zdm/)
+
+### FAQ
+
+Your device is not recognized? something is out of place? [Refer to the FAQ section for more details.](faq/hardware/)
+
+
+### Version 2.x.x Documentation
+
+Documentation for versions v2.x.x can be found <a href="https://docsv2.zerynth.com" target="_blank">here</a>
 

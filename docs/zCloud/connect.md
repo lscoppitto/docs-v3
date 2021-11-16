@@ -1,19 +1,19 @@
-# **Connect to zCloud**
+# **Connect to Zerynth Cloud**
 
-In this step by step guide we will show you how to build a demo IoT dashboard with the zCloud.
+In this step by step guide we will show you how to build a demo IoT dashboard with the Zerynth Cloud.
 
-All you need is a [Zerynth hardware](../hardware/index.md) connected to the zDeviceManager sending some data; we will guide you through the process of inspecting the incoming data and forwarding it to a dashboard.
+All you need is a [Zerynth hardware](../hardware/index.md) connected to the Zerynth Device Manager sending some data; we will guide you through the process of inspecting the incoming data and forwarding it to a dashboard.
 
 
 ## **Prepare your device**
 
-The first step is preparing your device with firmware and credentials in order to connect it to the [zDeviceManager](zdm_intro.md).
+The first step is preparing your device with firmware and credentials in order to connect it to the [Zerynth Device Manager](device_manager_data_storage.md).
 
-You need to install the Zerynth SDK, load a small firmware on the device and associate it with your Zerynth account. We got you covered with a [5 minutes introduction](../gettingstarted/index.md); once you complete it you can get back here to continue.
+You need to install the Zerynth SDK, load a small firmware on the device and associate it with your Zerynth account. We got you covered with a [5 minutes introduction](../gettingstarted/sdk_guide.md); once you complete it you can get back here to continue.
 
 Yo now have an IoT device that is sending some random data. Let's modify the firmware a bit to generate some power and temperature data.
 
-Data in the zDeviceManager is labelled with `tags`, and each message sent by a device is marked with a `tag`:
+Data in the Zerynth Device Manager is labelled with `tags`, and each message sent by a device is marked with a `tag`:
 
 ```python
 agent.publish({"value":random(0,100)}, "test")
@@ -44,7 +44,7 @@ So the device is now sending correctly tagged data, let's move to the next step 
 
 ## **Inspect and Control**
 
-Let's open the device page in the zDeviceManager. It can be done directly from VSCode by clicking `Cloud Device` in the `Zerynth Control Panel` or by opening the web app at [zdm.zerynth.com](https://zdm.zerynth.com) and:
+Let's open the device page in the Zerynth Device Manager. It can be done directly from VSCode by clicking `Cloud Device` in the `Zerynth Control Panel` or by opening the web app at [zdm.zerynth.com](https://zdm.zerynth.com) and:
 
 - opening the default workspace
 - clicking `my-iot-device`
@@ -72,7 +72,7 @@ More complex jobs can be sent from the `Jobs` button provided the firmware suppo
 
 ## **Add Integrations**
 
-In the zDeviceManager, the incoming data from the devices of your workspace is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the [zStorage](zstorage_intro.md) or your own database. Whatever the storage, the data must be first sent out of the zDeviceManager to its final destination.
+In the Zerynth Device Manager, the incoming data from the devices of your workspace is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the [Zerynth Storage](device_manager_data_storage.md) or your own database. Whatever the storage, the data must be first sent out of the Zerynth Device Manager to its final destination.
 
 This is accomplished thanks to `Integrations`. In the workspace screen, in the Integrations tab, it is possible to configure many different forwarding point.
 
@@ -84,7 +84,7 @@ Webhook integrations are the most generic ones since they send data in batches f
 
 In this guide we are using a custom service written in go that decodes the data and insert it into a Postgres database. 
 
-The next information requested by the integration dialog is the type of data: zDeviceManager supports both data and conditions streams. Select `data stream` and give it a name like `my-iot-integration`. The most important piece of information required by the integration is the url of the endpoint that will be receiving data. Type `http://hello.zerynth.com/zdm/data` and click `Submit`.
+The next information requested by the integration dialog is the type of data: Zerynth Device Manager supports both data and conditions streams. Select `data stream` and give it a name like `my-iot-integration`. The most important piece of information required by the integration is the url of the endpoint that will be receiving data. Type `http://hello.zerynth.com/zdm/data` and click `Submit`.
 
 <figure>
   <a data-fancybox="gallery" href="../img/connect-03.png">
@@ -115,13 +115,13 @@ The next information requested by the integration dialog is the type of data: zD
 </figure>
 
 
-Data is now flowing from the IoT device to the endpoint on `hello.zerynth.com` and the zDeviceManager will take care of resending any missed batch to avoid any data loss.
+Data is now flowing from the IoT device to the endpoint on `hello.zerynth.com` and the Zerynth Device Manager will take care of resending any missed batch to avoid any data loss.
 
 
 
 ## **Play with data**
 
-The data ingested at `hello.zerynth.com` is stored in a local database that can be queried by any dashboarding solution. We have installed a [Grafana](https://grafana.com/) instance that serves a public dashboard for you to play with. Grafana is one of the best dashboarding tool out there and you can use it without worrying about its maintenance directly from our custom [zDashboard](zdashboard_intro.md) solution.
+The data ingested at `hello.zerynth.com` is stored in a local database that can be queried by any dashboarding solution. We have installed a [Grafana](https://grafana.com/) instance that serves a public dashboard for you to play with. Grafana is one of the best dashboarding tool out there and you can use it without worrying about its maintenance directly from our custom Zerynth Dashboard solution.
 
 Dashboards can be easily created by adding panels, and each panel is the result of a query into the incoming data.
 
@@ -140,12 +140,12 @@ From the controls in the upper right corner you can change the time range of the
 
 ## **Host your own dashboard**
 
-Our little demo dashboard at `hello.zerynth.com` is just a simple example of what can be done with IoT data. However, with zDeviceManager integrations you can easily forward data to your own endpoints. To jump start the deployment of a zDeviceManager compatible endpoint you can refer to our github template [repository](https://github.com/zerynth/demo-template).
+Our little demo dashboard at `hello.zerynth.com` is just a simple example of what can be done with IoT data. However, with Zerynth Device Manager integrations you can easily forward data to your own endpoints. To jump start the deployment of a Zerynth Device Manager compatible endpoint you can refer to our github template [repository](https://github.com/zerynth/demo-template).
 
 It is a simple Docker Compose based repository that creates a setup much similar to the one used in this guide:
 
 - an Nginx instance proxying http requests
-- a golang based ingestion service that receives data from the zDeviceManager
+- a golang based ingestion service that receives data from the Zerynth Device Manager
 - a time series database instance (TimescaleDB)
 - a Grafana instance
 

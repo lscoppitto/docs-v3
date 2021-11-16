@@ -6,7 +6,7 @@ In this tutorial we will show how to use Zerynth toolchain from the command line
 The tutorial assumes:
 
 - You have a supported [hardware](../hardware/index.md) at hand
-- You have installed the [Zerynth SDK](../gettingstarted/index.md)
+- You have installed the [Zerynth SDK](../gettingstarted/sdk_guide.md)
 
 
 ## Shells and editors
@@ -243,13 +243,13 @@ ztc device console b08a15d393e42ed94f38145dfbd48a628f9ca30b
   <figcaption>Console with MQTT errors</figcaption>
 </figure>
 
-As you can see, there are errors, because the device is not yet recognized by the zCloud. You have a device, not yet an IoT device!
+As you can see, there are errors, because the device is not yet recognized by the Zerynth Cloud. You have a device, not yet an IoT device!
 In order to connect it properly and securely, let's go on with the tutorial, but first press `Ctrl+c` to stop receiving the output from the device.
 
 
 ### Provisioning
 
-Now that the project is running is time to make it connected. Enter the `zdm`! Yes, `zdm` is another toolchain for managing the device access and behaviour to the zCloud. 
+Now that the project is running is time to make it connected. Enter the `zdm`! Yes, `zdm` is another toolchain for managing the device access and behaviour to the Zerynth Cloud. 
 
 Devices are organized in fleets (group of devices) and fleets live under a workspace. The first time you created a Zerynth account, a default workspace and a default fleet have been created.
 
@@ -278,7 +278,7 @@ zdm device create wks-4tqb61zth8ug flt-4tqb622bdlah Zerynth
 ```
  and a new device named `Zerynth` with identifier `dev-5urjl32twpyv` is born.
 
-Now you just need to associate your physical device connected to the USB with the newly created cloud device. This bonding will let the project connect to the zCloud and the device being authenticated.
+Now you just need to associate your physical device connected to the USB with the newly created cloud device. This bonding will let the project connect to the Zerynth Cloud and the device being authenticated.
 
 This step is called *provisioning* in the IoT jargon and it's quite complex. Let's do it step by step.
 
@@ -289,7 +289,7 @@ ztc device provision prepare b08a15d393e42ed94f38145dfbd48a628f9ca30b
 ```
 This loads the firmware enabling you to send commands to retrieve various things.
 
-For associating a physical device to the cloud device you need a `bundle`. It is basically the signature of the current timestamp and device identity with the device private key held in the secure element. The `bundle` allows the zCloud to verify that your Zerynth hardware is original and manufactured by us.
+For associating a physical device to the cloud device you need a `bundle`. It is basically the signature of the current timestamp and device identity with the device private key held in the secure element. The `bundle` allows the Zerynth Cloud to verify that your Zerynth hardware is original and manufactured by us.
 
 Let's get the bundle with 
 ```bash
@@ -321,7 +321,7 @@ If you now type again
 ```bash
 ztc device console b08a15d393e42ed94f38145dfbd48a628f9ca30b
 ```
- the serial log will show that the device is connected to the zCloud.
+ the serial log will show that the device is connected to the Zerynth Cloud.
 
 <figure>
   <a data-fancybox="gallery" href="../img/cli-10.png">

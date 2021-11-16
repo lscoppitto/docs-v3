@@ -76,42 +76,49 @@ Setup a callback to convert ADC read values on an ADC channel. The ADC's read fu
 
 * `sens` is some sort of structure with data about the sensor to make the correct conversion.
 
-### function read_010
+### function read_voltage
 ```python
-read_010(ch, raw=False)
+read_voltage(ch, raw=False, electric=False)
 ```
 Read a channel from the ADC_010_420 in Voltage mode.
 
 * `ch` is the channel to be read. Possible values 1-4.
 * `raw` if set to `True` ADC's bits are returned as result.
+* `electric` if set to `True` Voltage value (V) read is returned as result.
 
 Returns the value converted by the channel callback. Voltage value (V) if callback is set to `None`.
 
-### function read_420
+***note***: deprecated `read_010` is still usable and will call `read_voltage`.
+
+### function read_current
 ```python
-read_420(ch, raw=False)
+read_current(ch, raw=False, electric=False)
 ```
 Read a channel from the ADC_010_420 in Current mode.
 
 * `ch` is the channel to be read. Possible values 1-4.
 * `raw` if set to `True` ADC's bits are returned as result.
+* `electric` if set to `True` Current value (mA) read is returned as result.
 
 Returns the value converted by the channel callback. Current value (mA) if callback is set to `None`.
 
+***note***: deprecated `read_420` is still usable and will call `read_current`.
+
 ### function read_resistive
 ```python
-read_resistive(ch, raw=False)
+read_resistive(ch, raw=False, electric=False)
 ```
 Read a channel from the ADC_RES.
 
 * `ch` is the channel to be read. Possible values 1-4.
 * `raw` if set to `True` ADC's bits are returned as result.
+* `electric` if set to `True` Resistance value (Ohm) read is returned as result.
 
 Returns the value converted by the channel callback. Resistance value (Ohm) if callback is set to `None`.
 
 ### function read_power
 ```python
-read_power(ch, samples=400, raw=False)
+read_power(ch, samples=400, raw=False, electric=False)
 ```
 
 Read a differnce of min and max read values from the ADC_CUR.
@@ -119,8 +126,9 @@ Read a differnce of min and max read values from the ADC_CUR.
 * `ch` is the channel to be read. Possible values 1-3.
 * `samples` is the number of samples to search min Max on. Default 400.
 * `raw` if set to `True` ADC's bits are returned as result.
+* `electric` if set to `True` Differnce (max - min) Current (mA) read is returned as result.
 
-Returns the value converted by the channel callback. Difference is bits if callback is set to `None`.
+Returns the value converted by the pin callback. Differnce (max - min) Current (mA) if callback is set to `None`.
 
 ### function realy_on
 ```python
@@ -214,6 +222,21 @@ Returns battery status. Possible returns `"chaged"`, `"charging"` and `"discharg
 get_power_source
 ```
 Return the source of power of the device. Possible returns `"external"` and `"battery"`
+
+### function `led`
+```python
+led(color)
+```
+Set the color of the led.
+
+* `color` is the color to set. Possible colors are. `BLACK`, `WHITE`, `RED`, `GREEN`, `BLUE`, `YELLOW`, `CYAN` and `MAGENTA`.
+
+### function `setup_cellular`
+```python
+setup_cellular(click_slot=1)
+```
+Configures pins and serial interface to be used correctly with Quectel BG96 cellular modem click board on the selected `click_slot`.
+Valid `click_slot` values are `1` and `2`.
 
 ### function summary
 ```python

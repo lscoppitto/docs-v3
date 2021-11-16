@@ -8,15 +8,15 @@ All Zerynth hardware is based around a [secure element](element.md) that provide
 * **Sign, verify and exchange secret keys** to accelerate cryptography operations. In particular, Zerynth provides a hardened TLS stack that used the secure element as the source for certificates and secrets. 
 * **Generates cryptographically secure random numbers**, allowing for always fresh secret keys during connections.
 
-On the cloud side, the zDeviceManager has a copy of every certificate stored in every produced Zerynth hardware and accepts a connection only if it comes from a device owning a known certificate.
+On the cloud side, the Zerynth Device Manager has a copy of every certificate stored in every produced Zerynth hardware and accepts a connection only if it comes from a device owning a known certificate.
 
 
 ## Device provisioning
 
 A delicate step in IoT is the device provisioning, namely the addition of information that are not known during the manufacturing phase.
-For example, once a Zerynth hardware is bought, it still can't connect to the zDeviceManager because it is not yet associated with the account of the user. This step is critical, and it must be possible to prove that a physical device belong to someone. 
+For example, once a Zerynth hardware is bought, it still can't connect to the Zerynth Device Manager because it is not yet associated with the account of the user. This step is critical, and it must be possible to prove that a physical device belong to someone. 
 
-The secure element comes to help because it can sign a message with its private key and the zDeviceManager can verify that the signature is valid.
+The secure element comes to help because it can sign a message with its private key and the Zerynth Device Manager can verify that the signature is valid.
 This step is quite complex, but thanks to the Zerynth SDK it can be automated with just a click from the VSCode extension.
 
 There may be additional information that it is not known during the manufacturing phase and that must be added into the device. For example, Wifi passwords should never be stored as a readable file in the internal filesystem; or worse, directly written into the firmware. Anyone with physica access to the device can attach a jtag probe or a development machine with the Zerynth toolchain and extract precious information from the internal filesystem.
