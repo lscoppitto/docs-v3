@@ -56,10 +56,18 @@ Start the timer. A started timer begins counting the number of passing milliseco
 reset()
 ```
 
-Reset the timer. A reset timer restarts counting the number of passing milliseconds from zero.
+Reset the timer. A reset timer restarts counting the number of passing milliseconds from zero. Counting towards the callback trigger is not reset.
 
 Returns the number of milliseconds passed since the start or the last reset.
 
+### method `reset_trigger`
+```python
+reset()
+```
+
+Reset the timer and the counting towards the callback trigger. A reset timer restarts counting the number of passing milliseconds from zero.
+
+Returns the number of milliseconds passed since the start or the last reset.
 
 ### method `get`
 ```python
