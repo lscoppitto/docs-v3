@@ -62,7 +62,7 @@ Returns the number of milliseconds passed since the start or the last reset.
 
 ### method `reset_trigger`
 ```python
-reset()
+reset_trigger()
 ```
 
 Reset the timer and the counting towards the callback trigger. A reset timer restarts counting the number of passing milliseconds from zero.
