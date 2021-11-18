@@ -1,4 +1,4 @@
-# Introduction to Zerynth Cloud
+# Zerynth Cloud
 
 **Zerynth Cloud** is a complete platform that frees you from the burden of maintaining all the technology and infrastructure of developing and deploying fleets of devices, while focusing on the added value of IoT data.
 From a single interface, provision and manage IoT devices, store and visualize data, and gain valuable insights and issue firmware updates on fleets of devices.
@@ -6,140 +6,47 @@ From a single interface, provision and manage IoT devices, store and visualize d
 
 ### **Zerynth Cloud** is composed of
 
-* **Device Management**: anything from securely provisioning devices, updating and configuring them remotely is the task of the [Zerynth Device Manager](device_manager_data_storage.md).
-* **Data Storage**: IoT data needs to be stored, recovered and easily accessed for analysis and integration. The [Zerynth Storage](device_manager_data_storage.md#storage) service has been developed with these goals in mind.
+* **Device Management**: anything from securely provisioning devices, updating and configuring them remotely is the task of the Zerynth Device Manager.
+* **Data Storage**: IoT data needs to be stored, recovered and easily accessed for analysis and integration. The Zerynth Storage service has been developed with these goals in mind.
 * **Dashboarding**: The Zerynth Dashboard service allows hosting and serving multiple customizable dashboards to visualize data and control device.
 
-[**Rest open APIs** are also available.](../reference/api/zdm/) They enable users to access devices, job and FOTA services, as well as workspaces and fleets operatiosn. They can be called from any application that can send an HTTPS request and receive an HTTPS response.
+[**Rest open APIs** are also available.](../reference/api/zdm/) They enable users to access devices, job and FOTA services, as well as workspaces and fleets operations. They can be called from any application that can send an HTTPS request and receive an HTTPS response.
 
-<figure>
-  <a data-fancybox="gallery" href="img/zcloud.jpg">
-  <img src="img/zcloud.jpg"/>
-  </a>
-</figure>
+### Features
 
+- **Provisioning**: associate device certificates securely stored in a crypto element with your cloud account in just a click. No more cumbersome and insecure credentials generation that hinders security and slows down mass deployments.
+- **Connectivity**: transfer data to the cloud with state of the art two-way authenticated and encrypted TLS connections.
+- **Life Cycle Management**: perform complex orchestration tasks by sending jobs and over-the-air updates to your fleets; from an easy to use GUI or programmatically via CLI or REST APIs.
+- **Data Availability**: avoid losing precious data by temporarily queueing them on the Zerynth Device Manager when your data sinks are down.
+- **Integrations**:  forward data via convenient webhooks or API to your final IoT application or to the integrated dashboard services.
 
-### Zerynth Cloud Inteface
-
-### Workspaces Navigation Page
-
-A **Workspace** is a group of devices, single fleet or multiple fleets of devices. You can imagine the workspace as the main folder of your project or your product.
-The workspace menu is contextual and remembers the latest section you visited. Workspaces are also searchable for easy navigation across many projects.
+Zerynth cloud can be adapted to all kinds of deployments, being available as a SaaS hosted by us or as an on-premises containerized application.
 
 
-<figure>
-  <a data-fancybox="gallery" href="img/zcloud1.jpg">
-  <img src="img/zcloud1.jpg"/>
-  </a>
-</figure>
+**We built Zerynth cloud based on the following key concepts:**
 
-### Devices Overview Page
+- A **Device** is the cloud representation of the physical IoT device. A Zerynth Device Manager device is associated to a physical device during provisioning. An action performed over a Zerynth Device Manager device (i.e. sending an update or a new configuration) is always reflected and communicated to the physical device.
+- A **Workspace** is an entity that groups together all the devices belonging to a single project. Zerynth Device Manager accounts can have multiple independent workspaces, one for each project.
+- A **Fleet** is a group of devices belonging to a Workspace. You can use fleets to group devices with similar features and applications. Fleets allow sending bulk device commands, OTA updates and jobs.
+- An **Integration** is an interface between the zerynth cloud and other 3rd party services.
 
-This page serves as main overview of the fleets or devices inside the workspace. It provides information such as device name, device ID and connection status of each device and the provisioning status of each device.
-Users can view single or multiple fleets and can search across devices and fleets with name or ID.
+Devices send data, events and receive requests from the Zerynth Device Manager. In particular:
 
-
-
-<figure>
-  <a data-fancybox="gallery" href="img/zcloud2.jpg">
-  <img src="img/zcloud2.jpg"/>
-  </a>
-</figure>
+- A **Tag** is a data label used for querying data. Each device can publish its data under multiple Tags and the Zerynth Device Manager will take care of dispatching them to integrations accordingly.
+- A **Condition** is an event on steroids. Conditions can be opened, updated and closed by devices to notify specific status change (e.i. Battery status). Conditions can be monitored in real-time using the Zerynth Device Manager web interface or via API. 
+- A **Job** is a command sent to a device. Jobs map to firmware functions like reset, diagnostics, control, update firmware, etc...
 
 
-### Device Page
-
-This page serves as the main control panel for the device. It consists of an overview section with relevant information on the device operation as well as Jobs&Fota section for issuing RPCs and Activity and console pages for monitoring data and operations.
-
-**Overview:** it contains the main device's information such as 
-
-* Device connection status, last disconnection and communication statistics.
-* Graph of recent data activity
-* Status of the latest FOTA and Job issued.
-* Cellular data Activity
+Zerynth Cloud can be easily accessed via at [https://zdm.zerynth.com](https://zdm.zerynth.com) or, for more advanced usages, via [command Line](../reference/cli/zdm/index.md) or [APIs](../reference/api/zdm/index.md).
 
 
+### The On Premise way
 
-<figure>
-  <a data-fancybox="gallery" href="img/zcloud3.jpg">
-  <img src="img/zcloud3.jpg"/>
-  </a>
-</figure>
+If you don't want to be locked in by a third party cloud or you already have a containerized application, the easiest way to integrate with the Zerynth Device Manager is exposing an endpoint for data ingestion.
 
-**Jobs & FOTA:** 
+Just create a webhook integration from the Zerynth Device Manager web app and point it to the http address of your endpoint. The integration will keep sending data to your endpoint where a service running on your servers will receive them and be responsible for database insertion.
 
-The page shows Jobs and Fota operations information, Latest calls and the status of each call.
-
-FOTAs can be currently scheduled on single devices or multiple fleets or - if the filters are not set - the entire workspace
-
-<figure>
-  <a data-fancybox="gallery" href="img/zcloudFota.jpg">
-  <img src="img/zcloudFota.jpg"/>
-  </a>
-</figure>
-
-**Activity:** 
-
-it is a new section that allows you to explore all your device events (like connections/disconnections, authentications, fota, jobs, etc.). 
-
-You can easily debug your device behaviour by analyzing these events. For every event you can view and filter its timestamp, its type, the communication direction (Device-to-Cloud or Cloud-to-Device) and a payload with further information.
-
-
-<figure>
-  <a data-fancybox="gallery" href="img/zcloudAct.jpg">
-  <img src="img/zcloudAct.jpg"/>
-  </a>
-</figure>
-
-
-
-**Console:** 
-It is a real time console that allows you to view all the data/conditions that are being sent by your device
-
-
-
-
-### Integration Page
-
-Integrate the data with third-party data visualization and business intelligence engines like Grafana or PowerBI.
-Available integrations are Microsoft Azure, Ubidots, Davra and Webhooks. Users can also filter integrations, Enable or delete them.
-
-<figure>
-  <a data-fancybox="gallery" href="img/zcloud4.jpg">
-  <img src="img/zcloud4.jpg"/>
-  </a>
-</figure>
-
-### Firmware Page
-
-The section allows users to configure firmware for single device or fleet of devices.
-<figure>
-  <a data-fancybox="gallery" href="img/zcloud5.jpg">
-  <img src="img/zcloud5.jpg"/>
-  </a>
-</figure>
-
-### Storage Section
-
-This section is made to simplify how users interact with the data flowing to Zerynth Cloud.
-It allows to easily navigate, filter, search and monitor data flowing to the whole workspace.
-
-
-<figure>
-  <a data-fancybox="gallery" href="img/zcloudStor.jpg">
-  <img src="img/zcloudStor.jpg"/>
-  </a>
-</figure>
-
-### Usage Section
-
-It allows you to view the details of the usage of a single workspace in relation to the account plan. You can view your plan and the info about the devices, traffic and storage consumed.
-
-<figure>
-  <a data-fancybox="gallery" href="img/zcloud6.jpg">
-  <img src="img/zcloud6.jpg"/>
-  </a>
-</figure>
+It seems a lot of work but we have you covered: from [here](https://github.com/zerynth/demo-template) you can checkout a demo repository with all the components already in place!
 
 
 

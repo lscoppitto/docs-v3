@@ -129,7 +129,7 @@ By pressing `Console` you can check the output of the firmware and the values be
 
 The next step is configuring the Zerynth Device Manager to send the incoming data to a dashboard for visualization.
 
-In the Zerynth Device Manager, the incoming data from the 4ZeroBox is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the [Zerynth Storage](../../zCloud/device_manager_data_storage.md) or your own database. Whatever the storage, the data must be first sent out of the Zerynth Device Manager to its final destination.
+In the Zerynth Device Manager, the incoming data from the 4ZeroBox is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the [Zerynth Storage](../../zCloud/index.md) or your own database. Whatever the storage, the data must be first sent out of the Zerynth Device Manager to its final destination.
 
 This is accomplished thanks to `Integrations`. In the workspace screen at [zdm.zerynth.com](https://zdm.zerynth.com), in the Integrations tab, it is possible to configure many different forwarding point.
 
