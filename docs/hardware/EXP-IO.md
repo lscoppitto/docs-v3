@@ -18,11 +18,11 @@ The EXP-IO expansion board is a mixed input/output module that features:
     Uses the TLP172A, Rated at 36Vdc.
 * **2 opto-isolated digital inputs**
     Uses ISO1212DBQR IC rated for 36Vdc.
-* **2 Analog Channels channels** Can be configured as
-    4-20 mA Current channel
-    0-10V Voltage channel
-    Resistive Sensor Channel (calibrated for 11 Kohm for best precision).
-    Current Clamp channel.
+* **2 Analog Channels channels** Each channel can be configured as
+    * 4-20 mA Current channel (full input range +/-20mA)
+    * 0-10V Voltage channel (full input range +/-10V)
+    * Resistive Sensor Channel.Internal bias is designed for NTC thermistor probes rated 10kΩ @ 25°C (with B=3435), but other probes may also be used depending on the temperature range to be measured.
+    * Current Clamp channel based on voltage or current signal( within channel Voltage and current ratings).
 
 ## **Resources and Documents**
 

@@ -7,7 +7,7 @@ All you need is a [Zerynth hardware](../hardware/index.md) connected to the Zery
 
 ## **Prepare your device**
 
-The first step is preparing your device with firmware and credentials in order to connect it to the [Zerynth Device Manager](device_manager_data_storage.md).
+The first step is preparing your device with firmware and credentials in order to connect it to the Zerynth Device Manager.
 
 You need to install the Zerynth SDK, load a small firmware on the device and associate it with your Zerynth account. We got you covered with a [5 minutes introduction](../gettingstarted/sdk_guide.md); once you complete it you can get back here to continue.
 
@@ -72,7 +72,7 @@ More complex jobs can be sent from the `Jobs` button provided the firmware suppo
 
 ## **Add Integrations**
 
-In the Zerynth Device Manager, the incoming data from the devices of your workspace is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the [Zerynth Storage](device_manager_data_storage.md) or your own database. Whatever the storage, the data must be first sent out of the Zerynth Device Manager to its final destination.
+In the Zerynth Device Manager, the incoming data from the devices of your workspace is stored just temporarily. To really use the IoT data it must be persisted to a time series storage like the Zerynth Storage or your own database. Whatever the storage, the data must be first sent out of the Zerynth Device Manager to its final destination.
 
 This is accomplished thanks to `Integrations`. In the workspace screen, in the Integrations tab, it is possible to configure many different forwarding point.
 

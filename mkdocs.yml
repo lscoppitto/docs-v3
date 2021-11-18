@@ -26,11 +26,11 @@ markdown_extensions:
 - pymdownx.tabbed
 - pymdownx.tilde
 nav:
-- Getting Started:
+- Getting started:
   - ZM1-DB: gettingstarted/ZM1-DB.md
   - 4ZeroBox: gettingstarted/4ZeroBox.md
   - 4ZeroBox Mobile: gettingstarted/4ZeroBox_mobile.md
-  - Zerynth SDK: gettingstarted/sdk_guide.md
+  - SDK: gettingstarted/sdk_guide.md
 - Hardware:
   - {Hardware Platforms: hardware/index.md}
   - IoT Modules:
@@ -49,10 +49,10 @@ nav:
     - 4ZeroBox Mobile: hardware/4ZeroBox_mobile.md
     - {Industrial IoT Kit: hardware/I40Kit.md}
     - {Product Innovation Kit: hardware/productInovv.md}
-- Zerynth Cloud:
-  - Introduction: zCloud/index.md
-  - Device Manager and Data Storage: zCloud/device_manager_data_storage.md
-- Tutorials and Demos:
+- Cloud:
+  - Features and components: zCloud/index.md
+  - Web application interface: zCloud/cloud_interface.md
+- Tutorials and demos:
   - Tutorials:
     - tutorials/index.md
     - tutorials/cli.md
@@ -66,16 +66,16 @@ nav:
     - 4ZeroBox:
       - demos/4zerobox/hello_4zerobox.md
       - demos/4zerobox/industrial_kit.md
-    - Zerynth Cloud:
+    - Cloud:
       - Connect to Zerynth Cloud: zCloud/connect.md
       - demos/zCloud/jobs_relays.md
       - Over the Air Updates Single Device: zCloud/FOTA.md
       - demos/zCloud/FOTA_fleet.md
       - Integrate Microsoft Azure IoT with Zerynth Cloud: demos/zCloud/azure_integration.md
-- Technical Reference:
+- Technical reference:
     - {Introduction: reference/index.md}
-    - Zerynth SDK:
-      - Zerynth OS: 
+    - SDK:
+      - Operating System: 
         - reference/os/index.md
         - reference/os/basics.md
         - reference/os/seqmap.md
@@ -167,18 +167,18 @@ nav:
           - reference/faq/installer.md
           - reference/faq/vscode.md
           - reference/faq/filesystem.md
-      - Zerynth SDK Examples:
+      - SDK Examples:
           - reference/examples/zerynth-os/hello_zerynth.md
           - reference/examples/zerynth-os/multi_serial.md
           - reference/examples/zerynth-os/multi_thread_basic.md
           - reference/examples/zerynth-os/c_language_interface.md
           - reference/examples/zerynth-os/adc.md
           - reference/examples/zerynth-os/watchdog.md
-    - Zerynth Cloud APIs:
+    - Cloud APIs:
       - reference/api/zdm/index.md
       - reference/api/zstorage/index.md
     - Changelog: reference/changelogs/index.md
-    - What's new in Zerynth v3.x: reference/changelogs/whatsnew.md
+    - What's new in SDK v3.x: reference/changelogs/whatsnew.md
     - Support plan for 3rd Party devices: reference/device_support.md
 
 

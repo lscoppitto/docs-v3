@@ -23,8 +23,8 @@ The 4ZeroBox Mobile can be integrated with any of Zerynth expansion boards. They
     
 * 6 Analog channels that can measure (according to the dip switch configuration):
 
-    -   4-20mA sensors (single ended or differential)
-    -   0-10V sensors (single ended or differential)
+    -   4-20mA sensors (full input range +/-20mA)(single ended or differential)
+    -   0-10V sensors (full input range +/-10V)(single ended or differential)
     -   current transformers (non-invasive)
     -   resistive sensors (NTC, RTD, contact, proximity, etc.)
  
