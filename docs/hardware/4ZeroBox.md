@@ -2,11 +2,18 @@
 
 The 4ZeroBox is a modular hardware electronic unit that simplifies the development of Industrial IoT applications allowing rapid integration with sensors, actuators, and Cloud services.
 
-4ZeroBox mounts a powerful ZM1 module by Zerynth (240MHz, 16Mb of Flash, 312Kb SRAM) and provides many onboard features like: a DIN-rail mountable case with industrial grade sensor channels, support for Wi-fi, Bluetooth, Ethernet, LoRa, CAN, RS485, RS232, SD Card, JTAG, I2C, SPI; last but not least, there are 2 on-board MikroBUS sockets to extend the 4ZeroBox with hundreds of MikroElektronika click boards (see “MikroBus Slots” section).
+**Features**
+
+* 4 Industrial Analog input channels, 2 Opto-isolated channels and 2 digital outputs.
+* Runs on ZM1 module (up to 240MHz, 16Mb of Flash, up to 600 MIPS)
+* Microchip ATECC608A crypto chip to ensure high-standard security.
+* Wi-Fi-and-Bluetooth,Ethernet support.
+* 2 On-board Relays, CAN, RS232 and RS485 Interfaces.
+* DIN-rail mountable (9 slots)
 
 <figure>
   <a data-fancybox="gallery" href="../img/4zerobox.png">
-  <img src="../img/4zerobox.png" />
+  <img src="../img/4zerobox.png"width="400" />
   </a>
 </figure>
 
@@ -15,65 +22,24 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
 
 ## **Device Summary**
 
+* 4 Industrial Analog input channels, 2 Opto-isolated channels and 2 digital outputs(2A @ 30V).
+* Runs on ZM1 module (up to 240MHz, 16Mb of Flash, up to 600 MIPS)
+* Microchip ATECC608A crypto chip to ensure high-standard security.
+* Wi-Fi-and-Bluetooth,Ethernet support.
+* 2 On-board Relays (6A @ 250V AC), CAN, RS232 and RS485 Interfaces.
 * DIN-rail mountable (9 slots)
-    
 * 8 to 36V Power Supply
-    
-* 4 selectable analog input channels:
-    
-    -   4-20mA single-ended
-    -   4-20mA differential
-    -   0-10V standard
-    
-* 3 current transformers (non-invasive)
-    
-* 4 resistive sensor channels (NTC, RTD, contact, proximity, etc.)
-    
-* 2 opto-isolated digital inputs
-    
-* 2 sink digital output (2A @ 30V)
-    
 * MicroSD card slot
-    
-* 1 Digital I/O + 2 Digital Input (3.3V)
-    
-* 2 NO/NC Relay (6A @ 250V AC)
-    
-* CAN peripheral
-    
-* Connectivity:
-    
-    -   WiFi IEEE 802.11 b/g/n/e/i (Client and AP mode supported)
-    -   Bluetooth® Low-Energy
-    -   Ethernet
-    
-* Crypto Chip - Secure Hardware Encryption
-    
-* RS-485 and RS232 peripherals
-    
-* 2 onboard mikroBUS sockets
-    
 * Li-Po battery support
-    
-* Li-Po battery onboard charging unit
-    
 * RGB status led
-    
-* Espressif ESP32 - 32bit Microcontroller 240MHz clock, 4Mb of Flash, 312Kb SRAM
+* Powered by Zerynth OS – efficient and easy to use, Python enabled OS for IoT applications.
+
     
 
 ## **Resources**
 
-For more infos about electrical connections, and how to use 4ZeroBox with sensors and other hardware, see the  [user manual](https://www.zerynth.com/download/13894/).
-
-For more information on the 4ZeroBox Library as software drivers, Its features, functions and examples
-[Please check this Link](../../reference/bsp/4zerobox_v9/)
-
-Other useful documents are:
-
--   [Datasheet](https://www.zerynth.com/download/13895/)
--   [Quick Guide](https://www.zerynth.com/download/15283/)
-
+* [User manual](https://www.zerynth.com/download/13894/)
+* [Board support package](../../reference/bsp/4zerobox_v9/)
 
 
 ## **Pin Mapping**
@@ -84,7 +50,6 @@ Other useful documents are:
   </a>
 </figure>
 
-Official reference for Zerynth 4ZeroBox can be found  [here](https://www.zerynth.com/4zeroplatform/).
 
 ## **Getting Started**
 
@@ -92,8 +57,8 @@ For step-by-step guide on connecting, running your first example, Please refer t
 
 ## **Software Library**
 
-For more information on the ZM1-DB Library as software Library, Its features, functions and examples demos
-[Please check this Link](../../reference/bsp/4zerobox_v9/)
+For more information on the 4ZeroBox drivers, examples and supported peripherals and libraries,
+[Please check the 4zerobox board support package.](../../reference/bsp/4zerobox_v9/)
 
 
 ## **Power**
