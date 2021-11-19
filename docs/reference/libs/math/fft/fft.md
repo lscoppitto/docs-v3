@@ -9,18 +9,18 @@ Creates an object to handle the Fast Fourier Transform.
 * `is_inverse` if set to `True` the `FFT` class will perform the inverse Fast Furier Transform;
 * `is_real` if set to `True` the `FFT` will be optimized to transform an input array with only real elements. This will result in less resources consumption and faster computation but limit the `FFT` to use only real input.
 
-The `FFT` class features `__setitem__` to pass inputs and `__getitem__` to get outputs. This allows to set inputs as `fourier[i] = input_element` and get outputs as `output_element = fourier[i]` with fourier as `FFT` class.
+The `FFT` class features `__setitem__` to pass inputs and `__getitem__` to get outputs. This allows to set inputs as `fourier[i] = input_element` and get outputs as `output_element = fourier[i]` with fourier as `FFT` object.
 
 The `FFT` class also features `__iter__` and `__next__` to be iterable.
 
 
-Returns a `FFT` class.
+Returns a `FFT` object.
 
 ### method `fft`
 ```python
 fft()
 ```
-Performs a Fast Fourier Transform of the `n` input data setted.
+Performs a Fast Fourier Transform of the `n` input data set.
 Before calling the `fft` method all the `n` inputs must be provided using the settable features of the `FFT` class.
 Once the Fast Fourier Transform is done, outputs can be accessed using the gettable feature of the `FFT` class.
 
