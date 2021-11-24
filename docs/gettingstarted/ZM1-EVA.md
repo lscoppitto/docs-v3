@@ -79,6 +79,6 @@ After provisioning, in the control panel, You'll find the cloud device is now as
 
 Zerynth can do much more than a simple Hello World, for additional information refer to:
 
-- [Demos](../../demos/zm1-db/exp-relay-lamp/)
+- [Demos](../../tutorials/zm1-db/exp-relay-lamp/)
 - [Zerynth Blog](https://www.zerynth.com/blog/)
 
