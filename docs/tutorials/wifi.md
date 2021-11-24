@@ -106,7 +106,3 @@ For connecting to Ethernet, the code will be nearly the same. Just use the Ether
         print("Publishing!", data)
         agent.publish({"value":data}, "test")
         sleep(5000)
-## More interesting tutorials
-Have you checked our Multithreaded firmware demo and our Watchdog demo? [Click here to check them](https://docs.zerynth.com/latest/demos/zerynth-os/multi_thread_basic/)
-
-We hope you enjoyed this new demo. Feel free to join our [community forum](https://community.zerynth.com/) if you have any additional questions.
