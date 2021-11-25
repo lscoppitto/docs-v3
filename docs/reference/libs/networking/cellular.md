@@ -274,6 +274,19 @@ The returned tuple is composed by the following elements:
 
 **NOTE**: see the [fix() method](#method-fix) notes for GNSS fix operation details.
 
+#### method `disable`
+```python
+disable()
+```
+The method disables the GNSS fix. When the fix is disabled, the calls to `fix()` or `location()`
+return with last known fix data, without doing any actual hardware fix operation.
+
+#### method `enable`
+```python
+enable()
+```
+The method enables the GNSS fix operation. Note that on GNSS object creation the fix operation is enabled by default.
+
 ## Names
 
 ### `gnss`
