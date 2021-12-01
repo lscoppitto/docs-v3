@@ -275,9 +275,10 @@ Set sources that can trigger an interrupt on a pin. For additional information, 
 
 ### method get_int_status
 ```python
-get_int_status()
+get_int_status(get_list=False)
 ```
 Returns the interrupt register status. The register tells what triggered the interrupt. For additional information, see register `INT_STATUS` on [IIM-42652 datasheet][ds].
+If `get_list` is set to `True`, the register bits will be splitted into a list.
 
 ### method set_int_clear_cfg
 ```pyhton
@@ -298,4 +299,40 @@ For additional information, see register `INT_CONFIG0` on [IIM-42652 datasheet][
 
 * `fifo_ths` is the clear method of fifo watermark threshold interrupt. 
 
-* `ui_drdy` is the clear method of ui data ready interrupt. 
+* `ui_drdy` is the clear method of ui data ready interrupt.
+
+### method enable_tilt_detection
+```python
+enable_tilt_detection(dmp_odr=2, tilt_time=1, int_pin=1)
+```
+Enable the tilt detection feature of the iim-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the device is tilted over 35° for more than the selected `tilt_time`.
+The interrupt will trigger eache time that the 35° threshold is crossed for more than the selected time for each axis and in both directions. For example if we tilt the `x` from 0* to 40°, the device will trigger and it will trigger again if we go back to 0* from 40°.
+
+* `dmp_odr` is the acquisition data rate used by the tilt detector. Possible values are `0` for 25 Hz and `2` for 50 Hz. Default value is `2`.
+* `tilt_time` is the time required to trigger the interrupt after the 35° threshold is crossed.
+    Possible values are:
+
+    | `tilt_time` | Required time [s] |
+    |-------------|-------------------|
+    | `0`         | 0                 |
+    | `1`         | 2                 |
+    | `2`         | 4                 |
+    | `3`         | 6                 |
+
+    Default value is `1`.
+* `int_pin` is the pin of IIM42652 to configure.
+
+### method disable_tilt_detection
+```python
+disable_tilt_detection()
+```
+Disable the tilt detection feature of the iim-42652 device.
+
+### method get_int_apex_status
+```python
+get_int_apex_status(get_list=False)
+```
+Get the apex status of the iim-42652 device. If the bit `3` is 1 then the interrupt was triggered by the tilt detection feature.
+If `get_list` is set to `True`, the register bits will be splitted into a list.
+
+### method enable_wake_on_motion
