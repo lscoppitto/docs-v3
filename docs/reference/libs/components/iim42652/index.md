@@ -306,7 +306,7 @@ For additional information, see register `INT_CONFIG0` on [IIM-42652 datasheet][
 enable_tilt_detection(dmp_odr=2, tilt_time=1, int_pin=1)
 ```
 Enable the tilt-detection feature of the IIM-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the device is tilted over 35° for more than the selected `tilt_time`.
-The interrupt will trigger eache time that the 35° threshold is crossed for more than the selected time for each axis and in both directions. For example if we tilt the `x` from 0* to 40°, the device will trigger and it will trigger again if we go back to 0* from 40°.
+The interrupt will trigger each time that the 35° threshold is crossed for more than the selected time for each axis and in both directions. For example if we tilt the `x` from 0° to 40°, the device will trigger and it will trigger again if we go back to 0° from 40°.
 
 * `dmp_odr` is the acquisition data rate used by the tilt detector. Possible values are `0` for 25 Hz and `2` for 50 Hz. Default value is `2`.
 * `tilt_time` is the time required to trigger the interrupt after the 35° threshold is crossed.
