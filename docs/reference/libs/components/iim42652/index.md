@@ -305,7 +305,7 @@ For additional information, see register `INT_CONFIG0` on [IIM-42652 datasheet][
 ```python
 enable_tilt_detection(dmp_odr=2, tilt_time=1, int_pin=1)
 ```
-Enable the tilt detection feature of the iim-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the device is tilted over 35° for more than the selected `tilt_time`.
+Enable the tilt-detection feature of the IIM-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the device is tilted over 35° for more than the selected `tilt_time`.
 The interrupt will trigger eache time that the 35° threshold is crossed for more than the selected time for each axis and in both directions. For example if we tilt the `x` from 0* to 40°, the device will trigger and it will trigger again if we go back to 0* from 40°.
 
 * `dmp_odr` is the acquisition data rate used by the tilt detector. Possible values are `0` for 25 Hz and `2` for 50 Hz. Default value is `2`.
@@ -320,19 +320,70 @@ The interrupt will trigger eache time that the 35° threshold is crossed for mor
     | `3`         | 6                 |
 
     Default value is `1`.
-* `int_pin` is the pin of IIM42652 to configure.
+* `int_pin` is the pin of IIM-42652 to configure.
 
 ### method disable_tilt_detection
 ```python
 disable_tilt_detection()
 ```
-Disable the tilt detection feature of the iim-42652 device.
+Disable the tilt-detection feature of the IIM-42652 device.
 
 ### method get_int_apex_status
 ```python
 get_int_apex_status(get_list=False)
 ```
-Get the apex status of the iim-42652 device. If the bit `3` is 1 then the interrupt was triggered by the tilt detection feature.
+Get the apex status of the IIM-42652 device. If the bit `3` is 1 then the interrupt was triggered by the tilt-detection feature.
 If `get_list` is set to `True`, the register bits will be splitted into a list.
 
 ### method enable_wake_on_motion
+```python
+enable_wake_on_motion(xth=0, yth=0, zth=0, xint=True, yint=True, zint=True, wom_mode=1, int_pin=1)
+```
+Enable the wake-on-motion feature of the IIM-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the acceleration on one of the axes is greater than the acceleration threshold of the axis. The thresholds goes from 0 to 1 in `g` units and do not depend on the selected acceleration range.
+
+* `xth` is the threshold on the x axis.
+* `yth` is the threshold on the y axis.
+* `zth` is the threshold on the z axis.
+* `xint` if set to `False` the x axis will not trigger the interrupt. If `xth` is 0 `xint` will be set to `False` automatically.
+* `yint` if set to `False` the y axis will not trigger the interrupt. If `yth` is 0 `yint` will be set to `False` automatically.
+* `zint` if set to `False` the z axis will not trigger the interrupt. If `zth` is 0 `zint` will be set to `False` automatically.
+* `wom_mode` is the mode used by the wake-on-motion to trigger the interrupt. If set to `0` static mode is used and acceleration is compared to the first sample acquired. If set to `1` differential mode is used and acceleration is compared to the last sample acquired. Default value is `1`.
+* `int_pin` is the pin of IIM-42652 to configure.
+
+### method disable_wake_on_motion
+```python
+disable_wake_on_motion()
+```
+Disable the wake-on-motion feature of the IIM-42652 device.
+
+### method enable_significant_motion_detection
+```python
+enable_significant_motion_detection(xth=0, yth=0, zth=0, smd_timing=2, int_pin=1)
+```
+Enable the significant-motion-detection feature of the IIM-42652 device. This feature allows to trigger the interrupt on the selected `int_pin` when the acceleration on one or more of the axes is cross the threshold more than twice on the selected `smd_timing`. The thresholds goes from 0 to 1 in `g` units and do not depend on the selected acceleration range.
+
+* `xth` is the threshold on the x axis.
+* `yth` is the threshold on the y axis.
+* `zth` is the threshold on the z axis.
+* `smd_timing` is the time window to get the significant motion. Possible values are: `2` for 1 second and `3` for 3 seconds.
+* `int_pin` is the pin of IIM-42652 to configure.
+
+### method disable_significant_motion_detection
+```python
+disable_significant_motion_detection()
+```
+Disable the significant-motion-detection feature of the IIM-42652 device.
+
+### method get_int_smd_wom_status
+```python
+get_int_smd_wom_status(get_list=False)
+```
+Get the apex status of the IIM-42652 device. If `get_list` is set to `True`, the register bits will be splitted into a list.
+Bits are:
+
+    | Bit_n | Function                                    |
+    |-------|---------------------------------------------|
+    | `3`   | Significant motion detection, clear on read |
+    | `2`   | Wake in Motion, z axis, clear on read       |
+    | `1`   | Wake in Motion, y axis, clear on read       |
+    | `0`   | Wake in Motion, x axis, clear on read       |
