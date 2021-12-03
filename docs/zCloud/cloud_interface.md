@@ -1,4 +1,4 @@
-# Cloud Inteface
+# Cloud Interface
 
 
 ### Workspaces

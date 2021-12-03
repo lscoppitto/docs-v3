@@ -18,7 +18,7 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
 </figure>
 
 !!! warning
-    In windows it may be necessary to install USB drivers. You can find them [here](http://www.wch-ic.com/downloads/CH341SER_ZIP.html).
+    In windows it may be necessary to install USB drivers. You can find them [here](https://sparks.gogo.co.nz/ch340.html).
 
 ## **Device Summary**
 

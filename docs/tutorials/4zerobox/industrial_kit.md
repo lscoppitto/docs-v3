@@ -100,24 +100,11 @@ The above means that the temperature sensor is of the `resistive` type, connecte
 Given the configuration, the `sensors` module automatically provides the correct reading.
 
 
-### Provision the device
+### Claim the device
 
 Before running the firmware, it is necessary to assocaite the 4ZeroBox to your Zerynth Cloud account. This must be done once and requires just two clicks!
 
-First, click `Physical device` in the `Zerynth Control Panel` to configure the firmware for the 4ZeroBox. Then, click `Provisioning`. It will ask for a cloud device name, set it to `industrial-kit`. Accept the confirmation dialog and wait for the process to finish.
-
-At the end, the `Zerynth Control Panel` will look like this:
-
-<figure>
-  <a data-fancybox="gallery" href="../img/kit-08.png">
-  <img src="../img/kit-08.png" />
-  </a>
-  <figcaption>Industrial Kit Provisioning</figcaption>
-</figure>
-
-indicating that the physical device is now associated with a cloud device and has a unique identity.
-
-
+Please check this [guide for the claiming process.](../../../gettingstarted/4ZeroBox/#4-connect-to-the-cloud)
 ### Run the firmware
 
 You are now ready to run the firmware! Press `Run` and all the modules and sensors configuration will be copied into the 4ZeroBox to be executed.

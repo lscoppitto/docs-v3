@@ -185,4 +185,4 @@ If you want more information on the features, pin map, or the user manual, pleas
 Zerynth can do much more than a simple Hello World, for additional examples refer to:
 
 - The examples tab in Zerynth extension.
-- [Tutorials](../tutorials/index.md)
+- [Tutorials](../tutorials/zCloud/connect.md)

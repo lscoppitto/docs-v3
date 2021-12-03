@@ -2,7 +2,7 @@
 
 The ZM1 Development board is an industrial-oriented, modular hardware development unit, Facilitates the development of scalable, secure and connected IoT applications.
 
-The ZM1-DB mounts the ZM1 module, a 32-bit dual Core MCU. The ZM1 Core features a clock frequency of up to 240 Mhz, Embedded SPI Flash memory of 16 MB, integrates the crypto element ATECC608A for ultra-secure communication.
+The ZM1-DB mounts [the ZM1 module](ZM1_module.md), a 32-bit dual Core MCU. The ZM1 Core features a clock frequency of up to 240 Mhz, Embedded SPI Flash memory of 16 MB, integrates the crypto element ATECC608A for ultra-secure communication.
 
 The ZM1 Development Board can act as a Development Board for prototyping a Product, and a core for industrial applications, thanks to the expansion modules system.
 The DB features I/O connectors (the Z-bus) that allow the connection in a cascade of different add-on modules to create specific industrial applications that fit into a DIN-RAIL case.
@@ -13,9 +13,9 @@ The DB features I/O connectors (the Z-bus) that allow the connection in a cascad
   </a>
 </figure>
 
-## **Device Summary**
+### **Device Summary**
 
-* ZM1 Core: 32-bit Microcontroller runs on up to 240MHz, 16Mb of Flash, 312Kb SRAM
+* [ZM1 Module](ZM1_module.md): 32-bit Microcontroller runs on up to 240MHz, 16Mb of Flash, 312Kb SRAM
 
 * Python/C enabled development on zOS
 
@@ -42,23 +42,23 @@ The DB features I/O connectors (the Z-bus) that allow the connection in a cascad
 * USB-C (power and programming)
 
 
-## **Resources and Documents**
+### **Resources and Documents**
 
 -   [User manual](https://www.zerynth.com/download/20117/)
 -   [Warning and Instructions for safe use](https://www.zerynth.com/download/20294/)
 
-## **Getting Started**
+### **Getting Started**
 
 For step-by-step guide on connecting, running your first example, Please refer to [the Getting started guide for the ZM1-DB](../../gettingstarted/ZM1-DB/)
 
-## **ZM1-DB Software Library**
+### **ZM1-DB Software Library**
 
 For more information on the ZM1-DB Library as software Library, Its features, functions and examples demos
 [Please check this Link](../../reference/bsp/zm1_db/)
 
 
 
-## **Pin Mapping**
+### **Pin Mapping**
 
 <figure>
   <a data-fancybox="gallery" href="../img/zm1-db-pinmap.jpg">
@@ -66,53 +66,21 @@ For more information on the ZM1-DB Library as software Library, Its features, fu
   </a>
 </figure>
 
-## **Power**
+### **Power**
 
 The development board can be powered through the USB type-C connection, 9-36V Power Supply connector P1.
 DC power supply has priority over the USB power supply, but the power circuit automatically detects and uses the available power source.
-## **Ethernet**
+### **Ethernet**
 
 The ZM1-DB supports Ethernet connection, The board uses the RJ45 Connector and LAN8710 as a physical layer transceiver.
 For the Ethernet software driver and Examples,[Please refer to the Ethernet](../../reference/libs/networking/eth/#ethernet)
 
-## **SD Card**
+### **SD Card**
 
 The board features an on-board SD Card interface,For more information [please refer to the Filesystem module](../../reference/libs/stdlib/fs/)
 
-<!---
-## Flash Layout
 
-The internal flash of the ZM1 module is organized in a single flash area with pages of 4096 bytes each. The flash starts at address 0x00000, but many areas are reserved for Esp32 IDF SDK and Zerynth OS. There exist two different layouts based on the presence of BLE support.
-
-| Start address | Size  | Content                 |
-|---------------|-------|-------------------------|
-| 0x0000A000    | 20Kb  | Esp32 NVS area          |
-| 0x0000F000    | 4Kb   | Esp32 PHY data          |
-| 0x00010000    | 2Mb   | Zerynth OS              |
-| 0x00210000    | 1Mb   | Zerynth Bytecode        |
-| 0x00310000    | 3Mb   | Zerynth OTA             |
-| 0x00920000    | 7040Kb| File System             |
-
--->
-
-## **ZM1**
-
-The ZM1-DB mounts the ZM1 module. The Zerynth Module ZM1 is a dedicated customized version of the ESP32-WROOM-32SE Module.
-The Module is certified RoHS, CE/RED, e FCC (EU e US).
-
-The ZM1 Module mounts onboard the ESP32-D0WD microcontroller, and is designed to be
-scalable and adaptive. The CPU clock frequency is adjustable from 80 MHz to 240 MHz, With an
-embedded 16 MB of SPI Flash memory and integrates a rich set of peripherals, ranging from Hall
-sensors, Capacitive touch sensor, SD interface, Ethernet, High speed SPI, UART, I2S e I2C.
-
-Inside the ZM1, the crypto element ATECC608A from Microchip has been integrated to handle
-secure connections in an easy manner, exchanging certificates and keys, encrypting messages
-over TLS protocol and using secure authentication procedures.
-
-For more information on ZM1 module, [Please refer to the user manual of ZM1](https://www.zerynth.com/download/20127/)
-
-
-## **Z-Bus**
+### **Z-Bus**
 
 The modular expansion system uses the Z-Bus. The Z-Bus is an efficient, powerful standard for connecting and prototyping different sensors and devices.
 The Z-Bus is using the CN1 pin header (20x2) exposing the following:
