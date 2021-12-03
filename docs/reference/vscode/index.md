@@ -204,7 +204,7 @@ the cloud enables users to remotely update and manage the firmware of the device
 
 The device downloads the new firmware and installs it. Upon reset, the new firmware will validate itself and if everything works correctly, it becomes permanent. FOTA can be easily tested directly from VSCode by clicking `Launch FOTA` in the `Zerynth Control Panel`; the current project is compiled and the `firmware.z` is uploaded to the Zerynth Device Manager as a new firmware version. The `FOTA` request is sent to the device automatically and by opening the console, its progress can be monitored.
 
-We wrote a quick FOTA demo, [click here to check it](../../zCloud/FOTA.md).
+We wrote a quick FOTA demo, [click here to check it](../../tutorials/zCloud/FOTA.md).
 
 ### Shortcuts
 

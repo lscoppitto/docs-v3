@@ -53,23 +53,20 @@ nav:
   - Features and components: zCloud/index.md
   - Web application interface: zCloud/cloud_interface.md
 - Tutorials and demos:
-  - tutorials/cli.md
-  - Ethernet and Wifi: tutorials/wifi.md
   - Expansion boards:
+    - Use cellular connectivity and GPS: tutorials/zm1-db/exp-connect-example.md
     - Control AC and DC devices: tutorials/zm1-db/exp-relay-lamp.md
     - Connect industrial sensors and devices: tutorials/zm1-db/exp-io-temperature.md
     - Prototype modules and sensors: tutorials/zm1-db/ex-proto-bme280.md
     - Communicate over RS232,RS485 and CAN protocol: tutorials/zm1-db/exp-ser-rs485.md
-    - Use cellular connectivity and GPS: tutorials/zm1-db/exp-connect-example.md
-  - 4ZeroBox:
-    - Hello 4ZeroBox: tutorials/4zerobox/hello_4zerobox.md
-    - tutorials/4zerobox/industrial_kit.md
+  - tutorials/4zerobox/industrial_kit.md
   - Cloud:
-    - Connect to Zerynth Cloud: zCloud/connect.md
+    - Connect to Zerynth Cloud: tutorials/zCloud/connect.md
     - tutorials/zCloud/jobs_relays.md
-    - Introduction to FOTA: zCloud/FOTA.md
+    - Introduction to FOTA: tutorials/zCloud/FOTA.md
     - FOTA for fleet of devices: tutorials/zCloud/FOTA_fleet.md
     - Integration with 3rd party services: tutorials/zCloud/azure_integration.md
+  - tutorials/cli.md
 - Technical reference:
     - {Introduction: reference/index.md}
     - SDK:

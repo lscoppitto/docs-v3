@@ -1,15 +1,13 @@
 # **Connect to Zerynth Cloud**
 
-In this step by step guide we will show you how to build a demo IoT dashboard with the Zerynth Cloud.
-
-All you need is a [Zerynth hardware](../hardware/index.md) connected to the Zerynth Device Manager sending some data; we will guide you through the process of inspecting the incoming data and forwarding it to a dashboard.
+In this tutorial we will see how we can connect our device to the cloud securely and seamlessly.
 
 
 ## **Prepare your device**
 
 The first step is preparing your device with firmware and credentials in order to connect it to the Zerynth Device Manager.
 
-You need to install the Zerynth SDK, load a small firmware on the device and associate it with your Zerynth account. We got you covered with a [5 minutes introduction](../gettingstarted/sdk_guide.md); once you complete it you can get back here to continue.
+You need to install the Zerynth SDK, load a small firmware on the device and associate it with your Zerynth account. We got you covered with a [5 minutes introduction](../../gettingstarted/sdk_guide.md); once you complete it you can get back here to continue.
 
 Yo now have an IoT device that is sending some random data. Let's modify the firmware a bit to generate some power and temperature data.
 
@@ -34,9 +32,9 @@ agent.publish({ "temp": random(0,100), "hum": random(0,100) }, "env")
 
 ```
 
-Run the example again and now the device is sending two tags, one for power consumption measured by a current sensor and one for environmental data of temperature and humidity. The device is still sending random data, but you can substitute the `random` function with real readings from supported sensors such as [BME280](../reference/libs/components/bme280/index.md).
+Run the example again and now the device is sending two tags, one for power consumption measured by a current sensor and one for environmental data of temperature and humidity. The device is still sending random data, but you can substitute the `random` function with real readings from supported sensors such as [BME280](../../reference/libs/components/bme280/index.md).
 
-Even better, if you have our [Industrial Kit](../tutorials/4zerobox/industrial_kit.md) you can generate real data with the included current sensor and the ntc temperature probe. Just clone the "Industrial Kit" example instead of "ZDM Simple" in VSCode, run it and you are good to go.
+Even better, if you have our [Industrial Kit](../../tutorials/4zerobox/industrial_kit.md) you can generate real data with the included current sensor and the ntc temperature probe. Just clone the "Industrial Kit" example instead of "ZDM Simple" in VSCode, run it and you are good to go.
 
 
 So the device is now sending correctly tagged data, let's move to the next step following the data up the IoT stack.

@@ -43,7 +43,7 @@ Once the swap ends, the bootloader launches the new firmware. Before declaring t
 Performing an over the air update with Zerynth is really easy!
 
 For executing a FOTA you need the Zerynth SDK and Zerynth hardware connected to the Zerynth Device Manager.
-Just follow the [Zerynth getting started](../gettingstarted/sdk_guide.md) tutorial and you will be ready in no time.
+Just follow the [Zerynth getting started](../../gettingstarted/sdk_guide.md) tutorial and you will be ready in no time.
 
 Once you have a provisioned and connected IoT device, all that is required for a FOTA is to:
 
