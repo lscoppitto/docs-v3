@@ -339,7 +339,7 @@ If `get_list` is set to `True`, the register bits will be splitted into a list.
 ```python
 enable_wake_on_motion(xth=0, yth=0, zth=0, xint=True, yint=True, zint=True, wom_mode=1, int_pin=1)
 ```
-Enable the wake-on-motion feature of the IIM-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the acceleration on one of the axes is greater than the acceleration threshold of the axis. The thresholds goes from 0 to 1 in `g` units and do not depend on the selected acceleration range.
+Enable the wake-on-motion feature of the IIM-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the acceleration on one of the axes is greater than the acceleration threshold of the axis. The thresholds go from 0 to 1 in `g` units and they do not depend on the selected acceleration range.
 
 * `xth` is the threshold on the x axis.
 * `yth` is the threshold on the y axis.
@@ -360,7 +360,7 @@ Disable the wake-on-motion feature of the IIM-42652 device.
 ```python
 enable_significant_motion_detection(xth=0, yth=0, zth=0, smd_timing=2, int_pin=1)
 ```
-Enable the significant-motion-detection feature of the IIM-42652 device. This feature allows to trigger the interrupt on the selected `int_pin` when the acceleration on one or more of the axes is cross the threshold more than twice on the selected `smd_timing`. The thresholds goes from 0 to 1 in `g` units and do not depend on the selected acceleration range.
+Enable the significant-motion-detection feature of the IIM-42652 device. This feature allows to trigger the interrupt on the selected `int_pin` when the acceleration on one or more of the axes is cross the threshold more than twice on the selected `smd_timing`. The thresholds go from 0 to 1 in `g` units and they do not depend on the selected acceleration range.
 
 * `xth` is the threshold on the x axis.
 * `yth` is the threshold on the y axis.
