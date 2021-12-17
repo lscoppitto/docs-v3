@@ -305,7 +305,7 @@ For additional information, see register `INT_CONFIG0` on [IIM-42652 datasheet][
 ```python
 enable_tilt_detection(dmp_odr=2, tilt_time=1, int_pin=1)
 ```
-Enable the tilt-detection feature of the IIM-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the device is tilted over 35° for more than the selected `tilt_time`.
+Enables the tilt-detection feature of the IIM-42652 device. This feature allows to trigger interrupt on the selected `int_pin` when the device is tilted over 35° for more than the selected `tilt_time`.
 The interrupt will trigger each time that the 35° threshold is crossed for more than the selected time for each axis and in both directions. For example if we tilt the `x` from 0° to 40°, the device will trigger and it will trigger again if we go back to 0° from 40°.
 
 * `dmp_odr` is the acquisition data rate used by the tilt detector. Possible values are `0` for 25 Hz and `2` for 50 Hz. Default value is `2`.
@@ -326,7 +326,7 @@ The interrupt will trigger each time that the 35° threshold is crossed for more
 ```python
 disable_tilt_detection()
 ```
-Disable the tilt-detection feature of the IIM-42652 device.
+Disables the tilt-detection feature of the IIM-42652 device.
 
 ### method get_int_apex_status
 ```python
@@ -360,7 +360,7 @@ Disable the wake-on-motion feature of the IIM-42652 device.
 ```python
 enable_significant_motion_detection(xth=0, yth=0, zth=0, smd_timing=2, int_pin=1)
 ```
-Enable the significant-motion-detection feature of the IIM-42652 device. This feature allows to trigger the interrupt on the selected `int_pin` when the acceleration on one or more of the axes is cross the threshold more than twice on the selected `smd_timing`. The thresholds go from 0 to 1 in `g` units and they do not depend on the selected acceleration range.
+Enable the significant-motion-detection feature of the IIM-42652 device. This feature allows to trigger the interrupt on the selected `int_pin` when the acceleration on one or more of the axes crosses the threshold more than twice on the selected `smd_timing`. The thresholds go from 0 to 1 in `g` units and they do not depend on the selected acceleration range.
 
 * `xth` is the threshold on the x axis.
 * `yth` is the threshold on the y axis.
