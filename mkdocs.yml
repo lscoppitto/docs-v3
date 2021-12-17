@@ -106,6 +106,7 @@ nav:
           - reference/libs/stdlib/base64.md
           - reference/libs/stdlib/json.md
           - reference/libs/stdlib/cbor.md
+          - reference/libs/stdlib/csv.md
         - Filesystem:
           - reference/libs/stdlib/fs.md
         - Peripherals:
