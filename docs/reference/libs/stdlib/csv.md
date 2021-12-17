@@ -6,7 +6,7 @@ CSVReader(f, newline="\n", delimiter=",", quotechar="\"", has_header=False, comm
 ```
 Creates a CSV reader object with the specified format.
 
-* `f` is the csv path or its file descriptor. The object will automatically handle both type of inputs. If `f` passed is the path string, the file will be automatically opened.
+* `f` is the csv path or its file descriptor. The object will automatically handle both type of inputs. If passed `f` is the path string, the file will be automatically opened.
 
 * `newline` is the string used as newline by the reader. Default is `"\n"`;
 
@@ -20,7 +20,7 @@ Creates a CSV reader object with the specified format.
 
 * `max_line` is the maximum number of lines that the reader will read. Default is `1024`;
 
-* `as_dict` is set to true if the reader will return a data as dictionary. Default is `False`;
+* `as_dict` if set to `True` the reader will return a data as dictionary, if `False` as a list. Default is `False`;
 
 The `CSVReader` objects are iterable.
 
@@ -34,8 +34,7 @@ Returns the number of row the reader is currently reading.
 ```python
 read()
 ```
-Reads the content of the csv. The returned formats depends on how the reader is configured. If `as_dict` is `False`, the reader will return a list.
-
+Reads the content of the csv. The returned formats depends on how the reader is configured.
 
 ### method `close`
 ```python
@@ -49,13 +48,13 @@ CSVWriter(f, newline="\n", delimiter=',', as_dict=False)
 ```
 Creates a CSV writer object with the specified format.
 
-* `f` is the csv path or its file descriptor. The object will automatically handle both type of inputs. If `f` passed is the path string, the file will be automatically opened.
+* `f` is the csv path or its file descriptor. The object will automatically handle both type of inputs. If passed `f` is the path string, the file will be automatically opened.
 
 * `newline` is the string used as newline by the writer. Default is `"\n"`;
 
 * `delimiter` is the char used as delimiter by the writer. Default is `","`;
 
-* `as_dict` is set to true if the writer will user a dictionary as data. Default is `False`;
+* `as_dict` if set to `True`, the writer will use a dictionary as data. Default is `False`;
 
 ### method `close`
 ```python
@@ -79,4 +78,4 @@ Writes a row on the csv.
 
 * `row` is the row to write. Depending on `as_dict` this might be a list or a dictionary.
 
-* `as_row` if set to `True` the writer will ignore the header lenght (if present) and write all the row nevertheless.
+* `as_row` if set to `True` the writer will ignore the header length (if present) and write all the row nevertheless.
