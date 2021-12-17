@@ -25,6 +25,9 @@ The username specified for MQTT connection is not authorized to establish the co
 ### exception `MQTTPublishTimeout`
 The publish method has timeout waiting for ack from borker when `qos` > 0 and `timeout` > 0.
 
+### exception `MQTTPublishGenericError`
+The publish method failed with an error that to not match any of the previous exceptions.
+
 ### class `MQTT`
 ```python
 MQTT(host, client_id, username="", password="", port=1883, clean_session=True, keepalive=60, reconnect_after=5000, network_timeout=6000, ctx=())
