@@ -107,7 +107,7 @@ Lists directory contents of a given `path`.
 
 * `path` is a string (following chosen low-level filesystem driver format).
 
-Returns a dictionaty of the contents with the following format `{ "entry_name": "type",}`. `type` can be `"d"` if the entry is a directory or `"-"` if it is a file.
+Returns a dictionary of the contents with the following format `{ "entry_name": "type",}`. `type` can be `"d"` if the entry is a directory or `"-"` if it is a file.
 
 ### function `copy`
 ```python
