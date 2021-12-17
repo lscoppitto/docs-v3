@@ -91,6 +91,14 @@ Removes a file on a given `path`.
 
 * `path` is a string (following chosen low-level filesystem driver format).
 
+### function `rmtree`
+```python
+rmtree(path)
+```
+Removes a directory and all subdirectories and files.
+
+* `path` is a string (following chosen low-level filesystem driver format).
+
 ### function `ls`
 ```python
 ls(path)
