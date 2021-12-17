@@ -251,6 +251,7 @@ While the fix request is ongoing, the GSM connection gets suspended. Long
 timeouts in a condition of low GNSS antenna reception may cause the GSM
 connection to drop; the cellular software module will auto reconnect as soon
 as it is possible after fix completes.
+See also [disable() method](#method-disable) and [enable() method](#method-enable) to disable and enable the GNSS fix operations. 
 
 **NOTE 2**: With the cellular hardware module on the [4ZeroBox Mobile](/latest/hardware/#4ZeroBox-mobile)
 and on the [EXP-CONNECT board](/latest/hardware/EXP-CON/),
