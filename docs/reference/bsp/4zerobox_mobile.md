@@ -274,6 +274,24 @@ get_dcd()
 ```
 The function returns the value of the dcd pin.
 
+### function `get_power_source`
+```python
+get_power_source()
+```
+The function returns a string with the power source of the device. Possible return strings are `"external"`, `"battery"` or `"usb"`.
+
+### function `read_vin`
+```python
+read_vin()
+```
+This function returns the applied external voltage in \[V\].
+
+### function `read_vbat`
+```python
+read_vbat()
+```
+This function returns the applied battery voltage in \[V\].
+
 ### function `summary`
 ```python
 summary()
