@@ -224,7 +224,7 @@ Set the mode used by the fifo. For additional information, see register `FIFO_CO
 ```python
 handle_fifo(buf, raw=False)
 ```
-Return a tuple with a packet of measures elaborated from the full fifo buffer. The first byte passed should be the header of the packet. The first value of the returned tuple is the number of bytes used to create the packet. If `raw` is set to `True`, the raw data will be returned.
+Returns a tuple with a packet of measures elaborated from the full fifo buffer. The first byte passed should be the header of the packet. The first value of the returned tuple is the number of bytes used to create the packet. If `raw` is set to `True`, the raw data will be returned.
 
 * `buf` is the buffer to get the first packet from.
 
