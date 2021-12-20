@@ -138,10 +138,9 @@ The tuple is composed by the following elements:
 
 ### function `get_rssi`
 ```python
-get_rssi(ssid)
+get_rssi(ssid=None)
 ```
-Returns the `rssi` of the specified `ssid`.
-A scan is executed before returning the `rssi`, this can require some seconds.
+Returns the `rssi` of the specified `ssid`. If `ssid` is `None` the rssi of the currently associeted net is returned, otherwise a scan is executed before returning the `rssi`, this can require some seconds.
 
 ### function `scan_and_get`
 ```python
