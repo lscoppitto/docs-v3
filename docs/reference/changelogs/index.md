@@ -20,17 +20,17 @@
 
 - Fast RSSI get for already connected SSID using get_rssi() from WiFi module.
 - TensorFlow lite updated to v2.6.2.
-- Random function uses hardware RNG when available and falls back on posix rand() pseudo-random generator.
-- Default pull to NONE in `gpio` module.
-- Generate python code starting from C files dropped into "ml" directory into project resources, for Machine Learning feature.
-- Timeout increased to 10secs for reset requests coming from Zerynth cloud.
+- Random function uses hardware RNG when available and falls back to posix rand() pseudo-random generator.
+- Default pull to INPUT_PULLNONE in `gpio` module functions.
+- Generate python code starting from C files dropped into "ml" directory into project resources, used by Machine Learning feature.
+- Timeout increased to 10secs for device reset requests coming from Zerynth cloud.
 - TSlog module is limited to internal flash only.
 - Zerynth SDK examples moved to https://github.com/zerynth/examples.
 
 ***Fixed***
 
 - Memory optimization for SNAP7 protocol.
-- Possible crash after cellular modem deinit.
+- Possible crash after cellular modem deinit().
 - Ethernet interface not reporting IP disconnection under some conditions.
 - Calling random() many times in a second returned the same value.
 - Problem on directory reading.
@@ -42,7 +42,7 @@
 - I2C address of the IIM hardware component mounted on the [4ZeroBox Mobile](../../hardware/4ZeroBox_mobile/).
 - SERIAL0 port used for console can be reconfigured.
 - LED initialization after init pins function.
-- Read analog functions renamed on [4ZeroBox](../../hardware/4ZeroBox/) device: read_010 and read_420 became read_voltage and read_current. Old names still available for backward compatibility.
+- Read analog functions renamed on [4ZeroBox](../../hardware/4ZeroBox/) device: read_010 and read_420 become read_voltage and read_current. Old names still available for backward compatibility.
 
 ## V3.0.8
 
