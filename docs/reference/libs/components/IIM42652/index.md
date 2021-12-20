@@ -7,7 +7,7 @@ This module contains the I2C driver for IIM-42652 6-axis SmartIndustrial™ Moti
 
 ### class IIM42652
 ```python
-IIM42652(drv=I2C0, addr=0x68, clk=1000000)
+IIM42652(drv=I2C0, addr=0x69, clk=1000000)
 ```
 Create an instance of a new IIM-42652 device controlled by I2C.
 
@@ -43,39 +43,39 @@ Returns the temperature value \[°C\] read form the temperature sensor onboard I
 
 ### method get_accel_x
 ```python
-get_accel_x()
+get_accel_x(raw=False)
 ```
-Returns the last read acceleration value on x axis.
+Returns the last read acceleration value \[g\] on x axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_accel_y
 ```python
-get_accel_y()
+get_accel_y(raw=False)
 ```
-Returns the last read acceleration value on y axis.
+Returns the last read acceleration value \[g\] on y axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_accel_z
 ```python
-get_accel_z()
+get_accel_z(raw=False)
 ```
-Returns the last read acceleration value on z axis.
+Returns the last read acceleration value \[g\] on z axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_gyro_x
 ```python
-get_gyro_x()
+get_gyro_x(raw=False)
 ```
-Returns the last read gyroscope value on x axis.
+Returns the last read gyroscope value \[dps\] on x axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_gyro_y
 ```python
-get_gyro_x()
+get_gyro_x(raw=False)
 ```
-Returns the last read gyroscope value on y axis.
+Returns the last read gyroscope value \[dps\] on y axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_gyro_z
 ```python
-get_gyro_x()
+get_gyro_x(raw=False)
 ```
-Returns the last read gyroscope value on z axis.
+Returns the last read gyroscope value \[dps\] on z axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method set_pwr_cfg
 ```python
@@ -112,8 +112,35 @@ set_accel_cfg(odr, fs)
 Set the accelerometer configuration for Output Data Rate and Full Scale. For additional information, see register `ACCEL_CONFIG0` on [IIM-42652 datasheet][ds].
 
 * `odr` is the Output Data Rate. Reset value is `0b0110` (32 kHz).
+    possible `odr` values are:
+
+    | `odr`    | Value \[Hz\] |
+    |----------|--------------|
+    | `0b0001` | 32000        |
+    | `0b0010` | 16000        |
+    | `0b0011` | 8000         |
+    | `0b0100` | 4000         |
+    | `0b0101` | 2000         |
+    | `0b0110` | 1000         |
+    | `0b0111` | 200          |
+    | `0b1000` | 100          |
+    | `0b1001` | 50           |
+    | `0b1010` | 25           |
+    | `0b1011` | 12.5         |
+    | `0b1100` | 6.25         |
+    | `0b1101` | 3.125        |
+    | `0b1110` | 1.5625       |
+    | `0b1111` | 500          |
 
 * `fs` is the Full Scale. Reset value is `0b000` (±16 g).
+    possible `fs` value are:
+
+    | `fs`    | Value \[g\] |
+    |---------|-------------|
+    | `0b000` | ± 16        |
+    | `0b001` | ± 8         |
+    | `0b010` | ± 4         |
+    | `0b011` | ± 2         |
 
 ### method set_gyro_cfg
 ```python
@@ -122,9 +149,36 @@ set_gyro_cfg(odr, fs)
 Set the gyroscope configuration for Output Data Rate and Full Scale. For additional information, see register `GYRO_CONFIG0` on [IIM-42652 datasheet][ds].
 
 * `odr` is the Output Data Rate. Reset value is `0b0110` (32 kHz).
+    possible `odr` values are:
+
+    | `odr`    | Value \[Hz\] |
+    |----------|--------------|
+    | `0b0001` | 32000        |
+    | `0b0010` | 16000        |
+    | `0b0011` | 8000         |
+    | `0b0100` | 4000         |
+    | `0b0101` | 2000         |
+    | `0b0110` | 1000         |
+    | `0b0111` | 200          |
+    | `0b1000` | 100          |
+    | `0b1001` | 50           |
+    | `0b1010` | 25           |
+    | `0b1011` | 12.5         |
+    | `0b1111` | 500          |
 
 * `fs` is the Full Scale. Reset value is `0b000` (±2000 degrees/sec).
+    possible `fs` value are:
 
+    | `fs`    | Value \[dps\] |
+    |---------|---------------|
+    | `0b000` | ± 2000        |
+    | `0b001` | ± 1000        |
+    | `0b010` | ± 500         |
+    | `0b011` | ± 250         |
+    | `0b100` | ± 125         |
+    | `0b101` | ± 62.5        |
+    | `0b110` | ± 31.25       |
+    | `0b111` | ± 15.625      |
 ### method set_fifo_cfg
 ```python
 set_fifo_cfg(accel_en, gyro_en, tmp_en=False, tmst_en=False, hires_en=False, wm_gt_th=False, res_rd=False)
@@ -168,9 +222,9 @@ Set the mode used by the fifo. For additional information, see register `FIFO_CO
 
 ### method handle_fifo
 ```python
-handle_fifo(buf)
+handle_fifo(buf, raw=False)
 ```
-Return a tuple with a packet of measures elaborated from the full fifo buffer. The first byte passed should be the header of the packet. The first value of the returned tuple is the number of bytes used to create the packet.
+Returns a tuple with a packet of measures elaborated from the full fifo buffer. The first byte passed should be the header of the packet. The first value of the returned tuple is the number of bytes used to create the packet. If `raw` is set to `True`, the raw data will be returned.
 
 * `buf` is the buffer to get the first packet from.
 
