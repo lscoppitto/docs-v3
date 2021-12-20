@@ -53,6 +53,15 @@ Unmount a storage device.
 
 * `prefix`: The mountpoint to unmount.
 
+### function `path`
+```python
+path(*args)
+```
+Creates a `path` with the correct format composing the given `*args`.
+
+* `*args` is any number of consecutive strings that will be used to create the path.
+
+Returns a string with the new `path`.
 
 ### function `open`
 ```python
@@ -73,6 +82,90 @@ Opens or create a file at `path`.
 
 
 Return an instance of `FileIO` or raises `IOError`.
+
+### function `rm`
+```python
+rm(path)
+```
+Removes a file on a given `path`.
+
+* `path` is a string (following chosen low-level filesystem driver format).
+
+### function `rmtree`
+```python
+rmtree(path)
+```
+Removes a directory and all subdirectories and files.
+
+* `path` is a string (following chosen low-level filesystem driver format).
+
+### function `ls`
+```python
+ls(path)
+```
+Lists directory contents of a given `path`.
+
+* `path` is a string (following chosen low-level filesystem driver format).
+
+Returns a dictionary of the contents with the following format `{ "entry_name": "type",}`. `type` can be `"d"` if the entry is a directory or `"-"` if it is a file.
+
+### function `copy`
+```python
+copy(src, dest)
+```
+Creates a copy of the `src` file in the `dest` path.
+
+* `src` is a string with the source file path (following chosen low-level filesystem driver format).
+
+* `dest` is a string with the destination file path (following chosen low-level filesystem driver format).
+
+### function `move`
+```python
+move(src, dest)
+```
+Moves the `src` file in the `dest` path.
+
+* `src` is a string with the source file path (following chosen low-level filesystem driver format).
+
+* `dest` is a string with the destination file path (following chosen low-level filesystem driver format).
+
+### function `exists`
+```python
+exists(src)
+```
+Returns `True` if the specified `src` path exists. False otherwise.
+
+* `src` is a string with the source file path (following chosen low-level filesystem driver format).
+
+### function `md5`
+```python
+md5(src)
+```
+Calculates the MD5 hash of a file.
+
+* `src` is a string with the source file path (following chosen low-level filesystem driver format).
+
+Returns a 32 byte string with the calculated MD5 hash.
+
+### function `write_file`
+```python
+write_file(path, content)
+```
+Writes `content` on a specified file on `path`. This functions opens the file in `"w+"`, writes `content` and closes the file.
+
+* `path` is a string (following chosen low-level filesystem driver format).
+
+* `content` is a string with the file content to write.
+
+### function `read_file`
+```python
+read_file(path)
+```
+Reads all the content of a file on `path`. This function opens the file in `"r"`, reads all its content and closes the file.
+
+* `path` is a string (following chosen low-level filesystem driver format).
+
+Returns a string with the content of the file.
 
 ### function `mkdir`
 ```python
