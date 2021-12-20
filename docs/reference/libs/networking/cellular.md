@@ -251,6 +251,7 @@ While the fix request is ongoing, the GSM connection gets suspended. Long
 timeouts in a condition of low GNSS antenna reception may cause the GSM
 connection to drop; the cellular software module will auto reconnect as soon
 as it is possible after fix completes.
+See also [disable() method](#method-disable) and [enable() method](#method-enable) to disable and enable the GNSS fix operations. 
 
 **NOTE 2**: With the cellular hardware module on the [4ZeroBox Mobile](/latest/hardware/#4ZeroBox-mobile)
 and on the [EXP-CONNECT board](/latest/hardware/EXP-CON/),
@@ -273,6 +274,19 @@ The returned tuple is composed by the following elements:
 2. `Float`: The altitude above/below mean sea level, expressed in meters.
 
 **NOTE**: see the [fix() method](#method-fix) notes for GNSS fix operation details.
+
+#### method `disable`
+```python
+disable()
+```
+The method disables the GNSS fix. When the fix is disabled, the calls to `fix()` or `location()`
+return with last known fix data, without doing any actual hardware fix operation.
+
+#### method `enable`
+```python
+enable()
+```
+The method enables the GNSS fix operation. Note that on GNSS object creation the fix operation is enabled by default.
 
 ## Names
 
