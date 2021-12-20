@@ -54,6 +54,20 @@ localtime()
 ```
 Returns a TimeInfo object with current system date and time.
 
+### function `gmtime`
+```python
+gmtime(secs)
+```
+Converts an UNIX EPOCH TIME (`secs`) and returns tuple with the following format: `(year, month, day, hours, minutes, seconds, week_day, year_day)`
+
+### function `mktime`
+```python
+mktime(t_tup)
+```
+Convers a time tuple and returns a UNIX EPOCH TIME. The tuple should have the following format: `(year, month, day, hours, minutes, seconds, week_day, year_day)`.
+
+*** note ***: `week_day`, `year_day` are not necessary on the tuple to make this function work.
+
 ### class `TimeInfo`
 ```python
 TimeInfo()
@@ -71,6 +85,12 @@ Returns a tuple with the broken-down time elements.
 from_tuple(t)
 ```
 Sets the object time to the `t` broken-down time tuple.
+
+### method `get_unix`
+```python
+get_unix()
+```
+Returns the UNIX EPOCH TIME of the current time.
 
 ### Broken-down time
 A broken-down time is a tuple with the following elements:
