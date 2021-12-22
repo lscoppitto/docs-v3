@@ -147,7 +147,7 @@ Performs a write operations on the SPI bus with selected device.
 ﻿
 * `tx` is the buffer containing the data to write on the bus, as bytearray.
 ﻿﻿
-* `n_bytes` is the max number of bytes to read from the device. If `-1` the `rx` bytearray length is used. It must be less than or equal to the length of `rx` bytearray, otherwise an `ErrorValue` exception is thrown.
+* `n_bytes` is the max number of bytes to read from the device. If `-1` the `tx` bytearray length is used. It must be less than or equal to the length of `tx` bytearray, otherwise an `ErrorValue` exception is thrown.
 
 ### method `read`
 ```python
