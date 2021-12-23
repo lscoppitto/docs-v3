@@ -7,13 +7,13 @@
 - gmtime() and mktime() functions in time module.
 - GNSS enable/disable methods in cellular module.
 - csv module.
-- Conversion function in iim42652 component. (PR #159)
+- Conversion function in iim42652 component.
 - Automatic tilt detection, wake on motion and significant motion detection in iim42652 component.
 - ZFS feature.
 - trunc(x, n) math function.
 - fs module functions: fs.ls(), fs.rmtree(), fs.md5(), fs.copy(), fs.move().
 - FFT module and exmaples.
-- Battery and external power source, ADC reading and checks support for [4ZeroBox Mobile](../../hardware/4ZeroBox_mobile/). (PR #78)
+- Battery and external power source, ADC reading and checks support for [4ZeroBox Mobile](../../hardware/4ZeroBox_mobile/).
 - dcn command for 'zdm device identity' toolchain command.
 
 ***Changed***
