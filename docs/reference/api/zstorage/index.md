@@ -33,6 +33,7 @@ Get the time series raw data of a workspace.
 - **size** - Size of each page (default: `100`)
 - **sort** - Sort the result [ `timestamp_device`, `-timestamp_device` ] (default: Decreasing timestamp device  `-timestamp_device` )
 - **device** - Filter by a device ID (default: All devices)
+- **tag** - Filter by tag (default: All tags)
 
 
 !!! note
@@ -41,6 +42,7 @@ Get the time series raw data of a workspace.
     - The `from` parameter cannot be negative.
     - The built time range is `start <= timestamp_device < end` .
     - The `device` parameter can be specified more than one time to filter by multiple devices.
+    - The `tag` parameter can be specified more than one time to filter by multiple tags.
 
 
 #### Response
@@ -149,6 +151,40 @@ Get the time series raw data of a workspace.
 }
 ```
 
+##### Filter by tags.
+
+`GET https://api.storage.zerynth.com/v3/timeseries/wks-123456789/data?tag=A&tag=B`
+
+`200 OK`
+
+```json
+{
+  "result": [
+    {
+      "timestamp_device": "2021-07-08T14:21:10.908Z",
+      "timestamp_in": "2021-07-08T14:21:10.908Z",
+      "fleet_id": "flt-123456789",
+      "device_id": "dev-123456789",
+      "tag": "A",
+      "payload": {
+        "hum": 55,
+        "temp": 27
+      }
+    },
+    {
+      "timestamp_device": "2021-07-08T14:21:10.908Z",
+      "timestamp_in": "2021-07-08T14:21:10.908Z",
+      "fleet_id": "flt-123456789",
+      "device_id": "dev-abcdef",
+      "tag": "B",
+      "payload": {
+        "hum": 55,
+        "temp": 27
+      }
+    }
+  ]
+}
+```
 
 ##### Paginate result
 
