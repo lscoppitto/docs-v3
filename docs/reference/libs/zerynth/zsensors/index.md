@@ -129,7 +129,7 @@ The callbacks must have the following signature `name(value, sens)` where value 
 def user_defined_callback(value, sens):
     return (value * sens["multiplier"])
 
-cb_dict = {"user_defined_type", user_defined_callback}
+cb_dict = {"user_defined_type": user_defined_callback}
 ```
 
 
