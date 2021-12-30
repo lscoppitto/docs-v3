@@ -1,7 +1,5 @@
-# Cloud Interface
-
-
-### Workspaces
+# Zerynth Cloud application
+## Workspaces
 
 A **Workspace** is a group of devices, single fleet or multiple fleets of devices. You can imagine the workspace as the main folder of your project or your product.
 The workspace menu is contextual and remembers the latest section you visited. Workspaces are also searchable for easy navigation across many projects.
@@ -13,6 +11,7 @@ The workspace menu is contextual and remembers the latest section you visited. W
   </a>
 </figure>
 
+## Device Management
 ### Devices
 
 This page serves as main overview of the fleets or devices inside the workspace. It provides information such as device name, device ID and connection status of each device and the provisioning status of each device.
@@ -21,85 +20,118 @@ Users can view single or multiple fleets and can search across devices and fleet
 
 
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloud2.jpg">
-  <img src="../img/zcloud2.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloud2.png">
+  <img src="../img/zcloud2.png"/>
   </a>
 </figure>
 
 
 ### Device 
 
-This page serves as the main control panel for the device. It consists of an overview section with relevant information on the device operation as well as Jobs&Fota section for issuing RPCs and Activity and console pages for monitoring data and operations.
+This page serves as the main control panel for the device. It consists of an Overview section with relevant information on the device operation as well as Jobs&FOTA section for issuing RPCs, Activity and Console pages for monitoring data and operations and File System for a detailed view of the device's files.
 
-**Overview:** it contains the main device's information such as 
+**Overview** 
+
+It contains the main device's information such as 
 
 * Device connection status, last disconnection and communication statistics.
-* Graph of recent data activity
+* Timeseries graph of recent data activity
 * Status of the latest FOTA and Job issued.
-* Cellular data Activity
-
+* Cellular and GPS activity
 
 
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloud3.jpg">
-  <img src="../img/zcloud3.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloud3a.png">
+  <img src="../img/zcloud3a.png"/>
   </a>
 </figure>
 
-**Jobs & FOTA:** 
+**Jobs & FOTA** 
 
-The page shows Jobs and Fota operations information, Latest calls and the status of each call.
+This section shows some information about the latest Jobs and FOTAs, with the description of their status and the device response.
 
-FOTAs can be currently scheduled on single devices or multiple fleets or - if the filters are not set - the entire workspace
+FOTAs can be currently scheduled on single devices or multiple fleets or - if the filters are not set - the entire workspace.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloudFota.jpg">
-  <img src="../img/zcloudFota.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloudFota.png">
+  <img src="../img/zcloudFota.png"/>
   </a>
 </figure>
 
-**Activity:** 
+**Activity** 
 
-it is a new section that allows you to explore all your device events (like connections/disconnections, authentications, fota, jobs, etc.). 
+This section allows you to explore all your device events (like connections/disconnections, authentications, fota, jobs, etc.). 
 
 You can easily debug your device behaviour by analyzing these events. For every event you can view and filter its timestamp, its type, the communication direction (Device-to-Cloud or Cloud-to-Device) and a payload with further information.
 
 
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloudAct.jpg">
-  <img src="../img/zcloudAct.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloudAct.png">
+  <img src="../img/zcloudAct.png"/>
   </a>
 </figure>
 
 
 
-**Console:** 
-It is a real time console that allows you to view all the data/conditions that are being sent by your device
+**Console** 
 
-
-
-
-### Integration 
-
-Integrate the data with third-party data visualization and business intelligence engines like Grafana or PowerBI.
-Available integrations are Microsoft Azure, Ubidots, Davra and Webhooks. Users can also filter integrations, Enable or delete them.
+This section offers a real-time console that allows you to view all the data/conditions that are being sent by your device.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloud4.jpg">
-  <img src="../img/zcloud4.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloudCons.png">
+  <img src="../img/zcloudCons.png"/>
   </a>
 </figure>
 
-### Firmware
+**File system**
 
-The section allows users to configure firmware for single device or fleet of devices.
+The Zerynth File System is a shared drive between your device and Zerynth Cloud.
+
+This section allows you to explore your device file system and upload new files or download the existing ones. It also allows you to syncronize the latest changes to your device and view the current syncronization status.
+
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloud5.jpg">
-  <img src="../img/zcloud5.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloudFS.png">
+  <img src="../img/zcloudFS.png"/>
   </a>
 </figure>
 
-### Storage
+
+### Integrations
+
+Integrations allow you to forward your devices data to external services. A common use case is using those data in third-party data visualization and business intelligence engines like Grafana or PowerBI.
+
+Available integrations are Microsoft Azure, Ubidots, Davra and Webhooks.
+
+<figure>
+  <a data-fancybox="gallery" href="../img/zcloud4.png">
+  <img src="../img/zcloud4.png"/>
+  </a>
+</figure>
+
+### Firmwares
+
+This section allows you to view and create new firmwares. You can also schedule a FOTA (Firmware-Over-The-Air) to single devices or fleets of devices.
+
+<figure>
+  <a data-fancybox="gallery" href="../img/zcloud5.png">
+  <img src="../img/zcloud5.png"/>
+  </a>
+</figure>
+
+### SIM Cards
+
+This section allows you to keep track of all your SIM cards. By default it shows the SIM cards that are associated to the devices in the current workspace, but there is also the possibility to view all the SIM cards that you have claimed (even in other workspaces).
+
+It offers an overview of the SIM cards, in which device they are being used and some information about the plan expiration and the data usage.
+
+<figure>
+  <a data-fancybox="gallery" href="../img/zcloudSim.png">
+  <img src="../img/zcloudSim.png"/>
+  </a>
+</figure>
+
+## Storage
+### Data
 
 This section is made to simplify how users interact with the data flowing to Zerynth Cloud.
 It allows to easily navigate, filter, search and monitor data flowing to the whole workspace.
@@ -107,23 +139,43 @@ It allows to easily navigate, filter, search and monitor data flowing to the who
 #### Features
 
 - A dedicated GUI for monitoring, filtering and controlling the data flowing to the workspace
-- Automatic recognition of incoming data.
+- Automatic recognition of incoming data
 - Advanced REST API to get both raw and aggregated data (e.g., average value of a column)
-- Single or periodic export of data of single or fleet or multiple fleets of devices in CSV or JSON formats.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloudStor.jpg">
-  <img src="../img/zcloudStor.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloudStor.png">
+  <img src="../img/zcloudStor.png"/>
   </a>
 </figure>
 
-### Usage
+### Exports
 
-It allows you to view the details of the usage of a single workspace in relation to the account plan. You can view your plan and the info about the devices, traffic and storage consumed.
+This section allows you to view and create new exports or periodic exports.
 
 <figure>
-  <a data-fancybox="gallery" href="../img/zcloud6.jpg">
-  <img src="../img/zcloud6.jpg"/>
+  <a data-fancybox="gallery" href="../img/zcloudExp.png">
+  <img src="../img/zcloudExp.png"/>
+  </a>
+</figure>
+
+## Data analysis
+### Zerynth Dashboard
+
+It allows you to explore the dashboards you created in Zerynth Dashboard.
+
+<figure>
+  <a data-fancybox="gallery" href="../img/zcloudDash.png">
+  <img src="../img/zcloudDash.png"/>
+  </a>
+</figure>
+
+## Usage
+
+It allows you to view the details of the usage of a single workspace in relation to the account plan. You can view your plan and the info about the devices, traffic, storage and dashboards consumed.
+
+<figure>
+  <a data-fancybox="gallery" href="../img/zcloud6.png">
+  <img src="../img/zcloud6.png"/>
   </a>
 </figure>
 
