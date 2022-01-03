@@ -12,7 +12,7 @@ IIM42652(drv=I2C0, addr=0x69, clk=1000000)
 Create an instance of a new IIM-42652 device controlled by I2C.
 
 * `drv` is the I2C drive to use. Default is `I2C0`;
-* `addr` is the I2C address of the device. Default is `0x68`;
+* `addr` is the I2C address of the device. Default is `0x69`;
 * `clk` is the I2C clock speed to use. Default is `1000000`.
 
 ### method soft_reset
@@ -259,7 +259,7 @@ Get `n` bytes from the fifo.
 
 Returns a `bytearray` with `n` bytes.
 
-### set_signal_path
+### method set_signal_path
 ```python
 set_signal_path(fifo_flush, tmst_strobe, abort_n_reset, dmp_mem_rst=False, dmp_init_en=False)
 ```
