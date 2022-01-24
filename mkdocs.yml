@@ -66,6 +66,7 @@ nav:
     - Introduction to FOTA: tutorials/zCloud/FOTA.md
     - FOTA for fleet of devices: tutorials/zCloud/FOTA_fleet.md
     - Integration with 3rd party services: tutorials/zCloud/azure_integration.md
+    - Track KPIs and Create Dashboards in Zerynth Cloud: tutorials/zCloud/dashboard.md
   - tutorials/cli.md
 - Technical reference:
     - {Introduction: reference/index.md}

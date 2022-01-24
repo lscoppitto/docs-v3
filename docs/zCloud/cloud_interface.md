@@ -158,16 +158,23 @@ This section allows you to view and create new exports or periodic exports.
   </a>
 </figure>
 
-## Data analysis
-### Zerynth Dashboard
+## Zerynth Dashboard
 
-It allows you to explore the dashboards you created in Zerynth Dashboard.
+A powerful data visualization and business intelligence engine that enable designing and building interactive and user friendly dashboards.
+
+* **Features**
+    * Easy-to-use templates for Zero Code dashboard building
+    * Alerts based on thresholds with notifications on Slack, Telegram, GChat, Discord and Email
+    * Permission system with editor/viewer user roles
+    * Highly customizable via SQL query language
 
 <figure>
   <a data-fancybox="gallery" href="../img/zcloudDash.png">
   <img src="../img/zcloudDash.png"/>
   </a>
 </figure>
+
+Creating dashboards in Zerynth Cloud is easy, [Check our tutorial on how to create simple dashboards.](../tutorials/zCloud/dashboard.md)
 
 ## Usage
 

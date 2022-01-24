@@ -1,14 +1,35 @@
 # Zerynth Cloud
 
 **Zerynth Cloud** is a complete platform that frees you from the burden of maintaining all the technology and infrastructure of developing and deploying fleets of devices, while focusing on the added value of IoT data.
-From a single interface, provision and manage IoT devices, store and visualize data, and gain valuable insights and issue firmware updates on fleets of devices.
+From a single interface, manage IoT devices, store and visualize data, and gain insights.
+Access from anywhere on the cloud, in a secure and easy way.
+
 
 
 ### **Zerynth Cloud** is composed of
 
-* **Device Management**: anything from securely provisioning devices, updating and configuring them remotely is the task of the Zerynth Device Manager.
-* **Data Storage**: IoT data needs to be stored, recovered and easily accessed for analysis and integration. The Zerynth Storage service has been developed with these goals in mind.
-* **Dashboarding**: The Zerynth Dashboard service allows hosting and serving multiple customizable dashboards to visualize data and control device.
+* **Device Management**: Data and device management software to deploy scalable, and secure IoT solutions.
+    * **Features**
+        * Devices onboarding and provisioning with gold-standard security;
+        * Devices lifecycle control with remote procedure call and over the air updates (FOTA) through REST APIs;
+        * Data Management for storage, aggregation, and feeding of data to Zerynth’s Dashboard or any 3rd party application;
+        * Event management with integrated alarm engine;
+        * Easy integration with third-party services and frontends, including all of the major cloud service providers;
+        * Fully integrated cellular connectivity with SIM/eSIM and private secure connection;
+        * Available as a service or on-premises.
+
+* **Data Storage**: A dedicated cloud service optimized for storing time series data. It enables retrieving the raw or aggregated data through APIs and exporting it into other formats (csv, json).
+    * **Features**
+        * A dedicated GUI for monitoring, filtering and controlling the data flowing to the workspace
+        * Advanced REST API to get both raw and aggregated data (e.g. average value of a column)
+        * Single or periodic exports of data of single or fleet or multiple fleets of devices in CSV or JSON formats
+
+* **Dashboarding**: A powerful data visualization and business intelligence engine that enable designing and building interactive and user friendly dashboards.
+    * **Features**
+        * Easy-to-use templates for Zero Code dashboard building
+        * Alerts based on thresholds with notifications on Slack, Telegram, GChat, Discord and Email
+        * Permission system with editor/viewer user roles
+        * Highly customizable via SQL query language
 
 [**Rest open APIs** are also available.](../reference/api/zdm/) They enable users to access devices, job and FOTA services, as well as workspaces and fleets operations. They can be called from any application that can send an HTTPS request and receive an HTTPS response.
 
