@@ -113,13 +113,13 @@ In the snippet above, a function is provided to the `on_fota` parameter. This fu
 
 ### class Agent
 ```python
-class Agent(cfg=None, jobs=None, conditions=[], on_conditions=None, set_clock_every=300, on_fota=None, host="zmqtt.zdm.zerynth.com")
+class Agent(cfg=None, jobs={}, conditions=[], on_conditions=None, set_clock_every=300, on_fota=None, host="zmqtt.zdm.zerynth.com")
 ```
 
 Create an `Agent` instance. The `Agent` class accepts various parameters:
 
 * `cfg` is an instance of the `Config` class detailing the transport connection parameters. It is set to *None* by default using standard parameters.
-* `jobs` is a dictionary that defines the ZDM jobs the agent can handle. The keys of the dictionary are strings representing the name of the jobs and the values are functions that are called each time a job is triggered. When set to *None* the only jobs that can be triggered are `reset` and `fota`.
+* `jobs` is a dictionary that defines the ZDM jobs the agent can handle. The keys of the dictionary are strings representing the name of the jobs and the values are functions that are called each time a job is triggered. When set to empty dictionary *{}* the only jobs that can be triggered are `reset` and `fota`.
 * `conditions` is a list of strings defining the condition's names used by the device.
 * `on_conditions` is a callback function called when there are open conditions left from previous executions of the firmware.
 * `set_clock_every` is the number of seconds after which re-synchronizing the real time clock. If set to zero or negative, clock synchronization is disabled and is up to the firmware to find alternative ways of setting the current time (i.e. by ntp protocol)
