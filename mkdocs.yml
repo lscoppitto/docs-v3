@@ -53,6 +53,7 @@ nav:
   - Features and components: zCloud/index.md
   - Web application interface: zCloud/cloud_interface.md
 - Tutorials and demos:
+  - {Introduction: tutorials/index.md}
   - Expansion boards:
     - Use cellular connectivity and GPS: tutorials/zm1-db/exp-connect-example.md
     - Control AC and DC devices: tutorials/zm1-db/exp-relay-lamp.md
