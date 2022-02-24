@@ -130,8 +130,9 @@ nav:
         - reference/libs/networking/socket.md
       - Protocols:
         - reference/libs/protocols/index.md
-        - reference/libs/protocols/ntp.md
+        - reference/libs/protocols/fins.md
         - reference/libs/protocols/http.md
+        - reference/libs/protocols/ntp.md
         - reference/libs/protocols/mqtt.md
         - reference/libs/protocols/modbus.md
       - Security and Cryptography:
