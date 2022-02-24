@@ -2,7 +2,7 @@
 
 Zerynth SDK provides multiple protocols to interact with entities across networks.
 
-Protocol are usied with a common syntax:
+Protocol are used with a common syntax:
 
 ```python
 
