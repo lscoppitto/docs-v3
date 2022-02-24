@@ -35,7 +35,7 @@ The configured SSID is not available between visible WiFi networks.
 
 ### function `configure`
 ```python
-configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, ent_user="", ent_pwd=""))
+configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, ent_user="", ent_pwd="", hostname=""))
 ```
 Configures the wifi interface with given arguments.
 
@@ -58,6 +58,8 @@ If the `security` is set to other values, the following parameters are ignored.
 
 * `ent_user`: the username to be used for the authentication. Default value is empty string.
 * `ent_pwd`: the password to be used for the authentication. Default value is empty string.
+
+* `hostname`: hostname associated with the interface. When the `hostname` is empty string, the dcn (Device Common Name) is used as hostname. Default value "".
 
 ### function `start`
 ```python
