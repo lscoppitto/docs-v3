@@ -1,3 +1,20 @@
+## V3.0.10
+
+***Added***
+
+- Support for Omron FINS protocol.
+- Support to get and set the board hostname.
+- Support for sensor module on ZM1-EVA device.
+- RS485 and RS232 ready to go init functions for [4ZeroBox Mobile](../../hardware/4ZeroBox_mobile/).
+
+***Fixed***
+
+- Problem with concurrent serial port acces when using vhalSerialReadTimeout() zOS C function.
+- Timeout could be handled the wrong way in some situation in vhalSerialReadTimeout() zOS C function.
+- Errors in VSCode when ZERYNTH_SDK_HOME environment variable contains spaces on Windows platform.
+- VSCode autoupdate to v3.0.9 from previous versions.
+
+
 ## V3.0.9
 
 ***Added***
