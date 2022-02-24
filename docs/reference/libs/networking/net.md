@@ -58,3 +58,16 @@ The interface with `ifc` descriptor is stopped, all connections dropped, and all
 down(ifc)
 ```
 The interface with `ifc` descriptor is shut down by releasing all resources and low level drivers associated with it.
+
+### function `get_hostname`
+```python
+get_hostname(ifc)
+```
+Return a string with the hostname associated with the `ifc` interface descriptor.
+
+### function `set_hostname`
+```python
+set_hostname(hostname, ifc)
+```
+Set the hostname to `hostname` string, associated with the `ifc` interface descriptor. If the `hostname` is `""`, the dcn (Device Common Name) is used as default.
+
