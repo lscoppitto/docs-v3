@@ -278,13 +278,13 @@ The returned tuple is composed by the following elements:
 ```python
 disable()
 ```
-The method disables the gnss fix search. Once disabled the `fix` and `location` methods will return the last received data, without suspending the GSM connection.
+The method disables the GNSS fix search. Once disabled, the `fix()` and `location()` methods will return the last received fix data, without suspending the cellular connection.
 
 ### method `enable`
 ```python
 enable()
 ```
-The method enables the gnss fix search. Once enable the `fix` and `location` will suspend the GSM connection. Enable is automatically called when GNSS is started.
+The method enables the GNSS fix search. Once enabled, the `fix()` and `location()` **will suspend the cellular connection** during their execution. Enable is automatically called when GNSS is started.
 
 ## Names
 
