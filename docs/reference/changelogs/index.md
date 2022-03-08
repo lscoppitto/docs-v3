@@ -1,12 +1,12 @@
 ## V3.0.11
 
-*** Changed ***
+***Changed***
 - 'Build' command of VSCode extension can be used with no device connected.
 
-*** Removed ***
+***Removed***
 - ZDM Conditions.
 
-*** Fixed ***
+***Fixed***
 - Problem with 'Build' and 'Run' commands running twice with VSCode v1.65.0 and greater.
 
 ## V3.0.10
