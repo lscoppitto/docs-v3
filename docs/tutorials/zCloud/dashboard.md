@@ -81,21 +81,20 @@ To get data, you need to put “data” after “FROM”, and you can use the fo
 | tag           | string | Publication tag with whom the data has been sent by device         |
 | payload       | jsonb  | Payload published by device                                        |
 
-#### **Condition queries**
+#### **Events queries**
 
-To get conditions, you need to put “conditions” after “FROM”, and you can use the following columns.
+To get events, you need to put “events” after “FROM”, and you can use the following columns.
 
-| Name          | Type   | Description                                                    |
-| ------------- | ------ | -------------------------------------------------------------- |
-| Id            | string | Id of the condition                                            |
-| tag           | string | Publication tag with whom the data has been sent by device     |
-| workspace\_id | string | Workspace id of the device                                     |
-| fleet\_id     | string | Fleet id of the device                                         |
-| device\_id    | string | Id of the device                                               |
-| payload       | jsonb  | Payload published by device when the condition has been opened |
-| payloadf      | jsonb  | Payload published by device when the condition has been closed |
-| start         | time   | Timestamp that indicates when the condition has been opened    |
-| finish        | time   | Timestamp that indicates when the condition has been closed    |
+| Name         | Type       | Description                                                                                     |
+|--------------|------------|-------------------------------------------------------------------------------------------------|
+| ts           | timestamp | The UTC timestamp of the event                                                                  |
+| ts\_db       | timestamp | Timestamp corresponding to when the data has been save on database                              |
+| workspace\_id | string     | Workspace id of the device                                                                      |
+| fleet\_id    | string     | Fleet id of the device                                                                          |
+| device\_id   | string     | Id of the device                                                                                |
+| type         | string     | Type of the event (e.g., connecttion, job)                                                      |
+| direction    | string     | The direction of the event. Possible values are: c2d (Cloud to Device) or d2c (Device to cloud) |
+| payload      | jsonb      | Payload of the event                                                                            |
 
 
 

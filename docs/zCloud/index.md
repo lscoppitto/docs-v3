@@ -54,7 +54,6 @@ Zerynth cloud can be adapted to all kinds of deployments, being available as a S
 Devices send data, events and receive requests from the Zerynth Device Manager. In particular:
 
 - A **Tag** is a data label used for querying data. Each device can publish its data under multiple Tags and the Zerynth Device Manager will take care of dispatching them to integrations accordingly.
-- A **Condition** is an event on steroids. Conditions can be opened, updated and closed by devices to notify specific status change (e.i. Battery status). Conditions can be monitored in real-time using the Zerynth Device Manager web interface or via API. 
 - A **Job** is a command sent to a device. Jobs map to firmware functions like reset, diagnostics, control, update firmware, etc...
 
 
