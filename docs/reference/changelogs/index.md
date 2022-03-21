@@ -1,15 +1,18 @@
 ## V3.0.11
 
 ***Changed***
-- 'Build' command of VSCode extension can be used with no device connected.
+
+- `Build` command of VSCode extension can be used with no device connected.
 
 ***Removed***
+
 - ZDM Conditions. The `conditions` and `on_conditions` parameters are remove from the init method of the `zdm.Agent` class.
   The `zdm.Condition` class is removed.
 
 
 ***Fixed***
-- Problem with 'Build' and 'Run' commands running twice with VSCode v1.65.0 and greater.
+
+- Problem with `Build` and `Run` commands running twice with VSCode v1.65.0 and greater.
 
 ## V3.0.10
 

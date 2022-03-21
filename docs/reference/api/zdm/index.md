@@ -749,13 +749,35 @@ Schedule a new FOTA for multiple fleets.
 ```
 
 ## Integrations
-Zerynth Device Manager allows you to forward data received from devices to third-party services.
+Zerynth Device Manager allows you to forward both data point and events to third-party services.
 
-!!! note "Note - Message Delivery Reliability"
+!!! note "Message Delivery Reliability"
     All Zerynth Device Manager integrations follow an **at-least-once** rule for data forwarding: the Zerynth Device Manager guarantees that all data that has been received from devices is forwarded to the external service, but some messages may be sent multiple times. It is up to the external service to handle deduplication. 
 
-### Webhook data format
 
+!!! important "Data Deduplication in Zerynth Storage"
+    In the Zerynth Storage the data is deduplicated based on the unique values of `device_id`, `tag`,`timestamp_device`.
+    This means that if a device publishes on the same tag with the same timestamp, the data point is discarded.
+    
+### Webhook 
+A webhook can send both data point and events. 
+
+#### Data format
+
+A data point has the following keys
+
+| Key              | Type      | Description                                                        |
+|------------------|-----------|--------------------------------------------------------------------|
+| timestamp_device | timestamp | The UTC timestamp in RFC3339 when the device sent the data point   |
+| timestamp_in     | timestamp | The UTC timestamp in RFC3339 when the cloud ingested the data point |
+| workspace_id     | string    | Workspace id of the device                                         |
+| fleet_id         | string    | Fleet id of the device                                             |
+| device_id        | string    | Device id of the device                                            |
+| tag              | string    | The tag of the data point                                          |
+| payload          | json      | A json payload.                                                    |
+
+
+##### Example
 
 ```json
 {
@@ -795,3 +817,88 @@ Zerynth Device Manager allows you to forward data received from devices to third
 
 !!! warning
     The field **'device_name'** is deprecated and may be removed in a future release
+
+
+
+#### Event format
+
+An event has the following keys
+
+| Key          | Type      | Description                                             |
+|--------------|-----------|---------------------------------------------------------|
+| ts           | timestamp | The UTC timestamp in RFC3339 format when the event occurs |
+| workspace_id | string    | Workspace id of the device                              |
+| fleet_id     | string    | Fleet id of the device                                  |
+| device_id    | string    | Device id of the device                                 |
+| type         | string    | The type of the event                                   |
+| direction    | string    | Direction of the event                                  |
+| payload      | json      | A json payload with the detailed info of the event      |
+
+The *direction* can have the following values:
+
+  - *d2c*: indicate  events sent by the device to che cloud 
+  - *c2d*: indicate  events sent by the cloud to the device
+  
+The *type* of events are the following:
+
+  - *authentication*: the identity of the device is checked (e.g., by checking the certificate of the device)                                                                    
+  - *authorization*: the permission of a device to perform an action (e.g., publish on a MQTT topic) is checked                                                                                     
+  - *cellular_info*: a devise sent the cellular info                                                          
+  - *connection*: a device established a connection                                                   
+  - *data*: a device sent a data point                                                                     
+  - *disconnection*: a device disconnected                                                       
+  - *fota*: a FOTA (firmware Over The Air Update) procedure is performed     
+  - *gnss_info*: a device sent a GPS info                                                       
+  - *job*: a job is scheduled/executed                                                                         
+  - *manifest*: a device sent a manifest message  (i.e., it contains the list of jobs exposed by the device)                                     
+  - *os_info*: a device sent the Operating System info                                 
+  - *private_strong*: a device sent an internal control message                                                                              
+  - *private_weak*: a device sent an internal control message
+  - *reset*: a reset is scheduled to the device                                                        
+  - *stats_info*: a device sent the statistical info                                                                
+  - *status*: a device requested the current status of the device to the cloud (e.g., the pending jobs to be executed)                                                                            
+  - *timestamp*: the timestamp is requested by the device                                                 
+  - *zfs*: a Zerynth File System changes is performed.                                                            
+
+
+!!! note 
+    Some events are started by the device and some are started by the cloud. In order to serialize the events use the `ts` value.
+
+##### Example
+
+```json
+{
+  "batch_id": "event-12345789",
+  "result": [
+    {
+      "id": "0",
+      "ts": "2022-03-18T09:34:23.777118453Z",
+      "workspace_id": "wks-123456789",
+      "fleet_id": "flt-123456789",
+      "device_id": "dev-123456789",
+      "type": "authentication",
+      "direction": "d2c",
+      "payload": {
+        "clientid": "dev-123456789",
+        "proto": "mqtt",
+        "error": "0",
+        "verified": "NONE",
+        "result": "allow"
+      }
+    },
+    {
+      "id": "1",
+      "ts": "2022-03-18T09:34:23.793Z",
+      "workspace_id": "wks-123456789",
+      "fleet_id": "flt-123456789",
+      "device_id": "dev-123456789",
+      "type": "connection",
+      "direction": "d2c",
+      "payload": {
+        "device_ip": "172.0.0.193",
+        "connected_at": "2022-03-18T09:34:23.793Z"
+      }
+    }
+  ]
+}
+```
