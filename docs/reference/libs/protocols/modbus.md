@@ -10,12 +10,14 @@ When a connection with a slave device has been established, coils and registers 
 
 ### class `ModbusTCP`
 ```python
-ModbusTCP(identifier)
+ModbusTCP(identifier, socket_timeout=1500)
 ```
 
 Create an instance of the ModbusTCP class which allow modbus communication with slave device using TCP.
 
 `identifier`: The slave device identifier, used in the header of every packet.
+
+`socket_timeout`: The timeout in milliseconds for the TCP socket connection. Default is `1500` milliseconds.
 
 
 ### method `read_coils`
@@ -24,6 +26,7 @@ read_coils(address, n)
 ```
 
 `address`: The starting address
+
 `n`: the number of coils to read from address
 
 
@@ -39,6 +42,7 @@ read_input(address, n)
 ```
 
 `address`: The starting address
+
 `n`: the number of input register to read, starting from `address`
 
 Returns:
@@ -51,6 +55,7 @@ read_holding(address, n)
 ```
 
 `address`: The starting address
+
 `n`: the number of holding register to read, starting from `address`
 
 Returns:
@@ -63,6 +68,7 @@ read_discrete(address, n)
 ```
 
 `address`: The starting address
+
 `n`: the number of discrete register to read, starting from `address`
 
 Returns:
@@ -75,6 +81,7 @@ write_coil(address, n)
 ```
 
 `address`: the address of the coil
+
 `value`: the new value
 
 Returns:
@@ -87,6 +94,7 @@ write_register(address, n)
 ```
 
 `address`: the address of the register
+
 `value`: the new value
 
 Returns:
@@ -99,7 +107,9 @@ write_multiple_registers(address, n, values)
 ```
 
 `address`: the address of the first holding register
+
 `n`: the number of registers
+
 `value`: a python list containing the new values
 
 Returns:
@@ -112,6 +122,7 @@ connect(address, [port = 502])
 ```
 
 `address`: the ip address of the slave device
+
 `port`: port on which the slave device is listening to
 
 
@@ -146,6 +157,7 @@ read_coils(address, n)
 ```
 
 `address` The starting address
+
 `n` the number of coils to read from address
 
 
@@ -161,6 +173,7 @@ read_input(address, n)
 ```
 
 `address` The starting address
+
 `n` the number of input register to read, starting from `address`
 
 Returns:
@@ -173,6 +186,7 @@ read_holding(address, n)
 ```
 
 `address` The starting address
+
 `n` the number of holding register to read, starting from `address`
 
 Returns:
@@ -185,6 +199,7 @@ read_discrete(address, n)
 ```
 
 `address` The starting address
+
 `n` the number of discrete register to read, starting from `address`
 
 Returns:
@@ -197,6 +212,7 @@ write_coil(address, n)
 ```
 
 `address` the address of the coil
+
 `value` the new value
 
 Returns:
@@ -209,6 +225,7 @@ write_register(address, n)
 ```
 
 `address` the address of the register
+
 `value` the new value
 
 Returns:
@@ -221,7 +238,9 @@ write_multiple_coils(address, n, values)
 ```
 
 `address` the address of the first coil
+
 `n` the number of coils
+
 `value` a python list containing the new values
 
 Returns:
@@ -234,7 +253,9 @@ write_multiple_registers(address, n, values)
 ```
 
 `address` the address of the first holding register
+
 `n` the number of registers
+
 `value` a python list containing the new values
 
 Returns:
