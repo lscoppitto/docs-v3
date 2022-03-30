@@ -17,8 +17,9 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
   </a>
 </figure>
 
-!!! warning
-    In windows it may be necessary to install USB drivers. You can find them [here](https://sparks.gogo.co.nz/ch340.html).
+## **Windows drivers**
+
+In windows it may be necessary to ***install USB drivers***. See the [driver page](/reference/faq/hardware/#do-i-need-special-drivers-for-zerynth-hardware) for details.
 
 ## **Device Summary**
 
@@ -34,7 +35,7 @@ The 4ZeroBox is a modular hardware electronic unit that simplifies the developme
 * RGB status led
 * Powered by Zerynth OS – efficient and easy to use, Python enabled OS for IoT applications.
 
-    
+
 
 ## **Resources**
 

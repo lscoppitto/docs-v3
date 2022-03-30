@@ -7,4 +7,4 @@ Usually not. All hardwares should be automatically recognized. Here is more info
 - **For the 4ZeroBox**: you can find them [here](http://www.wch-ic.com/downloads/CH341SER_ZIP.html).
 
 
-- **For ZM1-DB**: you can find them [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers).
+- **For ZM1-DB, ZM1-EVA, 4ZeroBox Mobile**: you can find them [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers).

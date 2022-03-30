@@ -10,6 +10,10 @@ The 4ZeroBox Mobile can be integrated with any of Zerynth expansion boards. They
   </a>
 </figure>
 
+## **Windows drivers**
+
+In windows it may be necessary to ***install USB drivers***. See the [driver page](/reference/faq/hardware/#do-i-need-special-drivers-for-zerynth-hardware) for details.
+
 ## **Device Summary**
 
 * ZM1 Module
