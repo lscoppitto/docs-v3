@@ -15,7 +15,7 @@ The DB features I/O connectors (the Z-bus) that allow the connection in a cascad
 
 ## **Windows drivers**
 
-In windows it may be necessary to ***install USB drivers***. See the [driver page](/reference/faq/hardware/#do-i-need-special-drivers-for-zerynth-hardware) for details.
+In windows it may be necessary to ***install USB drivers***. See the [driver page](/latest/reference/faq/hardware/#do-i-need-special-drivers-for-zerynth-hardware) for details.
 
 ## **Device Summary**
 
