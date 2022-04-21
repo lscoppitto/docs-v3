@@ -139,3 +139,9 @@ h5 {
     margin-right:-1rem;
 }
 
+.md-typeset svg{
+   width: 25px!important;
+   height: 25px!important;
+   fill: #0070ef!important;
+   margin-right: 12px;
+}
