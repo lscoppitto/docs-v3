@@ -329,9 +329,11 @@ Set sources that can trigger an interrupt on a pin. For additional information, 
 
 ### method get_int_status
 ```python
-get_int_status()
+get_int_status(get_list=False)
 ```
 Returns the interrupt register status. The register tells what triggered the interrupt. For additional information, see register `INT_STATUS` on [IIM-42652 datasheet][ds].
+
+* `get_list` if set to `True` the interrupt status is returned as a list. The list members correspond to the related bit in the status register. E.g.: element `0` is the bit 0, element `1` is the bit 1, and so forth.
 
 ### method set_int_clear_cfg
 ```pyhton
