@@ -12,6 +12,7 @@
 
 ***Fixed***
 
+- pwm output on parameters change.
 - Missing size argument into Modbus \_read\_input() method.
 - zdm.publish() accepts dictionary payloads only.
 
