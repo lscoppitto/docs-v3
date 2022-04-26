@@ -1,3 +1,21 @@
+## V3.0.12
+
+***Added***
+
+- socket timeout to ModbusTCP class.
+- on_reset event callback in zdm Agent.
+- opcua write functions and support for authentication with username and password.
+
+***Changed***
+
+- Uniform get_serial\*() API across all boards.
+
+***Fixed***
+
+- pwm output on parameters change.
+- Missing size argument into Modbus \_read\_input() method.
+- zdm.publish() accepts dictionary payloads only.
+
 ## V3.0.11
 
 ***Changed***
