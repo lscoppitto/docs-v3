@@ -42,7 +42,7 @@ For more information on the EXP-IO Library as software Library, features, functi
 </figure>
 
 
-## **Rotart and Standard switches**
+## **Rotary and Standard switches**
 
 For information on the switches and other hardware details, Please refer to the [User manual of the board](#resources-and-documents)
 
