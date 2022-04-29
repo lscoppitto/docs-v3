@@ -37,7 +37,7 @@ For more information on the EXP-SER Library as software Library, features, funct
 
 
 
-### **Rotart and Standard switches**
+### **Rotary and Standard switches**
 
 For information on the switches and other hardware details, Please refer to the [User manual of the board](#resources-and-documents)
 
