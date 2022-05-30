@@ -12,7 +12,7 @@ All the platforms support such query without the installation of specific USB dr
 [Silicon Labs USB drivers](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers). 
 
 In some linux platforms, in order to query the list of serial ports, particular permissions can be required.
-It usually suffices to add some rules to udev by adding the following contenti into `/etc/udev/rules.d/99-zerynth.rules`:
+It usually suffices to add some rules to udev by adding the following contenti into `/etc/udev/rules.d/70-zerynth.rules`:
 
 ```bash
 
