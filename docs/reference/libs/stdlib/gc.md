@@ -20,4 +20,5 @@ Returns a tuple of integers:
         3. Number of allocated blocks
         4. Number of free blocks
         5. GC Period: milliseconds between forced collections
-        6. Milliseconds since last collection                               
+        6. Milliseconds since last collection
+        7. OS free memory in bytes
