@@ -115,8 +115,8 @@ where:
 
         * `power` has the following arguments:
 
-            - `"ratio"` is the nuber of loops of the cable clamped.
-            - `"n_coil"` is the number of coil of the clamp.
+            - `"n_coil"` is the nuber of loops of the cable clamped.
+            - `"ratio"` is the number of coil of the clamp.
             - `"voltage"` is the voltage of the AC current.
             - `"offset"` is the offset of the AC current.
     - `digits_limit` if this is present, the returned number of decimal digits returned by read function will be limited to the desired digit.
