@@ -86,7 +86,7 @@ In the snippet above, a function is provided to the `on_fota` parameter. This fu
 
 ### class Agent
 ```python
-class Agent(cfg=None, jobs={}, set_clock_every=300, on_fota=None, host="zmqtt.zdm.zerynth.com")
+class Agent(cfg=None, jobs={}, set_clock_every=300, on_fota=None, host="zmqtt.zdm.zerynth.com", download_chunk_size=4096)
 ```
 
 Create an `Agent` instance. The `Agent` class accepts various parameters:
@@ -96,6 +96,7 @@ Create an `Agent` instance. The `Agent` class accepts various parameters:
 * `set_clock_every` is the number of seconds after which re-synchronizing the real time clock. If set to zero or negative, clock synchronization is disabled and is up to the firmware to find alternative ways of setting the current time (i.e. by ntp protocol)
 * `on_fota` is a function accepting one ore more arguments that will be called at different steps of the FOTA process to validate or refuse the step.
 * `host` is the hostname of the ZDM broker, do not change.
+* `download_chunk_size` is the size of the chunk used to download the firmware during FOTA process. Default is *4096* bytes.
 
 ### method `start`
 
@@ -174,6 +175,14 @@ reset()
 
 Reset the device gracefully by disconnecting the MQTT client, closing network interfaces (i.e. deassociating from WiFi access point) and finally resetting the device. It is used mainly during the FOTA process to start the new firmware but it can also be called externally when there is a need for a clean reset.
 
+
+### method `get_fota_percentages`
+
+```python
+get_fota_percentages()
+```
+
+Return a list with the percentages of firmware files downloaded during the FOTA process. The fist element is the percentage of the zOS, the second is the percentage of python bytecode.
 
 ## Agent configuration
 
