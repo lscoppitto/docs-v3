@@ -197,7 +197,4 @@ theme:
     logo: images/favicon-white.png
     name: material
     palette: {accent: red, primary: indigo}
-google_analytics:
-  - UA-64288331-2
-  - auto
 ...
