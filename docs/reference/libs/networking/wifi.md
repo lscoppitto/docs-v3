@@ -35,7 +35,7 @@ The configured SSID is not available between visible WiFi networks.
 
 ### function `configure`
 ```python
-configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, ent_user="", ent_pwd="", hostname=""))
+configure(ssid="", password="", security=WPA_WPA2, dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, ent_user="", ent_pwd="", hostname="", name="wifi", force_dns=Flase)
 ```
 Configures the wifi interface with given arguments.
 
@@ -43,23 +43,26 @@ Configures the wifi interface with given arguments.
 * `password` the the shared secret for the `ssid` network.
 * `security` is the encryption type to be used.
 
-If `dhcp` is *True* (the default) other following arguments are ignored.
-When `dhcp` is *False*, the other arguments are:
+* `dhcp`: enable DHCP for IP parameters. Default value is *True*.
+If `dhcp` is *True* `ip`, `mask`, `gateway`, `dns` arguments are ignored. ***Note*** For the `dns` see also the `force_dns` argument.
+When `dhcp` is *False*, the arguments for IP parameters are:
 
-* `ip`: is the IP address.
-* `mask`: the net mask expressed as A.B.C.D dotted address.
-* `gateway`: the gateway to be used as default router.
-* `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
+* `ip`: is the static IP address. Default value is empty string.
+* `mask`: the net mask expressed as A.B.C.D dotted address. Default value is empty string.
+* `gateway`: the gateway IP address to be used as default router. Default value is empty string.
+* `dns`: the Domain Name Server to be used for name resolution. Default value is *"8.8.8.8"*, the Google DNS.
 
-* `timeout`: Connection timeout in milliseconds. `WifiException` is raised if connection do not succeed during this time. Default value 10000 ms.
+* `force_dns`: forces a custom DNS address when DHCP is on. When the `force_dns` is *True* the DNS address provided by the DHCP server is ignored. Default value is *False*.
+
+* `timeout`: Connection timeout in milliseconds. `WifiException` is raised if connection do not succeed during this time. Default value is *10000* ms.
+* `name`: the interface name to be used in a multi interface scenario. Default value is *"wifi"*.
+* `hostname`: hostname associated with the interface. When the `hostname` is empty string, the dcn (Device Common Name) is used as hostname. Default value "".
 
 If the `security` is *WPA2_ENTERPRISE* (a.k.a. WPA-802.1X), the following parameters are used to specify the Extensible Authentication Protocol (EAP) attributes. Only PEAP is supported.
 If the `security` is set to other values, the following parameters are ignored.
 
 * `ent_user`: the username to be used for the authentication. Default value is empty string.
 * `ent_pwd`: the password to be used for the authentication. Default value is empty string.
-
-* `hostname`: hostname associated with the interface. When the `hostname` is empty string, the dcn (Device Common Name) is used as hostname. Default value "".
 
 ### function `start`
 ```python

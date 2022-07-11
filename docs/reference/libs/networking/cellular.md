@@ -53,7 +53,7 @@ The GNSS fix operation timed out.
 
 ### function `configure`
 ```python
-configure(apn="zerynth-apn", apn_user="", apn_password="", dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, modem_type=BG95_M3, name="cellular")
+configure(apn="zerynth-apn", apn_user="", apn_password="", dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=10000, modem_type=BG95_M3, name="cellular", force_dns=False)
 ```
 Configures the cellular interface with given arguments.
 
@@ -61,17 +61,19 @@ Configures the cellular interface with given arguments.
 * `apn_user`: the username for the network connection authentication. Usually it is empty. Default value empty string.
 * `apn_password`: the password for the network connection authentication. Usually it is empty. Default value empty string.
 
-If `dhcp` is *True* (the default) other following four IP related arguments are ignored.
-When `dhcp` is *False*, the four IP related arguments are:
+* `dhcp`: enable DHCP for IP parameters. Default value is *True*.
+If `dhcp` is *True* `ip`, `mask`, `gateway`, `dns` arguments are ignored. ***Note*** For the `dns` see also the `force_dns` argument.
+When `dhcp` is *False*, the arguments for IP parameters are:
 
-* `ip`: is the IP address.
-* `mask`: the net mask expressed as A.B.C.D dotted address.
-* `gateway`: the gateway to be used as default router.
-* `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
+* `ip`: is the static IP address. Default value is empty string.
+* `mask`: the net mask expressed as A.B.C.D dotted address. Default value is empty string.
+* `gateway`: the gateway IP address to be used as default router. Default value is empty string.
+* `dns`: the Domain Name Server to be used for name resolution. Default value is *"8.8.8.8"*, the Google DNS.
 
-* `timeout`: Connection timeout in milliseconds. `CellularException` is raised if connection do not succeed during this time. Default value 10000 ms.
-* `modem_type`: the Cellular hardware module type. Default value `BG95_M3`.
-* `name`: the interface name to be used in a multi interface scenario. Default value "cellular".
+* `force_dns`: forces a custom DNS address when DHCP is on. When the `force_dns` is *True* the DNS address provided by the DHCP server is ignored. Default value is *False*.
+* `timeout`: Connection timeout in milliseconds. `CellularException` is raised if connection do not succeed during this time. Default value is *10000* ms.
+* `modem_type`: the Cellular hardware module type. Default value is *BG95_M3*.
+* `name`: the interface name to be used in a multi interface scenario. Default value is *"cellular"*.
 
 ### function `init`
 ```python

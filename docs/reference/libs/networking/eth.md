@@ -33,17 +33,24 @@ Generic error occurred
 
 ### function `configure`
 ```python
-configure(dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=60000, hostname="")
+configure(dhcp=True, ip="", mask="", gateway="", dns="8.8.8.8", timeout=60000, hostname="", name="eth0", force_dns=False)
 ```
-Configures the ethernet interface with given arguments. If `dhcp` is *True* (the default) other arguments are ignored.
-When `dhcp` is *False*, the other arguments are:
+Configures the ethernet interface with given arguments.
 
-* `ip`: is the IP address.
-* `mask`: the net mask expressed as A.B.C.D dotted address.
-* `gateway`: the gateway to be used as default router.
-* `dns`: the Domain Name Server to be used for name resolution. Default is "8.8.8.8", the Google DNS.
-* `timeout`: Connection timeout in milliseconds. `ConnectionTimeoutError` is raised if connection do not succeed during this time. Default value 60000 ms.
-* `hostname`: hostname associated with the interface. When the `hostname` is empty string, the dcn (Device Common Name) is used as hostname. Default value "".
+* `dhcp`: enable DHCP for IP parameters. Default value is *True*.
+If `dhcp` is *True* `ip`, `mask`, `gateway`, `dns` arguments are ignored. ***Note*** For the `dns` see also the `force_dns` argument.
+When `dhcp` is *False*, the arguments for IP parameters are:
+
+* `ip`: is the static IP address. Default value is empty string.
+* `mask`: the net mask expressed as A.B.C.D dotted address. Default value is empty string.
+* `gateway`: the gateway IP address to be used as default router. Default value is empty string.
+* `dns`: the Domain Name Server to be used for name resolution. Default value is *"8.8.8.8"*, the Google DNS.
+
+* `force_dns`: forces a custom DNS address when DHCP is on. When the `force_dns` is *True* the DNS address provided by the DHCP server is ignored. Default value is *False*.
+
+* `timeout`: connection timeout in milliseconds. `ConnectionTimeoutError` is raised if connection do not succeed during this time. Default value is *60000* ms.
+* `hostname`: hostname associated with the interface. When the `hostname` is empty string, the dcn (Device Common Name) is used as hostname. Default value is empty string.
+* `name`: the interface name to be used in a multi interface scenario. Default value is *"eth0"*.
 
 ### function `start`
 ```python
