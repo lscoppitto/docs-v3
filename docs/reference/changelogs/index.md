@@ -1,3 +1,25 @@
+## V3.0.13
+
+***Added***
+
+- FOTA improvements when network connection is instable and when the system is in low free RAM condition.
+- Protection fix for ZM1 modules equipped with XMC flash memory, which may brick in low voltage power conditions.
+- Support to force user provided DNS when DHCP is active in networking modules. Secondary and fallback DNSs set to Google ones.
+- SDIO support for SDCard.
+- SNAP7 write methods.
+
+***Fixed***
+
+- I2C timeout during read operation under some conditions.
+- OPCUS read_multi() returns more descriptive error codes.
+- FOTA error code when firmware revert happens.
+- WiFi MAC address reported by wifi.info().
+- Log levels 'DEBUG' and 'ERROR' was swapped.
+- EXP-Connect selector values checks.
+- Serial readline() timeout TIME_U convertion.
+- Zerynth cloud device URLs updated in VSCode after cloud Zero-Code IIoT release.
+- VSCode option zerynth.alwaysOn to enable/disable Zerynth extention for non Zerynth projects.
+
 ## V3.0.12
 
 ***Added***
