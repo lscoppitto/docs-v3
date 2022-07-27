@@ -44,7 +44,7 @@ When `dhcp` is *False*, the arguments for IP parameters are:
 * `ip`: is the static IP address. Default value is empty string.
 * `mask`: the net mask expressed as A.B.C.D dotted address. Default value is empty string.
 * `gateway`: the gateway IP address to be used as default router. Default value is empty string.
-* `dns`: the Domain Name Server to be used for name resolution. Default value is *"8.8.8.8"*, the Google DNS.
+* `dns`: the Domain Name Server to be used for name resolution. When `dhcp` is *True* this parameter is ignored, unless `force_dns` is *True*. Default value is *"8.8.8.8"*, the Google DNS.
 
 * `force_dns`: forces a custom DNS address when DHCP is on. When the `force_dns` is *True* the DNS address provided by the DHCP server is ignored. Default value is *False*.
 
