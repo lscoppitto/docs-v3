@@ -165,11 +165,8 @@ A thread can also try to *unlock* a Lock object that it had previously *locked*:
 Lock object are tipically used to gain exclusive access to a resource::
 
 ```python
-import streams
 import threading
 
-# open a serial port: our resource
-streams.serial("ser1")
 # create a lock
 lock = threading.Lock()
 
