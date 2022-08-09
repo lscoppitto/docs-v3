@@ -89,6 +89,7 @@ nav:
         - reference/libs/expansions/exp-relay.md
         - reference/libs/expansions/exp-ser.md
         - reference/libs/expansions/exp-ain.md
+        - reference/libs/expansions/exp-aout.md
         - reference/libs/expansions/exp-connect.md
       - Standard Library:
         - reference/libs/stdlib/builtins.md
@@ -117,6 +118,7 @@ nav:
           - reference/libs/stdlib/i2c.md
           - reference/libs/stdlib/spi.md
           - reference/libs/stdlib/adc.md
+          - reference/libs/stdlib/dac.md
           - reference/libs/stdlib/pwm.md
           - reference/libs/stdlib/can.md
           - reference/libs/stdlib/mcu.md

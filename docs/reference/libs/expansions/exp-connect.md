@@ -4,7 +4,7 @@
 ```python
 EXP(position, selectors)
 ```
-Created an object for the expansion board connected to Zerynth ZM1 board at the `position` number, counting from left to right. Valid positions are 1 to 4.
+Creates an object for the expansion board connected to Zerynth ZM1 board at the `position` number, counting from left to right. Valid positions are 1 to 4.
 `selectors` is a tuple composed as in the following:
 
 0. Ring pin.
