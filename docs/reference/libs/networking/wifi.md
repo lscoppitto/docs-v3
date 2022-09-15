@@ -11,14 +11,14 @@ The link between the wifi module and the wifi driver is established without the 
 
 This module defines the following constants:
 
-* `WIFI_OPEN`            = 0; Open Wifi network
-* `WIFI_WEP`             = 1; Wifi Network secured with WEP
-* `WIFI_WPA`             = 2; Wifi Network secured with WPA
-* `WIFI_WPA2`            = 3; Wifi Network secured with WPA2
-* `WIFI_WPA_WPA2`        = 4; Wifi Network secured with WPA or WPA2
-* `WIFI_WPA2_ENTERPRISE` = 5; Wifi Network secured with WPA2 enterprise
-* `WIFI_WPA3`            = 6; Wifi Network secured with WPA3
-* `WIFI_WPA2_WPA3`       = 7; Wifi Network secured with WPA2 or WPA3
+* `OPEN`            = 0; Open Wifi network
+* `WEP`             = 1; Wifi Network secured with WEP
+* `WPA`             = 2; Wifi Network secured with WPA
+* `WPA2`            = 3; Wifi Network secured with WPA2
+* `WPA_WPA2`        = 4; Wifi Network secured with WPA or WPA2
+* `WPA2_ENTERPRISE` = 5; Wifi Network secured with WPA2 enterprise
+* `WPA3`            = 6; Wifi Network secured with WPA3
+* `WPA2_WPA3`       = 7; Wifi Network secured with WPA2 or WPA3
 
 ## Exception
 
