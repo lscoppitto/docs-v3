@@ -88,6 +88,22 @@ Unmount a storage device.
 
 * `prefix`: The mountpoint to unmount.
 
+### function `info`
+```python
+info(path)
+```
+
+The function returns a tuple with filesystem information.
+
+* `path`: is any path in the filesystem. The function finds the correct mountpoint and returns the related information.
+
+The returned tuple is composed by the following elements:
+
+0. `Integer`: the filesystem type. Can be one of *FATFS*, *SPIFFS*, *LITTLEFS*.
+1. `Integer`: the total bytes of the filesystem.
+2. `Integer`: the used bytes of the filesystem.
+3. `Integer`: the free bytes of the filesystem.
+
 ### function `path`
 ```python
 path(*args)
