@@ -95,7 +95,7 @@ info(path)
 
 The function returns a tuple with filesystem information.
 
-* `path`: is any path in the filesystem. The function finds the correct mountpoint and returns the related information.
+* `path`: is any path on the filesystem. The function finds the correct mountpoint and returns the related information.
 
 The returned tuple is composed by the following elements:
 
