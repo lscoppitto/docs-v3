@@ -97,3 +97,22 @@ Disconnect from the connected device. The device will try to disconnect from the
 deinit()
 ```
 Deinitialize the ble driver.
+
+### method `scan`
+```python
+scan(name=None, timeout=10000)
+```
+Scan for BLE devices, scan will go on until `timeout` is reached. If `name` is not `None` the driver will filter and keep only devices with name starting with `name`.
+Scanned list can be obtained with method `scan_list`.
+
+### method `scan_list`
+```python
+scan_list(max_dev=0)
+```
+Get previously scanned list of BLE devices. If `max_dev` is not `0` the list will contain up to `max_dev` devices.
+The returned list is a list of lists, each with the following data:
+`[name, adv_data, address, rssi]`
+0. `name` a string with the device name;
+1. `adv_data` a buffer of bytes with advertising data of the device;
+2. `address` address of the device on the network. This is the list described in the `discover` method;
+3. `rssi` is the rssi value of the device.
