@@ -48,9 +48,3 @@ For more information, Check the [device manager documentation](libs/zerynth/zdm/
 ### FAQ
 
 Your device is not recognized? something is out of place? [Refer to the FAQ section for more details.](faq/hardware/)
-
-
-### Version 2.x.x Documentation
-
-Documentation for versions v2.x.x can be found <a href="https://docsv2.zerynth.com" target="_blank">here</a>
-
