@@ -5,24 +5,18 @@ var zversion_set = function(versions) {
     var pathArray = window.location.pathname.split('/');
     //fill version list
     var j,i;
-    var vv= versions["versions"]
-    vv.push("v2.6.x")
-    vv.push("v2.x")
+    var vv = versions["versions"]
     var newPathname = "";
 
     for(j=0;j<vv.length;j++) {
-        if (vv[j] == "latest") {
-            newPathname = "https://docs.zerynth.com/latest";
-        } else if (vv[j].startsWith("v3.")) {
+        if (vv[j].startsWith("v3.")) {
             newPathname = "";
             for (i = 1; i < pathArray.length; i++) {
                 newPathname += "/";
                 newPathname += (i==1)?vv[j]:pathArray[i];
             }
-        } else if (vv[j].startsWith("v2.6.")) {
-            newPathname = "https://docsv2.zerynth.com"
         } else {
-            newPathname = "https://olddocs.zerynth.com"
+            newPathname = "https://docs.zerynth.com/latest";
         }
         $(".zversion_ul").append('<li class="md-version__item"><a href="'+newPathname+'" class="md-version__link">'+vv[j]+'</a></li>')
     }
