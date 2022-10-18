@@ -11,9 +11,6 @@ It can be daunting to navigate all the information, but the task is made easier 
 
 The technical reference spans a wide range of topics from the details of writing a Zerynth based firmware for embedded devices to the zCloud APIs. For this reason it's useful starting a journey through Zerynth from the lower layers of the IoT stack and then going up.
 
-!!! warning "V2 Documentation"
-    Documentation for versions of Zerynth before v3.0.0 can be found <a href="https://docsv2.zerynth.com" target="_blank">here</a>
-
 
 ## Hardware
 
@@ -38,8 +35,12 @@ The Zerynth platform optionally provides a service where IoT data ca be stored a
 
 ## Data Visualization (coming soon)
 
+<<<<<<< HEAD
 Once the data are stored, a Grafana based dashboard can be easily hooked up to the IoT database for visualizing them in no time. The zDashboarding service documentation can be found [here](../zCloud/zdashboard_intro.md)
 
 
 
 
+=======
+Your device is not recognized? something is out of place? [Refer to the FAQ section for more details.](faq/hardware/)
+>>>>>>> 3d3b99a... Remove Zerynth2
