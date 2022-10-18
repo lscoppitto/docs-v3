@@ -11,9 +11,6 @@ It can be daunting to navigate all the information, but the task is made easier 
 
 The technical reference spans a wide range of topics from the details of writing a Zerynth based firmware for embedded devices to the Zerynth Cloud APIs. For this reason it's useful starting a journey through Zerynth from the lower layers of the IoT stack and then going up.
 
-!!! warning "V2 Documentation"
-    Documentation for versions of Zerynth before v3.0.0 can be found <a href="https://docsv2.zerynth.com" target="_blank">here</a>
-
 
 ## Hardware
 
