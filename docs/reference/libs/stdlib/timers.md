@@ -8,6 +8,7 @@ Timer()
 ```
 
 Creates a new timer.
+The max number of timers is ***8***.
 
 
 ### method `one_shot`
