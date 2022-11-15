@@ -155,6 +155,24 @@ Send a message on a target TXF channel. Tx messages are automatically transmitte
 
 If the ch queue is full, PERIPHERAL_ERROR exception is raised.
 
+### function `transmit_ext`
+```python
+transmit_ext(ch, tx, id, rtr=False, seq=0)
+```
+Send a message on a target TXF channel using extended id. Tx messages are automatically transmitted by the Fifo.
+
+* `ch` is the target TXF channel.
+
+* `tx` is the message to transmit. Max size 8 bytes.
+
+* `id` is the message 29b ID.
+
+* `rtr` defines if the message is a RTR. Default is `False`.
+
+* `seq` is the sequence number of the message. Default is 0.
+
+If the ch queue is full, PERIPHERAL_ERROR exception is raised.
+
 ### function `stop_transmit`
 ```python
 stop_transmit(ch)
@@ -178,6 +196,21 @@ Each RXF channel requires an active filter.
 
 * `msid` is the mask of ignored bits or the filter.
 
+### function `add_filter_ext`
+```python
+add_filter_ext(filter, ch, id, mid)
+```
+Add a filter on received messages ID on a specified channel.
+Each RXF channel requires an active filter.
+
+* `filter` is the number of the filter. Up to 32 filters.
+
+* `ch` is the RXF channel to link the filter to.
+
+* `id` is the filtered 29b ID.
+
+* `mid` is the mask of ignored bits or the filter.
+
 ### function `rm_filter`
 ```python
 rm_filter(filter)
@@ -188,13 +221,27 @@ Removes a target filter. This
 
 ### function `receive`
 ```python
-receive(ch)
+receive(ch, size=8)
 ```
 Receive a message from a RXF channel if the channel is not empty.
 
 * `ch` is the channel to receive from.
 
+* `size` is the number of bytes to receive.
+
 Returns sid, msg
+
+### function `receive_ext`
+```python
+receive(ch, size=8)
+```
+Receive a message from a RXF channel if the channel is not empty. Returns a 29b id.
+
+* `ch` is the channel to receive from.
+
+* `size` is the number of bytes to receive.
+
+Returns id, msg
 
 ### function `stop_receive`
 ```python
