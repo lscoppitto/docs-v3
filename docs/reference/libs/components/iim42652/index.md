@@ -1,9 +1,9 @@
 # IIM42652
 
-[ds]: <http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf>
-_datasheet_: <http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf>
-
 This module contains the I2C driver for IIM-42652 6-axis SmartIndustrial™ MotionTracking device that supports an extended operating temperature range. The IIM-42652 combines a 3-axis gyroscope (up to ±2000 degrees/sec), and a 3-axis accelerometer (up to ±16g) and features a 2K-byte FIFO that can lower the traffic on the serial bus interface and reduce power consumption by allowing the system processor to burst read sensor data and then go into a low-power mode.
+
+[datasheet](http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf)
+[ds]: <http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf>
 
 ### class IIM42652
 ```python
@@ -43,39 +43,39 @@ Returns the temperature value \[°C\] read form the temperature sensor onboard I
 
 ### method get_accel_x
 ```python
-get_accel_x()
+get_accel_x(raw=False)
 ```
-Returns the last read acceleration value on x axis.
+Returns the last read acceleration value \[g\] on x axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_accel_y
 ```python
-get_accel_y()
+get_accel_y(raw=False)
 ```
-Returns the last read acceleration value on y axis.
+Returns the last read acceleration value \[g\] on y axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_accel_z
 ```python
-get_accel_z()
+get_accel_z(raw=False)
 ```
-Returns the last read acceleration value on z axis.
+Returns the last read acceleration value \[g\] on z axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_gyro_x
 ```python
-get_gyro_x()
+get_gyro_x(raw=False)
 ```
-Returns the last read gyroscope value on x axis.
+Returns the last read gyroscope value \[dps\] on x axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_gyro_y
 ```python
-get_gyro_x()
+get_gyro_x(raw=False)
 ```
-Returns the last read gyroscope value on y axis.
+Returns the last read gyroscope value \[dps\] on y axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method get_gyro_z
 ```python
-get_gyro_x()
+get_gyro_x(raw=False)
 ```
-Returns the last read gyroscope value on z axis.
+Returns the last read gyroscope value \[dps\] on z axis. If raw is set to `True`, the pre conversion value is returned.
 
 ### method set_pwr_cfg
 ```python
@@ -112,8 +112,35 @@ set_accel_cfg(odr, fs)
 Set the accelerometer configuration for Output Data Rate and Full Scale. For additional information, see register `ACCEL_CONFIG0` on [IIM-42652 datasheet][ds].
 
 * `odr` is the Output Data Rate. Reset value is `0b0110` (32 kHz).
+    possible `odr` values are:
+
+    | `odr`    | Value \[Hz\] |
+    |----------|--------------|
+    | `0b0001` | 32000        |
+    | `0b0010` | 16000        |
+    | `0b0011` | 8000         |
+    | `0b0100` | 4000         |
+    | `0b0101` | 2000         |
+    | `0b0110` | 1000         |
+    | `0b0111` | 200          |
+    | `0b1000` | 100          |
+    | `0b1001` | 50           |
+    | `0b1010` | 25           |
+    | `0b1011` | 12.5         |
+    | `0b1100` | 6.25         |
+    | `0b1101` | 3.125        |
+    | `0b1110` | 1.5625       |
+    | `0b1111` | 500          |
 
 * `fs` is the Full Scale. Reset value is `0b000` (±16 g).
+    possible `fs` value are:
+
+    | `fs`    | Value \[g\] |
+    |---------|-------------|
+    | `0b000` | ± 16        |
+    | `0b001` | ± 8         |
+    | `0b010` | ± 4         |
+    | `0b011` | ± 2         |
 
 ### method set_gyro_cfg
 ```python
@@ -122,9 +149,36 @@ set_gyro_cfg(odr, fs)
 Set the gyroscope configuration for Output Data Rate and Full Scale. For additional information, see register `GYRO_CONFIG0` on [IIM-42652 datasheet][ds].
 
 * `odr` is the Output Data Rate. Reset value is `0b0110` (32 kHz).
+    possible `odr` values are:
+
+    | `odr`    | Value \[Hz\] |
+    |----------|--------------|
+    | `0b0001` | 32000        |
+    | `0b0010` | 16000        |
+    | `0b0011` | 8000         |
+    | `0b0100` | 4000         |
+    | `0b0101` | 2000         |
+    | `0b0110` | 1000         |
+    | `0b0111` | 200          |
+    | `0b1000` | 100          |
+    | `0b1001` | 50           |
+    | `0b1010` | 25           |
+    | `0b1011` | 12.5         |
+    | `0b1111` | 500          |
 
 * `fs` is the Full Scale. Reset value is `0b000` (±2000 degrees/sec).
+    possible `fs` value are:
 
+    | `fs`    | Value \[dps\] |
+    |---------|---------------|
+    | `0b000` | ± 2000        |
+    | `0b001` | ± 1000        |
+    | `0b010` | ± 500         |
+    | `0b011` | ± 250         |
+    | `0b100` | ± 125         |
+    | `0b101` | ± 62.5        |
+    | `0b110` | ± 31.25       |
+    | `0b111` | ± 15.625      |
 ### method set_fifo_cfg
 ```python
 set_fifo_cfg(accel_en, gyro_en, tmp_en=False, tmst_en=False, hires_en=False, wm_gt_th=False, res_rd=False)
@@ -168,9 +222,9 @@ Set the mode used by the fifo. For additional information, see register `FIFO_CO
 
 ### method handle_fifo
 ```python
-handle_fifo(buf)
+handle_fifo(buf, raw=False)
 ```
-Return a tuple with a packet of measures elaborated from the full fifo buffer. The first byte passed should be the header of the packet. The first value of the returned tuple is the number of bytes used to create the packet.
+Returns a tuple with a packet of measures elaborated from the full fifo buffer. The first byte passed should be the header of the packet. The first value of the returned tuple is the number of bytes used to create the packet. If `raw` is set to `True`, the raw data will be returned.
 
 * `buf` is the buffer to get the first packet from.
 
@@ -205,7 +259,7 @@ Get `n` bytes from the fifo.
 
 Returns a `bytearray` with `n` bytes.
 
-### set_signal_path
+### method set_signal_path
 ```python
 set_signal_path(fifo_flush, tmst_strobe, abort_n_reset, dmp_mem_rst=False, dmp_init_en=False)
 ```
@@ -278,7 +332,8 @@ Set sources that can trigger an interrupt on a pin. For additional information, 
 get_int_status(get_list=False)
 ```
 Returns the interrupt register status. The register tells what triggered the interrupt. For additional information, see register `INT_STATUS` on [IIM-42652 datasheet][ds].
-If `get_list` is set to `True`, the register bits will be splitted into a list.
+
+* `get_list` if set to `True` the interrupt status is returned as a list. The list members correspond to the related bit in the status register. E.g.: element `0` is the bit 0, element `1` is the bit 1, and so forth.
 
 ### method set_int_clear_cfg
 ```pyhton
