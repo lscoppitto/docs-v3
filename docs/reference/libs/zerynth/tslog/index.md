@@ -313,13 +313,17 @@ Create an instance of `TSReader`. This class is never created manually, it is al
 ### method `next`
 
 ```python
-next()
+next(wait=0)
 ```
 
 Return the next record converted to a tuple according to the log `formats`.
 Can return *None* if there is no more available data, i.e. the writer has not committed new data yet.
 
 If only one format has been specified, the tuple contans the arguments stored. If the `formats` are more than one, the return value is a tuple with two items: the first is the `tag` as defined in `store_with_tag`, the second is the tuple of stored arguments.
+
+If `wait` is greater than zero, the method retries to get a record wating `wait` milliseconds between each retry.
+
+The reader advances to next record.
 
 
 ### method `next_record`
@@ -334,19 +338,6 @@ Can return *None* if there is no more available data, i.e. the writer has not co
 If `advance` is `True`, the reader will advance to the next record.
 
 If `wait` is greater than zero, the method retries to get a record wating `wait` milliseconds between each retry.
-
-### method `next`
-
-```python
-next(wait=0)
-```
-
-Return the next record as a bytearray.
-Can return *None* if there is no more available data, i.e. the writer has not committed new data yet.
-
-If `wait` is greater than zero, the method retries to get a record wating `wait` milliseconds between each retry.
-
-The reader advance to next record.
 
 ### method `peek`
 
