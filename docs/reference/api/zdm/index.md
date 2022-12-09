@@ -618,7 +618,7 @@ Create a new job for multiple fleets.
 - **value** (object) - Custom object associated to the job
 
 #### Example
-`POST https://api.zdm.zerynth.com/v3/devices/dev-123456789/jobs/jobOne?fleet=flt-123456789&fleet=flt-987654321`
+`POST https://api.zdm.zerynth.com/v3/workspaces/wks-123456789/jobs/jobOne?fleet=flt-123456789&fleet=flt-987654321`
 
 ```json
 {
