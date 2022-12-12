@@ -59,7 +59,7 @@ The `fs` module provides many functions for mounting and managing a filesystem. 
 
 ### function `mount`
 ```python
-mount(prefix, what=INTERNAL, spiclk=2000000)
+mount(prefix, what=INTERNAL, spiclk=2000000, format_fs=0, format_check="NO")
 ```
 
 Mounts a storage device.
@@ -72,6 +72,10 @@ Valid values:
 * *SD*: for MicroSD card. Only FAT filesystem is supported.
 
 * `spiclk`: The clock in Hz for the SPI bus where the MicroSD is attached to.
+
+* `format_fs`: format the fs if the mount fails if set to 1. Requires `format_check` to be set to `"YES"`. Only active on `SD`.
+
+* `format_check`: additional check to avoid unwanted format of the fs. Set to `"YES"` to pass the check.
 
 Can raise:
 
