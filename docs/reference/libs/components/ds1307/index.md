@@ -31,18 +31,3 @@ Configures the time of the DS1307. This function will also sync the system `time
 
 * `ti` time info class from `time` module. Refer to `time` module for further information.
 
-### Example:
-```python
-from bsp import board
-from components.ds1307 import ds1307
-
-...
-
-rtc = ds1307.DS1307()
-
-rtc.set_time(14, 30, 0, 10, 7, 21, 5)
-while True:
-    print(rtc.get_time())
-    sleep(1000)
-```
-
