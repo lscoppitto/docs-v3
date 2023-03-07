@@ -1,9 +1,9 @@
 # IIM42652
 
-This module contains the I2C driver for IIM-42652 6-axis SmartIndustrial™ MotionTracking device that supports an extended operating temperature range. The IIM-42652 combines a 3-axis gyroscope (up to ±2000 degrees/sec), and a 3-axis accelerometer (up to ±16g) and features a 2K-byte FIFO that can lower the traffic on the serial bus interface and reduce power consumption by allowing the system processor to burst read sensor data and then go into a low-power mode.
+[ds]: <https://invensense.tdk.com/wp-content/uploads/2023/01/DS-000440-IIM-42652-TYP-v1.2.pdf>
+_datasheet_: <https://invensense.tdk.com/wp-content/uploads/2023/01/DS-000440-IIM-42652-TYP-v1.2.pdf>
 
-[datasheet](http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf)
-[ds]: <http://3cfeqx1hf82y3xcoull08ihx-wpengine.netdna-ssl.com/wp-content/uploads/2021/01/DS-000440-IIM-42652-v1.0.pdf>
+This module contains the I2C driver for IIM-42652 6-axis SmartIndustrial™ MotionTracking device that supports an extended operating temperature range. The IIM-42652 combines a 3-axis gyroscope (up to ±2000 degrees/sec), and a 3-axis accelerometer (up to ±16g) and features a 2K-byte FIFO that can lower the traffic on the serial bus interface and reduce power consumption by allowing the system processor to burst read sensor data and then go into a low-power mode.
 
 ### class IIM42652
 ```python
