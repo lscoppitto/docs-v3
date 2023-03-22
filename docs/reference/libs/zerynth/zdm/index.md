@@ -86,7 +86,7 @@ In the snippet above, a function is provided to the `on_fota` parameter. This fu
 
 ### class Agent
 ```python
-class Agent(cfg=None, jobs={}, set_clock_every=300, on_fota=None, host="zmqtt.zdm.zerynth.com")
+class Agent(cfg=None, jobs={}, set_clock_every=300, on_fota=None, host="zmqtt.zdm.zerynth.com", upload_host="uploads.zdm.zerynth.com")
 ```
 
 Create an `Agent` instance. The `Agent` class accepts various parameters:
@@ -96,6 +96,7 @@ Create an `Agent` instance. The `Agent` class accepts various parameters:
 * `set_clock_every` is the number of seconds after which re-synchronizing the real time clock. If set to zero or negative, clock synchronization is disabled and is up to the firmware to find alternative ways of setting the current time (i.e. by ntp protocol)
 * `on_fota` is a function accepting one ore more arguments that will be called at different steps of the FOTA process to validate or refuse the step.
 * `host` is the hostname of the ZDM broker, do not change.
+* `upload_host` is the hostname for the file upload via HTTPS.
 
 ### method `start`
 
@@ -164,6 +165,19 @@ The `timeout` specifies the time in milliseconds to wait for an acknowledgement
 form the broker when `qos` > 0; when `qos` = 0, the `timeout` is ignored. If
 the acknowledgement is not received by the `timeout`, the `MQTTPublishTimeout`
 exception is raised.
+
+
+### method `upload`
+
+```python
+upload(path, cloud_name, timeout=0)
+```
+
+Send a file from `path` to the zdm file area with `cloud_name` name.
+This method calls into the underlying HTTPS client and makes a POST vs. the
+Zerynth cloud. A custom upload hostname can be specified by passing the
+`upload_host` parameter for the agent `Config()` class.
+The `timeout` specifies the time in milliseconds for the connection to timeout.
 
 
 ### method `reset`
