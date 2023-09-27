@@ -176,8 +176,10 @@ nav:
           - reference/examples/zerynth-os/adc.md
           - reference/examples/zerynth-os/watchdog.md
     - Cloud APIs:
+      - reference/api/authentication/index.md
       - reference/api/zdm/index.md
       - reference/api/zstorage/index.md
+      - reference/api/apps/index.md
     - Changelog: reference/changelogs/index.md
     - What's new in SDK v3.x: reference/changelogs/whatsnew.md
 
