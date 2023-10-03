@@ -1,6 +1,6 @@
 # Zerynth Apps API
 
-All the following requests must be authenticated with a valid API key. For more information about how to get an API key, see [Authentication](#authentication).
+All the following requests must be authenticated with a valid API key. For more information about how to get an API key, see [Authentication](../authentication/index.md).
 The base URL for all requests is `https://api.cloud.zerynth.com/v3`.
 
 ## Machines APP

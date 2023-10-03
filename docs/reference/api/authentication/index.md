@@ -2,16 +2,17 @@
 The **Zerynth Device Manager REST APIs** offer access to devices, job and FOTA services, as well as workspaces and fleets.
 This API can be called from any application that can send an HTTPS request and receive an HTTPS response.
 
-!!! note
-- Set the **Content-Type** header to **application/json**.
-- Set the **X-API-KEY** header to a valid API Key. For information about how to get an API key, see [Authentication](#authentication).
+!!! note "HTTPS only"
+		All requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.
+	- Set the **Content-Type** header to **application/json**.
+	- Set the **X-API-KEY** header to a valid API Key. For information about how to get an API key, see [Authentication](#create_api_key).
 
 ## Authentication
 Zerynth Device Manager grants access to endpoints by verifying an API key.
 
 The API key is a unique identifier that authenticates your requests and it is bound to a single workspace.
 
-### Create an API key
+### <a name="create_api_key"></a>Create an API key
 
 To create an API key:
 
