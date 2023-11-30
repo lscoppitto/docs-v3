@@ -1,3 +1,36 @@
+## V3.0.14
+
+***Added***
+
+- zdm.upload() and http.upload() methods to upload binary files.
+- ZDM config parameter to change the default http client timeout.
+- A filesystem can be formatted on a failed mount.
+- OPC-UA secure connections support.
+- BLE Scan support with name filtering.
+- cellular fuctions to select NB-IoT and CAT-M1 technologies and bands.
+- fs.info() function to get filesystem usage info.
+- EXP-AOUT analog outputs board support.
+- dac module for DAC support.
+- Toolchain can load generic files on cloud and not only zerynth MCU projects.
+- IIM42652 accelerometer internal filter example on 4ZeroBox Mobile.
+
+***Changed***
+
+- Default early watchdog set to 60s in project template.
+- VSCode Zerynth extension periodically checks for SDK updates with user notice.
+
+***Fixed***
+
+- cellular memory leak on gps fix.
+- use 8.5MHz clock source and disable calibration for RTC.
+- Spurious interrupts triggered for D39 and D36 pins.
+- Fix threading debug macros.
+- FOTA info validation into zdm module.
+- Endless update loop during device FOTA in some edge cases.
+- The device check for free space on local memory before FOTA downloading.
+- Interupt setup not applies in some edge cases.
+- Installer crash on check updates.
+
 ## V3.0.13
 
 ***Added***
