@@ -181,6 +181,29 @@ nav:
       - reference/api/apps/index.md
     - Changelog: reference/changelogs/index.md
     - What's new in SDK v3.x: reference/changelogs/whatsnew.md
+- Partners:
+  - Zerynth Platform:
+    - {Introduction: partners/zerynth_platform/index.md}
+    - Platform Architecture:  partners/zerynth_platform/platform_architecture/placeholder.md
+  - Zerynth App:
+    - {Introduction: partners/zerynth_app/index.md}
+    - Machine Monitoring: partners/zerynth_app/machine_monitoring/placeholder.md
+    - Production Insight: partners/zerynth_app/production_insight/placeholder.md
+    - Machine Control: partners/zerynth_app/machine_control/placeholder.md
+    - Custom Dashboarding: partners/zerynth_app/custom_dashboarding/placeholder.md
+    - Reports: partners/zerynth_app/reports/placeholder.md
+    - Rules: partners/zerynth_app/rules/placeholder.md
+    - Tools: partners/zerynth_app/tools/placeholder.md
+  - Machines Connection and Management:
+    - Machines Connection and Management: partners/machines_connection_and_management/machines_connection_and_management/placeholder.md
+  - Edge Layer:
+    - Edge Layer: partners/edge_layer/edge_layer/placeholder.md
+  - Integrations:
+    - Integrations: partners/integrations/integrations/placeholder.md
+  - Other Settings:
+    - Other Settings: partners/other_settings/other_settings/placeholder.md
+  - Wiring Guide:
+    - Wiring Guide: partners/wiring_guide/wiring_guide/placeholder.md
 
 
 
