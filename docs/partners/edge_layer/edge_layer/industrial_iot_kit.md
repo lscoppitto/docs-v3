@@ -25,7 +25,7 @@ With this kit machines are interface typically via 1 power clamp and up to 3 ext
     * 2x decoupling relays, 
     * 1x 100A power clamp (500A power clamp are also available as addon, verify and notify this need to the delivery team)
 
-# General Hardware Characteristics
+## General Hardware Characteristics
 
 ### DB-ZM1
 
@@ -82,170 +82,37 @@ The EXP-IO expansion board is a mixed input/output module that features:
 ### DB-ZM1
 
 
-<table>
-  <tr>
-   <td colspan="3" ><strong>Connector J1</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Screw Number</strong>
-   </td>
-   <td><strong>Symbol</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>1</strong>
-   </td>
-   <td>Power+
-   </td>
-   <td>External Power Supply positive pin
-   </td>
-  </tr>
-  <tr>
-   <td><strong>2</strong>
-   </td>
-   <td>Power-
-   </td>
-   <td>External Power Supply negative pin
-   </td>
-  </tr>
-</table>
+**Connector J1**
 
-
+| Screw Number | Symbol |	Description |
+|--------------|--------|-------------|
+| 1            | Power+ | External Power Supply positive pin |
+| 2            | Power- | External Power Supply negative pin |
 
 ### EXP-IO
 
+**P1 - Upper Screw Terminal**
 
-<table>
-  <tr>
-   <td colspan="3" ><strong>P1 - Upper Screw Terminal</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Screw Number</strong>
-   </td>
-   <td><strong>Symbol</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>1,2</strong>
-   </td>
-   <td><strong>OUT1</strong>
-   </td>
-   <td>Screw Terminal of the relay #1 ( OUT1 is normally open)
-   </td>
-  </tr>
-  <tr>
-   <td><strong>3,4</strong>
-   </td>
-   <td><strong>OUT2</strong>
-   </td>
-   <td>Screw Terminal of the relay #2 ( OUT2 is normally open)
-   </td>
-  </tr>
-  <tr>
-   <td><strong>5,6</strong>
-   </td>
-   <td><strong>OUT3</strong>
-   </td>
-   <td>Screw Terminal of the relay #3 ( OUT3 is normally open)
-   </td>
-  </tr>
-  <tr>
-   <td><strong>7,8</strong>
-   </td>
-   <td><strong>OUT4</strong>
-   </td>
-   <td>Screw Terminal of the relay #4 ( OUT4  is normally open)
-   </td>
-  </tr>
-  <tr>
-   <td><strong>9</strong>
-   </td>
-   <td><strong>GND</strong>
-   </td>
-   <td>Isolated Ground reference for analog bias
-   </td>
-  </tr>
-</table>
+| Screw Number | Symbol |	Description |
+|--------------|--------|-------------|
+| 1,2 |	OUT1  |	Screw Terminal of the relay #1 ( OUT1 is normally open) |
+| 3,4 |	OUT2	 | Screw Terminal of the relay #2 ( OUT2 is normally open) |
+| 5,6 |	OUT3	 | Screw Terminal of the relay #3 ( OUT3 is normally open) |
+| 7,8 |	OUT4	 | Screw Terminal of the relay #4 ( OUT4 is normally open) |
+| 9 |	GND |	Isolated Ground reference for analog bias |
 
 
+**P2 - Lower Screw Terminal**
 
-<table>
-  <tr>
-   <td colspan="3" ><strong>P2 - Lower Screw Terminal</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Screw Number</strong>
-   </td>
-   <td><strong>Symbol</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>10</strong>
-   </td>
-   <td><strong>DIN1-</strong>
-   </td>
-   <td>Digitally opto-Isolated digital Inputs
-   </td>
-  </tr>
-  <tr>
-   <td><strong>11</strong>
-   </td>
-   <td><strong>DIN1+</strong>
-   </td>
-   <td>Digitally opto-Isolated digital Inputs
-   </td>
-  </tr>
-  <tr>
-   <td><strong>12</strong>
-   </td>
-   <td><strong>DIN2-</strong>
-   </td>
-   <td>Digitally opto-Isolated digital Inputs
-   </td>
-  </tr>
-  <tr>
-   <td><strong>13</strong>
-   </td>
-   <td><strong>DIN2+</strong>
-   </td>
-   <td>Digitally opto-Isolated digital Inputs
-   </td>
-  </tr>
-  <tr>
-   <td><strong>14,15</strong>
-   </td>
-   <td><strong>AIN1-/AIN1+</strong>
-   </td>
-   <td>Analog Input Channel 4-20mA/0-10V/Resis./Current 
-   </td>
-  </tr>
-  <tr>
-   <td><strong>16,17</strong>
-   </td>
-   <td><strong>AIN2-/AIN2+</strong>
-   </td>
-   <td>Analog Input Channel 4-20mA/0-10V/Resis./Current 
-   </td>
-  </tr>
-  <tr>
-   <td><strong>18</strong>
-   </td>
-   <td><strong>GND</strong>
-   </td>
-   <td>Isolated Ground reference for analog bias
-   </td>
-  </tr>
-</table>
-
+| Screw Number | Symbol |	Description |
+|--------------|--------|-------------|
+| 10 |	DIN1-  |	Digitally opto-Isolated digital Inputs |
+| 11 |	DIN1+	 | Digitally opto-Isolated digital Inputs |
+| 12 |	DIN2-	 | Digitally opto-Isolated digital Inputs |
+| 13 |	DIN2+	 | Digitally opto-Isolated digital Inputs |
+| 14,15 |	AIN1-/AIN1+ |	Analog Input Channel 4-20mA/0-10V/Resis./Current |
+| 16,17 |	AIN2-/AIN2+ |	Analog Input Channel 4-20mA/0-10V/Resis./Current |
+| 18 |	GND |	Isolated Ground reference for analog bias |
 
 
     **NOTE**: All I/O pins on screw terminals are isolated from the zBUS interface.
@@ -265,88 +132,23 @@ The EXP-IO expansion board is a mixed input/output module that features:
 
 **ADDR SW**: Chooses the address of the ADC Chip. Enable multiple boards to be  connected simultaneously. Present in **EXP-IO** as **SW1**.
 
-
-<table>
-  <tr>
-   <td><strong>Position</strong>
-   </td>
-   <td><strong>Address</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>0</strong>
-   </td>
-   <td>0x10
-   </td>
-  </tr>
-  <tr>
-   <td><strong>1</strong>
-   </td>
-   <td>0x11
-   </td>
-  </tr>
-  <tr>
-   <td><strong>2</strong>
-   </td>
-   <td>0x12
-   </td>
-  </tr>
-  <tr>
-   <td><strong>3</strong>
-   </td>
-   <td>0x13
-   </td>
-  </tr>
-</table>
+| Position | Address |
+|----------|---------|
+| 0        | 0x10    |
+| 1        | 0x11    |
+| 2        | 0x12    |
+| 3        | 0x13    |
 
 
 **INT SW: **Controls which hardware channel you want to link the interrupt. Present in **EXP-IO** as **SW2**. 
 
 
-<table>
-  <tr>
-   <td><strong>Position</strong>
-   </td>
-   <td><strong>Pin on zBUS</strong>
-   </td>
-   <td><strong>Pin ZM1-DB</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>0</strong>
-   </td>
-   <td>INTR
-   </td>
-   <td>D35
-   </td>
-  </tr>
-  <tr>
-   <td><strong>1</strong>
-   </td>
-   <td>INTB
-   </td>
-   <td>NC
-   </td>
-  </tr>
-  <tr>
-   <td><strong>2</strong>
-   </td>
-   <td>INTE1
-   </td>
-   <td>D46
-   </td>
-  </tr>
-  <tr>
-   <td><strong>3</strong>
-   </td>
-   <td>INTE2
-   </td>
-   <td>D47
-   </td>
-  </tr>
-</table>
-
-
+| Pin | Pin on zBUS | Pin ZM1-DB |
+|-----|-------------|------------|
+| 0   | INTR        | D35        |
+| 1   | INTB        | NC         |
+| 2   | INTE1       | D46        |
+| 3   | INTE2       | D47        |
 
 ### Dip-switches
 
@@ -355,64 +157,15 @@ The EXP-IO expansion board is a mixed input/output module that features:
 Switch **S1**: each Analog channel can be configured with 3 DIP switches that enable specific features.
 
 
-<table>
-  <tr>
-   <td><strong>PIN</strong>
-   </td>
-   <td><strong>OFF</strong>
-   </td>
-   <td><strong>ON</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>1
-   </td>
-   <td>Gain ADC AIN1 = 1
-   </td>
-   <td>Gain ADC AIN1 = 5  
-   </td>
-  </tr>
-  <tr>
-   <td>2
-   </td>
-   <td>AIN1 read as voltage
-   </td>
-   <td>AIN1 read as Current
-   </td>
-  </tr>
-  <tr>
-   <td>3
-   </td>
-   <td>-
-   </td>
-   <td>AIN1 read as resistive sensor
-   </td>
-  </tr>
-  <tr>
-   <td>4
-   </td>
-   <td>Gain ADC AIN2 = 1
-   </td>
-   <td>Gain ADC AIN2 = 5
-   </td>
-  </tr>
-  <tr>
-   <td>5
-   </td>
-   <td>AIN2 read as voltage
-   </td>
-   <td>AIN2 read as Current
-   </td>
-  </tr>
-  <tr>
-   <td>6
-   </td>
-   <td>-
-   </td>
-   <td>AIN2 read as resistive sensor
-   </td>
-  </tr>
-</table>
+
+| Pin          | OFF      | ON                                             |
+|--------------|-----------|---------------------------------------------------------|
+| 1            | Gain ADC AIN1 = 1 | Gain ADC AIN1 = 5 |
+| 2            | AIN1 read as voltage    | AIN1 read as Current                             |
+| 3            | -    | AIN1 read as resistive sensor                                  |
+| 4            | Gain ADC AIN2 = 1    | Gain ADC AIN2 = 5                                 |
+| 5            | AIN2 read as voltage    | AIN2 read as Current                                   |
+| 6            | -    | AIN2 read as resistive sensor                                 |
 
 ## Apps Wiring Guide
 
