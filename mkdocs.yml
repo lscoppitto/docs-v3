@@ -196,6 +196,7 @@ nav:
     - Tools: partners/zerynth_app/tools/placeholder.md
   - Machines Connection and Management:
     - Machines Connection and Management: partners/machines_connection_and_management/machines_connection_and_management/placeholder.md
+    - Zerynth Toolbox: partners/machines_connection_and_management/machines_connection_and_management/zerynth_toolbox_for_commissioning.md
   - Edge Layer:
     - Edge Layer: partners/edge_layer/edge_layer/placeholder.md
   - Integrations:
