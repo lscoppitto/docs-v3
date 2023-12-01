@@ -197,13 +197,14 @@ nav:
   - Machines Connection and Management:
     - Machines Connection and Management: partners/machines_connection_and_management/machines_connection_and_management/placeholder.md
   - Edge Layer:
-    - Edge Layer: partners/edge_layer/edge_layer/placeholder.md
+    - Edge Layer: partners/edge_layer/edge_layer/industrial_iot_kit.md
   - Integrations:
     - Webhook: partners/integrations/integrations/webhook.md
   - Other Settings:
     - Other Settings: partners/other_settings/other_settings/placeholder.md
   - Wiring Guide:
-    - Wiring Guide: partners/wiring_guide/wiring_guide/placeholder.md
+    - {Introduction: partners/wiring_guide/index.md}
+    - Wiring Guide: partners/wiring_guide/wiring_guide.md
 
 
 
