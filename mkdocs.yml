@@ -198,6 +198,7 @@ nav:
     - Machines Connection and Management: partners/machines_connection_and_management/machines_connection_and_management/placeholder.md
     - Zerynth Toolbox: partners/machines_connection_and_management/machines_connection_and_management/zerynth_toolbox_for_commissioning.md
   - Edge Layer:
+    - 4ZeroAgent: partners/edge_layer/edge_layer/4zeroagent.md
     - Edge Layer: partners/edge_layer/edge_layer/industrial_iot_kit.md
   - Integrations:
     - Webhook: partners/integrations/integrations/webhook.md

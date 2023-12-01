@@ -1,12 +1,17 @@
 # Zerynth Toolbox for commissioning
 
-[Download for Linux](#){ .md-button } [Download for Windows](#){ .md-button }
+[Download for Windows](#){ .md-button } [Download for Linux](#){ .md-button }
 
 ## Introduction
 
-This toolbox aims to simplify both on site activities and testing of Zerynth apps.
-It features a Machine Scanner to acquire data from various PLCs, a PLC Simulator to replay the acquired data or to generate new data via an OPC-UA server and a Connectivity Checker to be able to test the Cloud endpoints.
-
+This toolbox aims to simplify both on site activities and testing of Zerynth apps using the Zerynth agents.
+It features a Machine Scanner to acquire data from various PLCs, a PLC Simulator to replay the acquired data or to generate new data via an OPC-UA server and a Connectivity Checker to be able to test whether the Zerynth cloud endpoints are reachable. 
+The windows executable is ready to be executed, while on Linux you need to download and then open a terminal and execute the following commands:
+```bash
+cd ~/Downloads
+chmod +x zerynth-toolbox
+./zerynth-toolbox
+```
 
 ## PLC Simulator
 
