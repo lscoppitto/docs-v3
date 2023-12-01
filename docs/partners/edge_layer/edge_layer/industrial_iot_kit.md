@@ -28,6 +28,13 @@ With this kit machines are interface typically via 1 power clamp and up to 3 ext
 # General Hardware Characteristics
 
 ### DB-ZM1
+
+<figure>
+  <a data-fancybox="gallery" href="../img/ZM1-DB-front.png">
+  <img src="../img/ZM1-DB-front.png"width="400" />
+  </a>
+</figure>
+
 The ZM1-DB is a flexible, modular, board that features the ZM1 SoM
 
 * **ZM1 Module**
@@ -45,6 +52,13 @@ The ZM1-DB is a flexible, modular, board that features the ZM1 SoM
 
 
 ### EXP-IO
+
+<figure>
+  <a data-fancybox="gallery" href="../img/EXP-IO-front.png">
+  <img src="../img/EXP-IO-front.png"width="400" />
+  </a>
+</figure>
+
 
 The EXP-IO expansion board is a mixed input/output module that features:
 
