@@ -199,7 +199,7 @@ nav:
   - Edge Layer:
     - Edge Layer: partners/edge_layer/edge_layer/placeholder.md
   - Integrations:
-    - Integrations: partners/integrations/integrations/placeholder.md
+    - Webhook: partners/integrations/integrations/webhook.md
   - Other Settings:
     - Other Settings: partners/other_settings/other_settings/placeholder.md
   - Wiring Guide:
