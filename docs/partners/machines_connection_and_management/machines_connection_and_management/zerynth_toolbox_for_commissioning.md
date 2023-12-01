@@ -1,6 +1,7 @@
 # Zerynth Toolbox for commissioning
 
 [Download for Windows](#){ .md-button } [Download for Linux](#){ .md-button }
+      
 
 ## Introduction
 
@@ -22,8 +23,6 @@ The PLC Simulator can be used to simulate a production machine to test the 4Zero
 To simulate a production machine click on the `Generate data` radio button.
 The simulated machine operates between two power levels, changing the number of produced pieces and the operation tag accordingly.
 
-<!-- insert image -->
-
 Here's how to setup the machine:
 
 * **IP, Port:** The IP and the port where the OPC-UA server is running. While the port is customizable, be sure to double check the IP address as sometimes it can be incorrect (e.g. if the PC has 2 network interfaces, only one IP will be shown).
@@ -34,10 +33,16 @@ Here's how to setup the machine:
 * **Pieces per minute (Hi prod):**: how many pieces are produced in the Hi production level.
 * **Good pieces %:** the percentage of good pieces produced.
 
-Once started, the state of the machine can be controlled with the toggles at the bottom left:
+![Start simulation](./img_zerynth_toolbox_for_commissioning/start_simulation.png)
+
+
+Once started, the operation can be changed using the textbox (it uses the default operation tags if left empty) and the state of the machine can be controlled with the toggles at the bottom left:
 
 * **Toggle alarm:** this switch sets the machine in the alarm state
 * **Toggle idle/working:** this switch sets the machine status. In the idle state the power consumption is automatically set to  1/4 of the `Low prod consumption` value
+
+![Control simulation](./img_zerynth_toolbox_for_commissioning/simulation_controls.png)
+
 
 The OPC-UA server will expose the following nodes:
 
