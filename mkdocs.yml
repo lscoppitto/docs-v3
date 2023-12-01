@@ -197,7 +197,10 @@ nav:
   - Machines Connection and Management:
     - Machines Connection and Management: partners/machines_connection_and_management/machines_connection_and_management/placeholder.md
   - Edge Layer:
-    - Edge Layer: partners/edge_layer/edge_layer/industrial_iot_kit.md
+    - {Introduction: partners/edge_layer/index.md}
+    - Industrial IOT Kit:
+      - Essential: partners/edge_layer/industrial_iot_kit/essential.md
+      - Electric Panel: partners/edge_layer/industrial_iot_kit/electric_panel.md
   - Integrations:
     - Webhook: partners/integrations/integrations/webhook.md
   - Other Settings:
