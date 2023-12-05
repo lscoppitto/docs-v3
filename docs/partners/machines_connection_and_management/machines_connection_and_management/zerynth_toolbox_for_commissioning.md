@@ -16,7 +16,7 @@ chmod +x zerynth-toolbox
 
 ## PLC Simulator
 
-The PLC Simulator can be used to simulate a production machine to test the 4ZeroAgent o to replay the data acquired from a real machine.
+The PLC Simulator can be used to simulate a production machine to test the 4ZeroAgent or to replay the data acquired from a real machine.
 
 ### Data generation
 
@@ -58,26 +58,62 @@ The OPC-UA server will expose the following nodes:
 
 ### Replay acquisition
 
-To replay an acquisition recorded using the [Machine Scanner](#recording-a-session), click on the `Replay acquisition` radio button, then click on the `Load acquisition file` and select a valid CSV file.
-Now you have to match the OPC-UA nodes with the correct CSV acquisition column. If the acquisition file contains analogic or digital readings, the exported node will be named `ns=1;s=AINX` or `ns=1;s=DINX`.
+To replay an acquisition recorded using the [Machine Scanner](#recording-a-session), click on the `Replay acquisition` radio button, then click on the `Load acquisition file` button and select a valid CSV file.
+Now you have to match the OPC-UA nodes with the correct CSV acquisition column.
 
-<!-- insert image -->
+![Replay acquisition](./img_zerynth_toolbox_for_commissioning/replay_acquisition.png)
 
 Now you can start the server to replay and scrub through the acquisition.
 
+!!! Note
+    If a column contains an invalid value or if a node is not associated with any column, the node value will be set to `0` or `""`.
 ## Machine Scanner
+
+### Analog and digital reading
+
+If you have a 4ZeroBox with an EXP-IO connected, it can be used to read up to two amperometric clamps (0-5V) and to read up to two digital inputs.
+Please, before connecting the device check the EXP-IO board and make sure that the `ADDR` switch is set to one and taht all the switches on the `S1` DIP switch are set to off. 
+
+![Switch configuration](./img_zerynth_toolbox_for_commissioning/switch_config.png)
+
+Then to flash the correct firmware follow these steps:
+
+1. Connect the device
+2. Go to the *Flash utilities* tab
+3. Select the serial port to be used (on Linux click on `Refresh` if nothing shows up)
+4. Select the `io_reader` firmware
+5. Click on the `Flash` button
+
+!!! Warning
+    <u>The original firmware on the device will be overwritten!</u>
+
+![Flash device](./img_zerynth_toolbox_for_commissioning/flash_firmware.png)
+
+Once done, head to the *Machine Scanner* tab, and select the *Digital/Analog Scanner* tab. Here you can connect to the device as before.
+
+![Connect to the reader](./img_zerynth_toolbox_for_commissioning/connect_reader.png)
+
+
+Now, you can set the clamps amperage, the power source phases, the network voltage and specify whether the logic of the digital inputs has to be inverted.
+Then, you can start reading from the device by clicking on the `Start reading` button.
+
+!!! Note
+    If the led of the device is flashing red, it means that it cannot connect to the EXP-IO board. In this case make sure that the switches are in the correct position.
+
+
+
 
 ### OPC-UA
 
-To scan an OPC-UA server open the Machine Scanner tab
+To scan an OPC-UA server open the *Machine Scanner* tab and then click on *OPCUA*
 
-<!-- image here -->
+![Machine scanner](./img_zerynth_toolbox_for_commissioning/machine_scanner.png)
 
 Insert the following parameters:
 
 * **IP/Hostname, Port and Path:** usually, an OPC-UA server is identified by an url like `opc.tcp://[ip or hostname]:port/path`. Leave the path empty if it's not needed.
 * **Username and password:** provide these parameters if the server requires user authentication, otherwise leave them empty.
-* **Certificate, key and Application URI:** provide these parameters if they are required by the server. The application URI can be found inspecting the certificate with `openssl x509 -in certificate.crt -text -noout` and usually is something like `urn:host:field1:field2`. 
+* **Certificate, key and Application URI:** provide these parameters if they are required by the server, otherwise leave them empty. The application URI can be found inspecting the certificate with the terminal command `openssl x509 -in certificate.crt -text -noout` and usually is something like `urn:host:field1:field2`. 
 
 Now, you can start the scanner and wait for the scanning process to complete.
 
@@ -86,13 +122,18 @@ Now, you can start the scanner and wait for the scanning process to complete.
 
 Once the scanner has finished its job, a new tab containing the scanned nodes will appear: there it's possible to open the record and the export dialog.
 
+
+
 ### Recording a session
 
 To record a session click on the `Record` button
 
-<!-- insert image -->
+![Record](./img_zerynth_toolbox_for_commissioning/record_button.png)
 
-select the nodes to record, connect a 4ZeroBox (check [here](#) how to setup the device) if analogic and digital signal acquisition is required, select the acquisition frequency and start the recording.
+select the nodes to record, select the acquisition frequency and start the recording.
+
+![Record dialog](./img_zerynth_toolbox_for_commissioning/record_dialog.png)
+
 To stop the recording, click on the `Record` button again and click on the stop button.
 The session is saved on a csv file containing a column with the timestamp in millisecond and the columns containing the values:
 
@@ -109,6 +150,8 @@ The session is saved on a csv file containing a column with the timestamp in mil
 
 To export a table click on the `Export table` button, select the nodes to export, then choose the format and click on `Export`.
 
+![Export dialog](./img_zerynth_toolbox_for_commissioning/export_dialog.png)
+
 The CSV format is useful for further reference of the server nodes, here's an example:
 
 | nodeid   | name                | type   |
@@ -122,7 +165,7 @@ The CSV format is useful for further reference of the server nodes, here's an ex
 | ns=1;i=7 | Machine.Operation   | STRING |
 
 
-<!-- insert configuator reference  -->
+<!-- insert configurator reference  -->
 
 The JSON format, instead, is compatible with the 4ZeroAgent and can be used in the graph configurator (check [here](#)) to configure the `OpcuaNode` graph node.
 Here's an example:
