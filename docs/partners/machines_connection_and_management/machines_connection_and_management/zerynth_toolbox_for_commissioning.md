@@ -6,8 +6,8 @@
 ## Introduction
 
 This toolbox aims to simplify both on site activities and testing of Zerynth apps using the Zerynth agents.
-It features a Machine Scanner to acquire data from various PLCs, a PLC Simulator to replay the acquired data or to generate new data via an OPC-UA server and a Connectivity Checker to be able to test whether the Zerynth cloud endpoints are reachable. 
-The windows executable is ready to be executed, while on Linux you need to download and then open a terminal and execute the following commands:
+It features a **Machine Scanner** to acquire data from various PLCs, a **PLC Simulator** to replay the acquired data or to generate new data via an OPC-UA server and a **Connectivity Checker** to be able to test whether the Zerynth cloud endpoints are reachable. 
+The windows executable is ready to be executed, while on Linux you need to download it and then open a terminal and execute the following commands:
 ```bash
 cd ~/Downloads
 chmod +x zerynth-toolbox
@@ -16,7 +16,7 @@ chmod +x zerynth-toolbox
 
 ## PLC Simulator
 
-The PLC Simulator can be used to simulate a production machine to test the 4ZeroAgent or to replay the data acquired from a real machine.
+The PLC Simulator can be used to simulate a production machine to test the [4ZeroAgent](../../edge_layer/edge_layer/4zeroagent.md){target=_blank} or to replay the data acquired from a real machine.
 
 ### Data generation
 
@@ -29,12 +29,11 @@ Here's how to setup the machine:
 * **Low prod consumption (W):** the power consumption when the machine operates at the lower power level.
 * **High prod consumption (W):** the power consumption when the machine operates at the higher power level.
 * **High/low power period (s):** the period spent in each power level (e.g. if set to `10`, the machine will switch level every 10 seconds).
-* **Pieces per minute (Low prod):**: how many pieces are produced in the Low production level.
-* **Pieces per minute (Hi prod):**: how many pieces are produced in the Hi production level.
+* **Pieces per minute (Low prod):** how many pieces are produced in the Low production level.
+* **Pieces per minute (Hi prod):** how many pieces are produced in the Hi production level.
 * **Good pieces %:** the percentage of good pieces produced.
 
 ![Start simulation](./img_zerynth_toolbox_for_commissioning/start_simulation.png)
-
 
 Once started, the operation can be changed using the textbox (it uses the default operation tags if left empty) and the state of the machine can be controlled with the toggles at the bottom left:
 
@@ -63,6 +62,9 @@ Now you have to match the OPC-UA nodes with the correct CSV acquisition column.
 
 ![Replay acquisition](./img_zerynth_toolbox_for_commissioning/replay_acquisition.png)
 
+![Select nodes](./img_zerynth_toolbox_for_commissioning/zoom_nodes_replay.png)
+
+
 Now you can start the server to replay and scrub through the acquisition.
 
 !!! Note
@@ -72,7 +74,7 @@ Now you can start the server to replay and scrub through the acquisition.
 ### Analog and digital reading
 
 If you have a 4ZeroBox with an EXP-IO connected, it can be used to read up to two amperometric clamps (0-5V) and to read up to two digital inputs.
-Please, before connecting the device check the EXP-IO board and make sure that the `ADDR` switch is set to one and taht all the switches on the `S1` DIP switch are set to off. 
+Please, before connecting the device check the EXP-IO board and make sure that the `ADDR` switch is set to `0` and that all the switches on the `S1` DIP switch are set to off. 
 
 ![Switch configuration](./img_zerynth_toolbox_for_commissioning/switch_config.png)
 
@@ -84,7 +86,7 @@ Then press **WIN + x**, click on **Device manager** and look for **Other devices
 
 ![Select device](./img_zerynth_toolbox_for_commissioning/select_device.png)
 
-Then click on **Update driver**
+Double click on the UART device and then click on **Update driver**
 
 ![Update driver](./img_zerynth_toolbox_for_commissioning/update_driver.png){width=50%}
 
@@ -150,30 +152,30 @@ Now, you can start the scanner and wait for the scanning process to complete.
 !!! Note
     The auto refresh feature **is still beta** and can lead to the crash of the application.
 
-Once the scanner has finished its job, a new tab containing the scanned nodes will appear: there it's possible to open the record and the export dialog.
+Once the scanner has finished its job, a new tab containing the scanned nodes will appear: there you can open the record and the export dialogs.
 
 
 
 ### Recording a session
 
-To record a session click on the `Record` button
+To record a session, click on the `Record` button
 
 ![Record](./img_zerynth_toolbox_for_commissioning/record_button.png)
 
-select the nodes to record, select the acquisition frequency and start the recording.
+Select the nodes to record, select the acquisition frequency and start recording
 
 ![Record dialog](./img_zerynth_toolbox_for_commissioning/record_dialog.png)
 
-To stop the recording, click on the `Record` button again and click on the stop button.
-The session is saved on a csv file containing a column with the timestamp in millisecond and the columns containing the values:
+To stop recording, click on the `Record` button again and click on the stop button.
+The session will be saved on a csv file containing a column with the timestamp in millisecond and the columns containing the nodes values:
 
-| timestamp (ms) | ns=1;i=1 | ns=1;i=3 | ns=1;i=4 | ns=1;i=5 | ns=1;i=6 | ns=1;i=7 |
-|:--------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-| 1701095566041  | 1168.01  | 50       | 10       | 1        | 0        | HIGH     |
-| 1701095566143  | 1201.99  | 50       | 10       | 1        | 0        | HIGH     |
-| ...            | ...      | ...      | ...      | ...      | ...      | ...      |
-| 1701095594530  | 600.11   | 106      | 16       | 1        | 0        | LOW      |
-| 1701095594632  | 700.13   | 106      | 16       | 1        | 0        | LOW      |
+| timestamp (ms) | ns=1;i=1 | ns=1;i=3 |   ...    | ns=1;i=7 |
+|:--------------:|:--------:|:--------:|:--------:|:--------:|
+| 1701095566041  | 1168.01  | 50       |    ...   | HIGH     |
+| 1701095566143  | 1201.99  | 50       |    ...   | HIGH     |
+| ...            | ...      | ...      |    ...   | ...      |
+| 1701095594530  | 600.11   | 106      |    ...   | LOW      |
+| 1701095594632  | 700.13   | 106      |    ...   | LOW      |
 
 
 ### Exporting a table
