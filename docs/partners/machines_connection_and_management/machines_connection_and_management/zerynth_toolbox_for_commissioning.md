@@ -1,6 +1,6 @@
 # Zerynth Toolbox for commissioning
 
-[Download for Windows](#){ .md-button } [Download for Linux](#){ .md-button }
+<!-- [Download for Windows](#){ .md-button } [Download for Linux](#){ .md-button } -->
       
 
 ## Introduction
@@ -76,7 +76,35 @@ Please, before connecting the device check the EXP-IO board and make sure that t
 
 ![Switch configuration](./img_zerynth_toolbox_for_commissioning/switch_config.png)
 
-Then to flash the correct firmware follow these steps:
+#### Install drivers (Windows only)
+
+If you're on Windows and you haven't installed the drivers for the *CP210x USB to UART Bridge* yet, please install them before continuing.
+First, download the drivers [here](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip) and unzip the folder.
+Then press **WIN + x**, click on **Device manager** and look for **Other devices**
+
+![Select device](./img_zerynth_toolbox_for_commissioning/select_device.png)
+
+Then click on **Update driver**
+
+![Update driver](./img_zerynth_toolbox_for_commissioning/update_driver.png){width=50%}
+
+Click on **Browse my computer for drivers**
+
+![Browse driver](./img_zerynth_toolbox_for_commissioning/select_driver.png){width=50%}
+
+Finally, select the folder where you extracted the drivers and click on **Next**
+
+![Select folder](./img_zerynth_toolbox_for_commissioning/select_folder.png){width=50%}
+
+Now you should see the device listed under **Ports (COM & LPT)**
+
+![Installed](./img_zerynth_toolbox_for_commissioning/drivers_installed.png){width=50%}
+
+
+
+#### Flash the device
+
+Once you installed the driver, you can flash the correct firmware on the device following these steps:
 
 1. Connect the device
 2. Go to the *Flash utilities* tab
@@ -88,6 +116,8 @@ Then to flash the correct firmware follow these steps:
     <u>The original firmware on the device will be overwritten!</u>
 
 ![Flash device](./img_zerynth_toolbox_for_commissioning/flash_firmware.png)
+
+#### Read from the device
 
 Once done, head to the *Machine Scanner* tab, and select the *Digital/Analog Scanner* tab. Here you can connect to the device as before.
 
@@ -167,7 +197,7 @@ The CSV format is useful for further reference of the server nodes, here's an ex
 
 <!-- insert configurator reference  -->
 
-The JSON format, instead, is compatible with the 4ZeroAgent and can be used in the graph configurator (check [here](#)) to configure the `OpcuaNode` graph node.
+The JSON format, instead, is compatible with the 4ZeroAgent and can be used in the graph configurator (check [here](./advanced_configurator.md#OPCUA-Node)) to configure the `OpcuaNode` graph node.
 Here's an example:
 
 ```json
@@ -188,7 +218,13 @@ Here's an example:
 
 This tool is useful to check whether the cloud endpoints are reachable and up.
 
-<!-- insert image -->
+If everything is ok you should see something like this
+
+![Connection ok](./img_zerynth_toolbox_for_commissioning/con_ok.png)
+
+Otherwise, you should see an error to the offline endpoints 
+
+![Connection ko](./img_zerynth_toolbox_for_commissioning/con_ko.png)
 
 
 
